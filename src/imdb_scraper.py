@@ -6,7 +6,7 @@ import uuid
 import random
 from pathlib import Path
 from typing import Dict, Any
-from urllib.parse import urlencode
+from urllib.parse import quote
 
 import requests
 from bs4 import BeautifulSoup
@@ -15,7 +15,8 @@ import pandas as pd
 # ========= 使用者可調變數 =========
 INPUT_CSV = "data/kaggle/industry/movies.csv" 
 TITLE_COLUMN = "name"           # 哪一欄是電影標題
-GET_REV_COUNT = 20               # 每部電影最多抓幾篇評論
+GET_REV_COUNT = 10               # 每部電影最多抓幾篇評論
+GET_ROLE_COUNT = 10                # 每部電影抓幾個主要角色
 MAX_MOVIES = 100                # 最多處理幾部電影，避免一次抓太多（可設為 None 不限數量）
 
 PROGRESS_PATH = Path("data/progress.json")
@@ -78,48 +79,96 @@ def save_progress(path: Path, data: Dict[str, Any]) -> None:
 
 # ========= IMDb 爬蟲邏輯 =========
 
-def search_imdb_title(title: str) -> str | None:
+def _normalize_title(s: str) -> str:
+    """簡單 normalization：小寫、移除非字母數字。"""
+    s = s.lower()
+    s = re.sub(r"[^a-z0-9]+", "", s)
+    return s
+
+def search_imdb_id_by_find(title: str) -> str | None:
     """
-    在 IMDb 搜尋電影標題，回傳第一個結果的 ttID（例如 tt1375666）。
-    若找不到則回傳 None。
+    用 IMDb /find 頁面，從 __NEXT_DATA__ 的 JSON 中抓出最適合的 titleId。
+    找不到就回傳 None。
     """
-    print(f"[search] Searching IMDb for title: {title!r}")
-    base_url = "https://www.imdb.com/find/"
-    params = {
-        "q": title,
-        "s": "tt",
-        "ttype": "ft",  # feature film
-        "ref_": "fn_ft"
+    # 1. 拼 URL（只查 Title / Feature Film）
+    q = quote(title)
+    url = f"https://www.imdb.com/find/?q={q}&s=tt&ttype=ft"
+
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/123.0.0.0 Safari/537.36"
+        ),
+        "Accept-Language": "en-US,en;q=0.9",
     }
-    url = f"{base_url}?{urlencode(params)}"
-    resp = SESSION.get(url, headers=HEADERS)
-    if resp.status_code != 200:
-        print(f"[search] HTTP {resp.status_code} when searching {title!r}")
-        return None
 
+    resp = SESSION.get(url, headers=headers, timeout=10)
+    resp.raise_for_status()
+
+    # 2. 用 BeautifulSoup 找出 __NEXT_DATA__ script
     soup = BeautifulSoup(resp.text, "html.parser")
-
-    # IMDb 搜尋頁結構常見為 table.findList > tr.findResult
-    result = soup.select_one("table.findList tr.findResult td.result_text a")
-    if not result:
-        print(f"[search] No result found for {title!r}")
+    script = soup.find("script", id="__NEXT_DATA__", type="application/json")
+    if not script or not script.string:
+        print("[search] __NEXT_DATA__ not found")
         return None
 
-    href = result.get("href", "")
-    m = re.search(r"/title/(tt\d+)", href)
-    if not m:
-        print(f"[search] Cannot parse ttID from href={href!r}")
+    # 3. 解析 JSON
+    try:
+        data = json.loads(script.string)
+    except json.JSONDecodeError:
+        print("[search] JSON decode error")
         return None
 
-    tt_id = m.group(1)
-    print(f"[search] Found ttID={tt_id} for title={title!r}")
-    return tt_id
+    # 4. 走到 titleResults.results
+    page_props = (data.get("props") or {}).get("pageProps") or {}
+    title_results = (page_props.get("titleResults") or {}).get("results") or []
+
+    if not title_results:
+        print(f"[search] No titleResults for '{title}'")
+        return None
+
+    target_norm = _normalize_title(title)
+    best_item = None
+
+    for r in title_results:
+        item = r.get("listItem") or {}
+        cand = item.get("originalTitleText") or item.get("titleText")
+        if not cand:
+            continue
+
+        cand_norm = _normalize_title(cand)
+
+        # 完全 match（忽略大小寫、標點）直接用這個
+        if cand_norm == target_norm:
+            best_item = item
+            break
+
+        # 否則就先記第一個當備用
+        if best_item is None:
+            best_item = item
+
+    if not best_item:
+        print(f"[search] No suitable match for '{title}'")
+        return None
+
+    imdb_id = best_item.get("titleId")
+    print(f"[search] Found IMDb ID {imdb_id} for title '{title}' (matched: {best_item.get('originalTitleText') or best_item.get('titleText')})")
+    return imdb_id
 
 
 def scrape_reviews_for_movie(tt_id: str, get_count: int, progress: Dict[str, Any]):
     """
-    從 /title/ttID/reviews 抓前 get_count 篇評論，
-    更新 progress["reviews"] 與 progress["users"]。
+    從 IMDb /title/ttID/reviews 抓前 get_count 篇評論（HTML 版），
+    頁面結構：
+      - 每篇 review 最外層：<article class="... user-review-item">
+      - 評分：span.ipc-rating-star--rating
+      - 標題：div[data-testid="review-summary"]
+      - 內容：div[data-testid="review-overflow"]
+      - 日期：li.review-date
+      - 使用者：a[data-testid="author-link"]  (href="/user/urXXXXXXX/")
+
+    寫入 progress["reviews"] 和 progress["users"]。
     """
     url = f"https://www.imdb.com/title/{tt_id}/reviews"
     print(f"[reviews] Fetching reviews from {url}")
@@ -130,58 +179,60 @@ def scrape_reviews_for_movie(tt_id: str, get_count: int, progress: Dict[str, Any
 
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    # 每一個 review 通常在 div.review-container 裡
-    containers = soup.select("div.review-container")
-    if not containers:
-        print(f"[reviews] No review containers found for ttID={tt_id}")
+    # ★ 每篇評論都是一個 article.user-review-item
+    articles = soup.select("article.user-review-item")
+    if not articles:
+        print(f"[reviews] No review <article> found for ttID={tt_id}")
         return
 
-    added = 0
-    for container in containers:
-        if added >= get_count:
-            break
+    users = progress["users"]
+    reviews_store = progress["reviews"]
 
-        # user 資訊
-        user_link = container.select_one("span.display-name-link a")
+    added = 0
+    for article in articles[:get_count]:
+        # ---- 使用者 ----
+        user_link = article.select_one('a[data-testid="author-link"]')
         if not user_link:
             continue
 
         user_name = user_link.get_text(strip=True)
-        user_href = user_link.get("href", "")
-        um = re.search(r"/user/(ur\d+)", user_href)
-        imdb_user_id = um.group(1) if um else user_href
+        href = user_link.get("href", "")
+        m = re.search(r"/user/(ur\d+)", href)
+        if not m:
+            continue
+        imdb_user_id = m.group(1)
 
-        # 評分
-        rating_span = container.select_one("span.rating-other-user-rating span")
+        # ---- 評分 ----
+        rating_span = article.select_one("span.ipc-rating-star--rating")
         rating = rating_span.get_text(strip=True) if rating_span else ""
 
-        # 日期
-        date_span = container.select_one("span.review-date")
-        date_text = date_span.get_text(strip=True) if date_span else ""
+        # ---- 日期 ----
+        date_li = article.select_one("li.review-date")
+        date_text = date_li.get_text(strip=True) if date_li else ""
 
-        # 評論內容
-        text_div = container.select_one("div.text.show-more__control") or \
-                   container.select_one("div.text")
-        comment = text_div.get_text(" ", strip=True) if text_div else ""
+        # ---- 內容 ----
+        content_div = article.select_one('div[data-testid="review-overflow"]')
+        comment = content_div.get_text(" ", strip=True) if content_div else ""
 
-        # 用 ttID + user_id + date 當 key 避免重複
+        # （可選）標題，如果你之後想用得到
+        # summary_div = article.select_one('[data-testid="review-summary"]')
+        # title_text = summary_div.get_text(" ", strip=True) if summary_div else ""
+
+        # ---- 去重 key：ttID + user + date ----
         review_key = f"{tt_id}|{imdb_user_id}|{date_text}"
-
-        if review_key in progress["reviews"]:
-            # 已存在就跳過
+        if review_key in reviews_store:
             continue
 
         review_id = make_id("rev")
 
-        # 先更新 user 表（user_id 就是 IMDb 的 user ID）
-        users = progress["users"]
+        # 更新 user 表（用 IMDb user id 當 user_id）
         if imdb_user_id not in users:
             users[imdb_user_id] = {
                 "user_id": imdb_user_id,
                 "name": user_name
             }
 
-        progress["reviews"][review_key] = {
+        reviews_store[review_key] = {
             "review_id": review_id,
             "movie_imdb_id": tt_id,
             "user_id": imdb_user_id,
@@ -194,11 +245,15 @@ def scrape_reviews_for_movie(tt_id: str, get_count: int, progress: Dict[str, Any
 
     print(f"[reviews] Added {added} new reviews for ttID={tt_id}")
 
-
 def scrape_roles_for_movie(tt_id: str, progress: Dict[str, Any]):
     """
-    從 /title/ttID/fullcredits 抓 cast list，
-    更新 progress["roles"]。
+    從新版 IMDb /title/ttID/fullcredits 的 __NEXT_DATA__ JSON 抓 Cast，
+    只取前 GET_ROLE_COUNT 個主要角色，更新 progress["roles"]。
+    每一筆 roles 存成：
+      - role_id: 自動產生
+      - name: 角色名稱
+      - actor: 演員名稱
+      - movie_imdb_id: ttID（之後寫 CSV 用）
     """
     url = f"https://www.imdb.com/title/{tt_id}/fullcredits"
     print(f"[roles] Fetching cast from {url}")
@@ -208,46 +263,81 @@ def scrape_roles_for_movie(tt_id: str, progress: Dict[str, Any]):
         return
 
     soup = BeautifulSoup(resp.text, "html.parser")
-    cast_table = soup.select_one("table.cast_list")
-    if not cast_table:
-        print(f"[roles] No cast_list table found for ttID={tt_id}")
+    script = soup.find("script", id="__NEXT_DATA__", type="application/json")
+    if not script or not script.string:
+        print(f"[roles] __NEXT_DATA__ not found for ttID={tt_id}")
+        return
+
+    try:
+        data = json.loads(script.string)
+    except json.JSONDecodeError:
+        print(f"[roles] JSON decode error for ttID={tt_id}")
+        return
+
+    # 走到 contentData.categories，找 name == "Cast" 的那一組
+    content_data = (
+        data.get("props", {})
+            .get("pageProps", {})
+            .get("contentData", {})
+    )
+    categories = content_data.get("categories") or []
+    cast_cat = None
+    for cat in categories:
+        if cat.get("name") == "Cast":
+            cast_cat = cat
+            break
+
+    if not cast_cat:
+        print(f"[roles] Cast category not found in JSON for ttID={tt_id}")
+        return
+
+    section = cast_cat.get("section") or {}
+    items = section.get("items") or []
+    if not items:
+        print(f"[roles] Cast items empty for ttID={tt_id}")
         return
 
     roles = progress["roles"]
     added = 0
 
-    # cast_list 通常每一列是 tr，內含 avatar, actor, character 等欄位
-    rows = cast_table.select("tr")
-    for row in rows:
-        actor_cell = row.select_one("td:nth-of-type(2) a")
-        character_cell = row.select_one("td.character")
+    # 只取前 GET_ROLE_COUNT 個 cast item
+    for item in items:
+        if added >= GET_ROLE_COUNT:
+            break
 
-        if not actor_cell or not character_cell:
+        actor_name = (item.get("rowTitle") or "").strip()
+        if not actor_name:
             continue
 
-        actor_name = actor_cell.get_text(strip=True)
-        # 角色欄位可能有多個 <a>，或包含換行，用 get_text(" ", strip=True) 一次整理
-        character_name = character_cell.get_text(" ", strip=True)
-        # 簡單清掉多餘空白
-        character_name = re.sub(r"\s+", " ", character_name).strip()
-
-        if not character_name or not actor_name:
+        characters = item.get("characters") or []
+        if not characters:
+            # 沒標角色名就略過
             continue
 
-        role_key = f"{tt_id}|{character_name}|{actor_name}"
-        if role_key in roles:
-            continue
+        for char in characters:
+            character_name = (char or "").strip()
+            if not character_name:
+                continue
 
-        role_id = make_id("role")
-        roles[role_key] = {
-            "role_id": role_id,
-            "name": character_name,
-            "actor": actor_name,
-            "movie_imdb_id": tt_id
-        }
-        added += 1
+            # 用 ttID + 角色名 + 演員名 當 key，避免重複
+            role_key = f"{tt_id}|{character_name}|{actor_name}"
+            if role_key in roles:
+                continue
+
+            role_id = make_id("role")
+            roles[role_key] = {
+                "role_id": role_id,
+                "name": character_name,
+                "actor": actor_name,
+                "movie_imdb_id": tt_id,
+            }
+            added += 1
+
+            if added >= GET_ROLE_COUNT:
+                break
 
     print(f"[roles] Added {added} new roles for ttID={tt_id}")
+
 
 
 # ========= CSV 輸出 =========
@@ -349,7 +439,7 @@ def main():
             continue
 
         # 1. 搜尋 IMDb，取得 ttID
-        tt_id = search_imdb_title(title)
+        tt_id = search_imdb_id_by_find(title)
         if not tt_id:
             print(f"[main] Cannot find IMDb ID for title={title!r}, skipping.")
             continue
