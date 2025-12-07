@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 # ========= 使用者可調變數 =========
-INPUT_CSV = "data/kaggle/industry.csv" 
+INPUT_CSV = "data/kaggle/industry/movies.csv" 
 TITLE_COLUMN = "name"           # 哪一欄是電影標題
 GET_REV_COUNT = 20               # 每部電影最多抓幾篇評論
 MAX_MOVIES = 100                # 最多處理幾部電影，避免一次抓太多（可設為 None 不限數量）

@@ -1,0 +1,5 @@
+{
+    "code-runner.cwd": "${workspaceFolder}",
+    "code-runner.fileDirectoryAsCwd": false,
+    "code-runner.runInTerminal": true
+}
