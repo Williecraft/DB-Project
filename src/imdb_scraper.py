@@ -15,9 +15,9 @@ import pandas as pd
 # ========= 使用者可調變數 =========
 INPUT_CSV = "data/kaggle/industry/movies.csv" 
 TITLE_COLUMN = "name"           # 哪一欄是電影標題
-GET_REV_COUNT = 10               # 每部電影最多抓幾篇評論
+GET_REV_COUNT = 20               # 每部電影最多抓幾篇評論
 GET_ROLE_COUNT = 10                # 每部電影抓幾個主要角色
-MAX_MOVIES = 100                # 最多處理幾部電影，避免一次抓太多（可設為 None 不限數量）
+MAX_MOVIES = 200                # 最多處理幾部電影，避免一次抓太多（可設為 None 不限數量）
 
 PROGRESS_PATH = Path("data/progress.json")
 
