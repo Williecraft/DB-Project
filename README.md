@@ -1,0 +1,3 @@
+- 寫完的code都先放在src
+- 如果相同功能需要多個檔案就用資料夾包起來放在src下
+- 資料集都在data/kaggle，爬到或生出來的資料都放在data/generated
