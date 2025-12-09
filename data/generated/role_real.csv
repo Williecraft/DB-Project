@@ -1,0 +1,1974 @@
+role_id,name,actor,actor_id
+role_8a1a9474,Jack Torrance,Jack Nicholson,nm0000197
+role_7eacdbd5,Wendy Torrance,Shelley Duvall,nm0001167
+role_5cc331ad,Danny,Danny Lloyd,nm0515950
+role_ddd2e574,Hallorann,Scatman Crothers,nm0001079
+role_8e711e50,Ullman,Barry Nelson,nm0625167
+role_9db2befa,Grady,Philip Stone,nm0832104
+role_1d8b6e60,Lloyd,Joe Turkel,nm0877185
+role_0b5d91ce,Doctor,Anne Jackson,nm0413271
+role_9b8a9968,Durkin,Tony Burton,nm0123748
+role_f1e04929,Young Woman in Bath,Lia Beldam,nm0067672
+role_a34b3796,Emmeline Lestrange,Brooke Shields,nm0000222
+role_a823a0b7,Richard Lestrange,Christopher Atkins,nm0000803
+role_4eee1d9c,Paddy Button,Leo McKern,nm0571674
+role_05c7c389,Arthur Lestrange,William Daniels,nm0200122
+role_47aaea19,Young Emmeline,Elva Josephson,nm0430745
+role_57503879,Young Richard,Glenn Kohan,nm0463174
+role_cbdb84d9,Captain,Alan Hopgood,nm0394086
+role_bd5c2433,Officer,Gus Mercurio,nm0580517
+role_69148dec,Lookout,Jeffrey Kleiser,nm0459165
+role_6a464580,Little Paddy,Bradley Pryce,nm0699333
+role_6468f691,Luke Skywalker,Mark Hamill,nm0000434
+role_cc905e83,Han Solo,Harrison Ford,nm0000148
+role_d6db7bac,Princess Leia,Carrie Fisher,nm0000402
+role_0e1efd09,Lando Calrissian,Billy Dee Williams,nm0001850
+role_a5d9bad5,C-3PO,Anthony Daniels,nm0000355
+role_3ae4d244,Darth Vader,David Prowse,nm0001190
+role_89975d80,Chewbacca,Peter Mayhew,nm0562678
+role_b0beae89,R2-D2,Kenny Baker,nm0048652
+role_1238da23,Yoda,Frank Oz,nm0000568
+role_200de4a1,Ben (Obi-Wan) Kenobi,Alec Guinness,nm0000027
+role_59f37470,Roger Murdock,Kareem Abdul-Jabbar,nm0000717
+role_9958f410,Steve McCroskey,Lloyd Bridges,nm0000978
+role_0569b62d,Captain Clarence Oveur,Peter Graves,nm0336335
+role_246e6c36,Elaine Dickinson,Julie Hagerty,nm0353546
+role_f54f6f1d,Ted Striker,Robert Hays,nm0001332
+role_a8efc34b,Dr. Rumack,Leslie Nielsen,nm0000558
+role_706289ee,Randy,Lorna Patterson,nm0666309
+role_9301292a,Captain Rex Kramer,Robert Stack,nm0821041
+role_d9794bad,Johnny Henshaw-Jacobs,Stephen Stucker,nm0835992
+role_e6bff2df,Otto,Otto,nm10185194
+role_56c51f61,Ty Webb,Chevy Chase,nm0000331
+role_2179b254,Al Czervik,Rodney Dangerfield,nm0001098
+role_d8c0a4a5,Judge Elihu Smails,Ted Knight,nm0461095
+role_517457d4,Danny Noonan,Michael O'Keefe,nm0001574
+role_42ca669d,Carl Spackler,Bill Murray,nm0000195
+role_b7da3586,Maggie O'Hooligan,Sarah Holcomb,nm0390106
+role_19d5421f,Tony D'Annunzio,Scott Colomby,nm0173082
+role_ed2e0c5b,Lacey Underall,Cindy Morgan,nm0604563
+role_bd8a8a33,Dr. Beeper,Dan Resin,nm0720274
+role_f78ac029,The Bishop,Henry Wilcoxon,nm0928295
+role_2f52680f,Mrs. Voorhees,Betsy Palmer,nm0658133
+role_a3b8beb2,Alice,Adrienne King,nm0454415
+role_557c359d,Marcie,Jeannine Taylor,nm0852551
+role_a0326737,Annie,Robbi Morgan,nm0604987
+role_9d49283f,Jack,Kevin Bacon,nm0000102
+role_f9015bd9,Bill,Harry Crosby,nm0188993
+role_902ab6fc,Brenda,Laurie Bartram,nm0059324
+role_235ff370,Ned,Mark Nelson,nm0625588
+role_344b1fb1,Steve Christy,Peter Brouwer,nm0112829
+role_5e229dfd,The Truck Driver,Rex Everhart,nm0263591
+role_4c678845,Prison Guard,Tom Erhart,nm0258931
+role_8c78b826,Prison Guard,Gerald Walling,nm0909212
+role_8375555b,Joliet Jake,John Belushi,nm0000004
+role_86e16fcf,Prison Guard,Walter Levine,nm0505979
+role_dabd400d,Corrections Officer,Frank Oz,nm0000568
+role_5af42991,Elwood,Dan Aykroyd,nm0000101
+role_61d4d28b,Sister Mary Stigmata,Kathleen Freeman,nm0293466
+role_6dbb69ee,Curtis,Cab Calloway,nm0130572
+role_fb64f8e5,Choirmaster,Alonzo Atkins,nm0040551
+role_3dfff12d,Reverend Cleophus James,James Brown,nm0113768
+role_7ab6e38e,Jake La Motta,Robert De Niro,nm0000134
+role_6b7d3500,Vickie La Motta,Cathy Moriarty,nm0001550
+role_26b9858c,Joey,Joe Pesci,nm0000582
+role_04936fba,Salvy,Frank Vincent,nm0898634
+role_e757da74,Tommy Como,Nicholas Colasanto,nm0170225
+role_c64ac655,Lenore,Theresa Saldana,nm0757854
+role_2ce8758d,Mario,Mario Gallo,nm0002869
+role_8dfd5225,Patsy,Frank Adonis,nm0012376
+role_ad80056d,Guido,Joseph Bono,nm0095114
+role_fe420de5,Toppy,Frank Topham,nm0867666
+role_fd275b27,Lex Luthor,Gene Hackman,nm0000432
+role_78417e7c,Superman,Christopher Reeve,nm0001659
+role_96d07d04,Clark Kent,Christopher Reeve,nm0001659
+role_700c6b20,Otis,Ned Beatty,nm0000885
+role_abe74ad1,Perry White,Jackie Cooper,nm0178114
+role_5230daa4,Ursa,Sarah Douglas,nm0235243
+role_3a8aabe3,Lois Lane,Margot Kidder,nm0452288
+role_f76c2a47,Non,Jack O'Halloran,nm0641172
+role_1cd4335d,Eve Teschmacher,Valerie Perrine,nm0674781
+role_d16c7a92,Lara,Susannah York,nm0948772
+role_df506885,Cole Younger,David Carradine,nm0001016
+role_7514634c,Jim Younger,Keith Carradine,nm0001018
+role_56709175,Bob Younger,Robert Carradine,nm0001019
+role_8956f4a8,Jesse James,James Keach,nm0005077
+role_78d36e18,Frank James,Stacy Keach,nm0005078
+role_0dd45f36,Ed Miller,Dennis Quaid,nm0000598
+role_41e71957,Clell Miller,Randy Quaid,nm0001642
+role_43bd76d8,John Younger,Kevin Brophy,nm0112403
+role_ebd17eb5,George Arthur,Harry Carey Jr.,nm0001013
+role_1f3891a9,Charlie Ford,Christopher Guest,nm0001302
+role_29cd6e46,Philo Beddoe,Clint Eastwood,nm0000142
+role_1d8f26b9,Lynn Halsey-Taylor,Sondra Locke,nm0516800
+role_9798bdc7,Orville,Geoffrey Lewis,nm0507212
+role_eb09a6b4,Jack Wilson,William Smith,nm0807448
+role_3c6bdbf1,James Beekman,Harry Guardino,nm0345340
+role_11d474d5,Ma,Ruth Gordon,nm0002106
+role_838b7eae,Patrick Scarfe,Michael Cavanaugh,nm0146938
+role_e426d469,Fat Zack,Barry Corbin,nm0179224
+role_a6353b23,Moody,Roy Jenson,nm0421772
+role_7299e5ad,Dallas,Bill McKinney,nm0571853
+role_83e11675,Andrew Steyn,Marius Weyers,nm0923366
+role_c0c75616,Kate Thompson,Sandra Prinsloo,nm0697865
+role_267f7c5f,Xi,N!xau,nm0618452
+role_cf7b039c,Sam Boga,Louw Verwey,nm0895116
+role_4ac99ea8,Mpudi,Michael Thys,nm0862347
+role_b6efdecf,Jack Hind,Nic de Jager,nm0208910
+role_2a8fee7b,Card 1,Fanyana H. Sidumo,nm0796717
+role_a7db4d02,Card 2,Joe Seakatsie,nm0780494
+role_b5a9569c,Mr. Thompson,Brian O'Shaughnessy,nm0642598
+role_abe1035c,President,Ken Gampu,nm0304027
+role_842daee4,Popeye,Robin Williams,nm0000245
+role_28a8dcc9,Olive Oyl,Shelley Duvall,nm0001167
+role_9e8bfbf0,Poopdeck Pappy,Ray Walston,nm0001827
+role_9ff887f5,Wimpy,Paul Dooley,nm0233209
+role_8609dc6c,Bluto,Paul L. Smith,nm0809544
+role_985534ed,Geezil,Richard Libertini,nm0508844
+role_594b7a45,The Taxman,Donald Moffat,nm0595567
+role_6b10cfc4,Cole Oyl,MacIntyre Dixon,nm0228912
+role_cad2a873,Nana Oyl,Roberta Maxwell,nm0561809
+role_dfdc0c19,Castor Oyl,Donovan Scott,nm0779073
+role_1c142da2,Calvin Jarrett,Donald Sutherland,nm0000661
+role_42cda309,Beth Jarrett,Mary Tyler Moore,nm0001546
+role_c468aca3,Dr. Tyrone Berger,Judd Hirsch,nm0002139
+role_3c3a160a,Conrad Jarrett,Timothy Hutton,nm0000459
+role_3863f5e3,Salan - The Swim Coach,M. Emmet Walsh,nm0001826
+role_32213c57,Jeannine Pratt,Elizabeth McGovern,nm0001527
+role_4f2ad6de,Karen,Dinah Manoff,nm0001503
+role_51d6b4da,Joe Lazenby,Fredric Lehne,nm0499791
+role_e8b9d522,Ray,James Sikking,nm0797725
+role_38c2d621,Sloan,Basil Hoffman,nm0388819
+role_f388d2be,Dr. Robert Elliott,Michael Caine,nm0000323
+role_c52694f1,Kate Miller,Angie Dickinson,nm0001141
+role_f6044e20,Liz Blake,Nancy Allen,nm0000262
+role_c77d2cc6,Peter Miller,Keith Gordon,nm0330360
+role_b5ae14b6,Detective Marino,Dennis Franz,nm0001240
+role_440248e8,Dr. Levy,David Margulies,nm0546868
+role_9b8e5ba8,Warren Lockman,Ken Baker,nm0048643
+role_27fcee9c,Betty Luce,Susanna Clemm,nm0166290
+role_5bc202c3,Cleveland Sam,Brandon Maggart,nm0535933
+role_9c54ce99,Cleaning Woman,Amalie Collier,nm0171876
+role_88ba112f,Richard Collier,Christopher Reeve,nm0001659
+role_84e82f5c,Elise McKenna,Jane Seymour,nm0005412
+role_a365f260,W. F. Robinson,Christopher Plummer,nm0001626
+role_3192b80f,Laura Roberts,Teresa Wright,nm0942863
+role_1035737a,Arthur Biehl,Bill Erwin,nm0259984
+role_421ea37e,Dr. Gerald Finney,George Voskovec,nm0903667
+role_b4171a6f,Older Elise,Susan French,nm0294215
+role_5e751c3f,Arthur's Father,John Alvin,nm0023569
+role_c58d4862,Genevieve,Eddra Gale,nm0301841
+role_65830bc0,Richard's Date (1972),Audrey Bennett,nm0071599
+role_e0d6bd9c,Angelo,Eddie Barth,nm0058532
+role_9567346e,Coco,Irene Cara,nm0001011
+role_1503da70,Bruno,Lee Curreri,nm0001087
+role_aa490a64,Lisa,Laura Dean,nm0212847
+role_a05f06b7,Hilary,Antonia Franceschi,nm0289900
+role_1a7404eb,Michael,Boyd Gaines,nm0301305
+role_07e6f0a8,Shorofsky,Albert Hague,nm0353831
+role_6c7d6979,Mrs. Finsecker,Tresa Hughes,nm0400955
+role_f96b4f06,François Lafete,Steve Inwood,nm0409481
+role_da44e697,Montgomery,Paul McCrane,nm0005204
+role_7424cb91,Stevie Wayne,Adrienne Barbeau,nm0000105
+role_2cebe834,Elizabeth Solley,Jamie Lee Curtis,nm0000130
+role_bb72e168,Kathy Williams,Janet Leigh,nm0001463
+role_e496ce22,Mr. Machen,John Houseman,nm0002144
+role_415ce12f,Nick Castle,Tom Atkins,nm0040662
+role_e57430ea,Dick Baxter,James Canning,nm0134110
+role_4c398062,Dan O'Bannon,Charles Cyphers,nm0194234
+role_e2dcc79c,Sandy Fadel,Nancy Kyes,nm0477341
+role_6b5475cd,Andy Wayne,Ty Mitchell,nm0593792
+role_d8b7a1b0,Father Malone,Hal Holbrook,nm0001358
+role_271630a7,Skip Donahue,Gene Wilder,nm0000698
+role_efa5f625,Harry Monroe,Richard Pryor,nm0001640
+role_8e68dada,Rory Schultebrand,Georg Stanford Brown,nm0113617
+role_da3736b5,Meredith,JoBeth Williams,nm0001851
+role_e129b600,Jesus Ramirez,Miguel Ángel Suárez,nm0840822
+role_dd0486f5,Deputy Ward Wilson,Craig T. Nelson,nm0005266
+role_9e4afad5,Warden Walter Beatty,Barry Corbin,nm0179224
+role_e14a960b,Blade,Charles Weldon,nm0919714
+role_42ad24f8,Warden Henry Sampson,Nicolas Coster,nm0182661
+role_1089bfe3,Len Garber,Joel Brooks,nm0112063
+role_0821a21a,Steve Burns,Al Pacino,nm0000199
+role_43f93b98,Capt. Edelson,Paul Sorvino,nm0000649
+role_3405bfd3,Nancy,Karen Allen,nm0000261
+role_27f09075,Stuart Richards,Richard Cox,nm0185210
+role_edbd9558,Ted Bailey,Don Scardino,nm0769135
+role_6791d13e,Patrolman DiSimone,Joe Spinell,nm0818874
+role_fad4ca32,Skip Lee,Jay Acovone,nm0010264
+role_f915d661,Det. Lefransky,Randy Jurgensen,nm0432921
+role_6473b121,Dr. Rifkin,Barton Heyman,nm0382263
+role_dd2fe6e5,DaVinci,Gene Davis,nm0204634
+role_d45005d2,Averill,Kris Kristofferson,nm0001434
+role_7c3d5efb,Champion,Christopher Walken,nm0000686
+role_3520a4e9,Irvine,John Hurt,nm0000457
+role_808d0363,Canton,Sam Waterston,nm0001832
+role_735d92ea,Mr. Eggleston,Brad Dourif,nm0000374
+role_d3e32177,Ella,Isabelle Huppert,nm0001376
+role_185c37b9,The Reverend Doctor,Joseph Cotten,nm0001072
+role_df61840e,John L. Bridges,Jeff Bridges,nm0000313
+role_6a611d3f,Wolcott,Ronnie Hawkins,nm0370214
+role_33ef9094,Mayor Lezak,Paul Koslo,nm0467178
+role_e96603c7,Capt. Matthew Yelland,Kirk Douglas,nm0000018
+role_408f74f1,Warren Lasky,Martin Sheen,nm0000640
+role_cc6f64f9,Laurel Scott,Katharine Ross,nm0001684
+role_45561ace,Cdr. Richard Owens,James Farentino,nm0267232
+role_eac2c3ea,Mr.Tideman,James Farentino,nm0267232
+role_bc7f9f04,Cdr. Dan Thurman,Ron O'Neal,nm0641938
+role_73657331,Sen. Samuel Chapman,Charles Durning,nm0001164
+role_1c9fbf04,Black Cloud,Victor Mohica,nm0595991
+role_2da761f8,Lt. Perry,James Coleman,nm0171061
+role_a43198a9,Simura,Soon-Tek Oh,nm0644902
+role_83b45a54,Kira,Olivia Newton-John,nm0000556
+role_4de624b3,Danny McGuire,Gene Kelly,nm0000037
+role_473f2fab,Sonny Malone,Michael Beck,nm0065235
+role_57baa21a,Simpson,James Sloyan,nm0806277
+role_a9cf8f70,Helen,Dimitra Arliss,nm0035195
+role_36e79bab,Sandra,Katie Hanley,nm0360088
+role_8c804a48,Richie,Fred McCarren,nm0564985
+role_793f1c76,Jo,Renn Woods,nm0940758
+role_13ad215f,Muse #1,Sandahl Bergman,nm0000922
+role_5e56126d,Muse #2,Lynne Latham,nm0004263
+role_d095d4e7,Bud Davis,John Travolta,nm0000237
+role_e49e4be8,Sissy,Debra Winger,nm0000700
+role_9c3bc685,Wes Hightower,Scott Glenn,nm0001277
+role_babddbbf,Pam,Madolyn Smith Osborne,nm0001750
+role_ece6abec,Bob Davis,Barry Corbin,nm0179224
+role_c61695f6,Corene Davis,Brooke Alderson,nm0017574
+role_1b8e6c34,Marshall,Cooper Huckabee,nm0399590
+role_17f5bd73,Steve Strange,James Gammon,nm0304000
+role_b5419d7e,Mickey Gilley,Mickey Gilley,nm0319076
+role_05316fbc,Johnny Lee,Johnny Lee,nm0496739
+role_b5c1f8b0,Eddie Jessup,William Hurt,nm0000458
+role_6701ee95,Emily Jessup,Blair Brown,nm0001974
+role_d5291b8c,Arthur Rosenberg,Bob Balaban,nm0000837
+role_7a1c5c1a,Mason Parrish,Charles Haid,nm0354024
+role_c8f39f7d,Eccheverria,Thaao Penghlis,nm0671837
+role_dedd95f0,Primal Man,Miguel Godreau,nm0324196
+role_5363df02,Sylvia Rosenberg,Dori Brenner,nm0107467
+role_7b1429b4,Hobart,Peter Brandon,nm0104793
+role_a579c326,The Brujo,Charles White-Eagle,nm0925618
+role_67dde1ac,Margaret Jessup,Drew Barrymore,nm0000106
+role_27852283,Ferris,Tatum O'Neal,nm0001575
+role_daaf450c,Angel,Kristy McNichol,nm0001531
+role_9e2d9b3d,Gary,Armand Assante,nm0000800
+role_b4ea4ae4,Randy,Matt Dillon,nm0000369
+role_8820514b,Ms. Bright,Margaret Blye,nm0089984
+role_47595d51,Mr. Whitney,Nicolas Coster,nm0182661
+role_a84a3b55,Cinder,Krista Errickson,nm0259799
+role_07be5ba2,Dana,Alexa Kenin,nm0447782
+role_b3fa6998,Chubby,Abby Bluestone,nm0089579
+role_fb2f6802,Sunshine,Cynthia Nixon,nm0633223
+role_0e7c09e2,Admr. James Sandecker,Jason Robards,nm0001673
+role_5bf19bcd,Dirk Pitt,Richard Jordan,nm0430151
+role_546c5594,Dr. Gene Seagram,David Selby,nm0782978
+role_6497f01c,Dana Archibald,Anne Archer,nm0000271
+role_3f49d2ab,John Bigalow,Alec Guinness,nm0000027
+role_7640e3d8,Captain Prevlov,Bo Brundin,nm0116066
+role_65a1a909,MCPO Vinnie Walker,M. Emmet Walsh,nm0001826
+role_b9dabf18,Capt. Joe Burke,J.D. Cannon,nm0134201
+role_83c255bc,Admiral Kemper,Norman Bartold,nm0058991
+role_2fb2e7af,Marganin,Elya Baskin,nm0059946
+role_ea762200,Henry Brubaker,Robert Redford,nm0000602
+role_db98d211,Richard 'Dickie' Coombes,Yaphet Kotto,nm0001433
+role_8aa3a7bf,Lillian Gray,Jane Alexander,nm0000737
+role_08b43f7c,John Deach,Murray Hamilton,nm0358069
+role_25419270,Larry Lee Bullen,David Keith,nm0001418
+role_392ba1d7,Walter,Morgan Freeman,nm0000151
+role_dbde72d6,Roy Purcell,Matt Clark,nm0164273
+role_1249df18,Huey Rauch,Tim McIntire,nm0532838
+role_14f4768d,Abraham Cook,Richard Ward,nm0911797
+role_30e8f94d,Zaranska,Jon Van Ness,nm0887551
+role_064cb960,Julian,Richard Gere,nm0000152
+role_03471025,Michelle,Lauren Hutton,nm0001381
+role_5959de2c,Sunday,Hector Elizondo,nm0001185
+role_21f77c5f,Anne,Nina van Pallandt,nm0887684
+role_f7c2f596,Leon,Bill Duke,nm0004886
+role_edc95964,Charles Stratton,Brian Davies,nm0203617
+role_a05306f8,Lisa Williams,K Callan,nm0130282
+role_82d0d80e,Mr. Rheiman,Tom Stewart,nm0829872
+role_dcdb16fb,Judy Rheiman,Patricia Carr,nm0139823
+role_f6d7d726,Lt. Curtis,David Cryer,nm0190541
+role_e94b6768,Clifford,Chris Makepeace,nm0538485
+role_8b82c47e,Linderman,Adam Baldwin,nm0000284
+role_c0d66906,Moody,Matt Dillon,nm0000369
+role_398b238f,Carson,Paul Quandt,nm0702861
+role_85c660f9,Mike,Hank Salas,nm0757591
+role_9d32244b,Shelley,Joan Cusack,nm0000349
+role_5dcde425,Hightower,Dean R. Miller,nm0588213
+role_54e2fec0,Koontz,Tim Reyna,nm0721502
+role_1f7adb58,Dubrow,Richard Bradley,nm0103379
+role_b4f19b3e,Leilani,Denise Baske,nm0059922
+role_0392a341,Mr. Hammond,Leslie Nielsen,nm0000558
+role_86cd2177,Kimberly Hammond,Jamie Lee Curtis,nm0000130
+role_0fa79bda,Nick McBride,Casey Stevens,nm0828309
+role_f394d7ff,Wendy Richards,Anne-Marie Martin,nm0551926
+role_60cd5488,Mrs. Hammond,Antoinette Bower,nm0100949
+role_44cc42da,Alex Hammond,Michael Tough,nm0869517
+role_47a59143,Mr. Sykes,Robert A. Silverman,nm0798887
+role_409c7a44,Vicki,Pita Oliver,nm0646964
+role_c4843344,Lou Farmer,David Mucci,nm0610820
+role_ec24e122,Drew Shinnick,Jeff Wincott,nm0934637
+role_74bb311b,Bandit,Burt Reynolds,nm0000608
+role_d8d69fe9,Sheriff Buford T. Justice,Jackie Gleason,nm0001276
+role_f61dcb65,Gaylord Justice,Jackie Gleason,nm0001276
+role_640def70,Reginald Van Justice,Jackie Gleason,nm0001276
+role_7e98780e,Cledus,Jerry Reed,nm0715274
+role_8b5dfeaa,Doc,Dom DeLuise,nm0001123
+role_2ecb3e29,Carrie,Sally Field,nm0000398
+role_ca4c2931,Little Enos,Paul Williams,nm0931435
+role_e43f57b7,Big Enos,Pat McCormick,nm0566588
+role_c274d0a4,John Conn,David Huddleston,nm0399663
+role_d81bc537,Bill Dalton,Scott Glenn,nm0001277
+role_647a1634,Red Buck,Redmond Gleeson,nm0322439
+role_bef66c03,Little Dick Raidler,William Russ,nm0750916
+role_e9c99724,George Weightman,Kenny Call,nm0130100
+role_56397158,Bittercreek Newcomb,John Savage,nm0001698
+role_f72f6a41,Dynamite Dick,Buck Taylor,nm0852076
+role_863ea8cf,Engineer,Michael Conrad,nm0175700
+role_cf28bf3e,Annie,Amanda Plummer,nm0001625
+role_34280796,Jenny - 'Little Britches',Diane Lane,nm0000178
+role_e954cb3d,Bill Doolin,Burt Lancaster,nm0000044
+role_d99b119a,Glenda Parks,Goldie Hawn,nm0000443
+role_d5e612f4,Nicholas Gardenia,Chevy Chase,nm0000331
+role_7da8a8b9,Ira Parks,Charles Grodin,nm0001301
+role_7c917466,Fred,Robert Guillaume,nm0347039
+role_d473a000,Judge John Channing,Harold Gould,nm0332390
+role_be330371,Governor,George Grizzard,nm0342732
+role_336a6fde,Aurora De La Hoya,Yvonne Wilder,nm0928648
+role_62d172ce,Chester,T.K. Carter,nm0141953
+role_d465b477,Dex,Judd Omen,nm0648381
+role_cbc3dcaf,Bee Gee,Marc Alaimo,nm0015826
+role_d3ee2137,Judy Benjamin,Goldie Hawn,nm0000443
+role_848a9cef,Capt. Doreen Lewis,Eileen Brennan,nm0107281
+role_d2eedceb,Henrí Trémont,Armand Assante,nm0000800
+role_9a37804b,Col. Clay Thornbush,Robert Webber,nm0916433
+role_cd1b97a2,Teddy Benjamin,Sam Wanamaker,nm0910737
+role_3e20cc59,Harriet Benjamin,Barbara Barrie,nm0057363
+role_bca7ce76,Pvt. Mary Lou Glass,Mary Kay Place,nm0005316
+role_83303285,Sgt. Jim Ballard,Harry Dean Stanton,nm0001765
+role_7a1723c0,Yale Goodman,Albert Brooks,nm0000983
+role_e45a61f3,Rabbi,Alan Oppenheimer,nm0649178
+role_f8c23151,Earle,Julius Averitt,nm0042976
+role_3f9511e9,Mechanic,Steve Ballard,nm0050673
+role_4fc74c06,Homeowner,Phil Berle,nm0075540
+role_28731305,Pledge,Mike Binder,nm0082802
+role_6d344b6a,Homeowner,Herbert Bress,nm0107775
+role_6ae5d951,Driving Instructor,Jerry Brutsche,nm0116779
+role_806d52f6,Pledge,Joey Camen,nm0131436
+role_b99d8946,Do Wopper,T.K. Carter,nm0141953
+role_f9901fb4,Do Wopper,Al Chalk,nm0149940
+role_d87df6fc,PomPom Girl,Dawn Clark,nm0163847
+role_88886788,Vincent Smith,Rory Calhoun,nm0001983
+role_c93e0f75,Bruce Smith,Paul Linke,nm0512912
+role_47310214,Ida Smith,Nancy Parsons,nm0663878
+role_601f0ae5,Terry,Nina Axelrod,nm0043497
+role_2667eba2,Reverend Billy,Wolfman Jack,nm0413125
+role_869abc6b,Edith Olson,Elaine Joyce,nm0431519
+role_a695409e,Guy Robaire,Dick Curtis,nm0193318
+role_ddd1d9c6,1st T.V. Preacher,Dick Curtis,nm0193318
+role_91fd4892,Debbie,Monique St. Pierre,nm0820811
+role_96075192,Suzi,Rosanne Katon,nm0441423
+role_fa708442,Jess Robin,Neil Diamond,nm0004871
+role_cf64c8b2,Yussel Rabinovitch,Neil Diamond,nm0004871
+role_47c74cbd,Cantor Rabinovitch,Laurence Olivier,nm0000059
+role_821a1c8e,Molly Bell,Lucie Arnaz,nm0036109
+role_816a8759,Rivka Rabinovitch,Catlin Adams,nm0010818
+role_134fab06,Bubba,Franklyn Ajaye,nm0014977
+role_36f5efff,Keith Lennox,Paul Nicholas,nm0629417
+role_bec26bb2,Eddie Gibbs,Sully Boyar,nm0101604
+role_1c6bc652,Leo,Mike Kellin,nm0446037
+role_ebc70de5,Paul Rossini,James Booth,nm0095718
+role_a869652a,Loretta Lynn,Sissy Spacek,nm0000651
+role_5122bb98,Doolittle Lynn,Tommy Lee Jones,nm0000169
+role_f382fbfa,Ted Webb,Levon Helm,nm0375629
+role_eb5dea12,'Clary' Webb,Phyllis Boyens,nm0101992
+role_7d5137d2,Webb Child,Bill Anderson Jr.,nm0026286
+role_321b202d,Webb Child,Foister Dickerson,nm0225417
+role_d07070a7,Webb Child,Malla McCown,nm0566685
+role_df8724a6,Webb Child,Pamela McCown,nm0566687
+role_208120c2,Webb Child,Kevin Salvilla,nm0759467
+role_923a890c,Lee Dollarhide,William Sanderson,nm0761836
+role_46f07625,Mrs. Aylwood,Bette Davis,nm0000012
+role_d97bd81b,Jan Curtis,Lynn-Holly Johnson,nm0000468
+role_6108ebad,Ellie Curtis,Kyle Richards,nm0724201
+role_51d69093,Helen Curtis,Carroll Baker,nm0004647
+role_eda8e00f,Paul Curtis,David McCallum,nm0564724
+role_1a0f4975,Mike Fleming,Benedict Taylor,nm0852028
+role_2fcded35,Mary Fleming,Frances Cuka,nm0191311
+role_41610d1f,Tom Colley,Richard Pasco,nm0664390
+role_af1c6ffa,John Keller,Ian Bannen,nm0000846
+role_bb105c2c,Karen Aylwood,Katharine Levy,nm0506496
+role_dd69a2a9,Harry 'Breaker' Morant,Edward Woodward,nm0940919
+role_7b9739d7,Major J.F. Thomas,Jack Thompson,nm0860233
+role_ed13fe29,Cpt. Alfred Taylor,John Waters,nm0000691
+role_1d5c5f6b,Lt. Peter Handcock,Bryan Brown,nm0000986
+role_d245c76c,Lt. Col. Denny,Charles 'Bud' Tingwell,nm0863968
+role_6b24478c,Cpt. Simon Hunt,Terence Donovan,nm0233065
+role_e0d5ac0e,Col. Ian (Johnny) Hamilton,Vincent Ball,nm0050482
+role_09752efd,Sar. Maj. Drummond,Ray Meagher,nm0575114
+role_6af99a48,Cpl. Sharp,Chris Haywood,nm0371824
+role_754e1795,Christiaan Botha,Russell Kiefel,nm0452352
+role_73b885ee,Eli Cross,Peter O'Toole,nm0000564
+role_43b7ef0d,Cameron,Steve Railsback,nm0706883
+role_95ccd18e,Nina Franklin,Barbara Hershey,nm0001347
+role_3066b8b6,Sam,Allen Garfield,nm0307255
+role_99a648b0,Jake,Alex Rocco,nm0733678
+role_9cc7eaec,Denise,Sharon Farrell,nm0268331
+role_e4c2b0b4,Raymond Bailey,Adam Roarke,nm0730126
+role_887cbedc,Ace,Philip Bruns,nm0116575
+role_23604b4e,Chuck Barton,Charles Bail,nm0047094
+role_ffad0c4f,Gabe - Eli's Cameraman,John Garwood,nm0217953
+role_8522cac5,Lazlo,Peter Boyle,nm0001967
+role_25403a8f,Hunter S. Thompson,Bill Murray,nm0000195
+role_5ce8523f,Marty Lewis,Bruno Kirby,nm0456124
+role_57519597,Harris,Rene Auberjonois,nm0041281
+role_490ed224,Judge Simpson,R.G. Armstrong,nm0035866
+role_1918e2f5,Porter,Danny Goldman,nm0325761
+role_8ce5caf0,Rojas,Rafael Campos,nm0133310
+role_7a584c53,Desk Clerk,Leonard Frey,nm0294600
+role_e235157b,Super Fan,Leonard Gaines,nm0301334
+role_13ccc368,Man #1,Otis Day,nm0422221
+role_263a0452,Florence Cathcart,Rebecca Hall,nm0356017
+role_eb65b0ee,Robert Mallory,Dominic West,nm0922035
+role_91a74d91,Maud Hill,Imelda Staunton,nm0001767
+role_c4f99fad,Tom Hill,Isaac Hempstead Wright,nm3652842
+role_cb228da5,Malcolm McNair,Shaun Dooley,nm0233215
+role_183b6a80,Edward Judd,Joseph Mawle,nm1152798
+role_7f48f699,Harriet Cathcart,Diana Kent,nm0448712
+role_20f725f3,Alexander Cathcart,Richard Durden,nm0243983
+role_ff026f9d,Reverend Hugh Purslow,John Shrapnel,nm0795344
+role_1fdb2d52,Freddie Strickland,Cal MacAninch,nm0531229
+role_e44e8f64,Cheech,Cheech Marin,nm0001507
+role_898fe96d,Dwayne 'Red' Mendoza,Cheech Marin,nm0001507
+role_5e7155a8,Chong,Tommy Chong,nm0001045
+role_f468e35f,Donna,Evelyn Guerrero,nm0346186
+role_a7e270c3,Candy,Betty Kennedy,nm0447926
+role_44f1627a,Mr. Neatnik,Sy Kramer,nm0469680
+role_f2920acb,Gloria,Rikki Marin,nm0547499
+role_e63d3491,Gay Motorcyclist,Peter Bromilow,nm0111325
+role_f734a822,Executive,Paul 'Mousie' Garner,nm0307063
+role_b92971d6,Music Store Salesman,Jonathan T. Moore,nm6512202
+role_ebff7665,Lincoln Six Echo,Ewan McGregor,nm0000191
+role_a3258416,Tom Lincoln,Ewan McGregor,nm0000191
+role_1c62ff60,Jordan Two Delta,Scarlett Johansson,nm0424060
+role_89aac0b1,Sarah Jordan,Scarlett Johansson,nm0424060
+role_edd216b5,Albert Laurent,Djimon Hounsou,nm0005023
+role_e5e813a8,Dr. Bernard Merrick,Sean Bean,nm0000293
+role_714259f9,James McCord,Steve Buscemi,nm0000114
+role_b59c4408,Starkweather Two Delta,Michael Clarke Duncan,nm0003817
+role_d6ac11b0,Jamal Starkweather,Michael Clarke Duncan,nm0003817
+role_9d8718de,Jones Three Echo,Ethan Phillips,nm0680392
+role_78f7ca1e,Lacey,Suzanna Love,nm0522429
+role_15039a3d,Jake,Ron James,nm0416893
+role_82e7b27d,Dr. Warren,John Carradine,nm0001017
+role_1efe0adb,Willy,Nicholas Love,nm0522392
+role_8248cceb,Kevin,Raymond Boyden,nm0101973
+role_585372a3,Aunt Helen,Felicite Morgan,nm0604650
+role_3ea12a24,Uncle Ernest,Bill Rayburn,nm0713072
+role_e09822e2,Father Reilly,Llewelyn Thomas,nm0859169
+role_a9bf446d,Young Willy,Jay Wright,nm0942478
+role_5d145f4f,Young Lacey,Natasha Schiano,nm0771276
+role_009503e3,Maxwell Smart,Don Adams,nm0010915
+role_6c4645c8,Agent 34,Sylvia Kristel,nm0000482
+role_1ec3265b,Edith Von Secondberg,Rhonda Fleming,nm0281766
+role_424cf97b,Chief,Dana Elcar,nm0253020
+role_c2c4d0a9,Agent 36,Pamela Hensley,nm0002135
+role_a6108d00,Agent 22,Andrea Howard,nm0397109
+role_4a0d0537,Carruthers,Norman Lloyd,nm0516093
+role_edacec75,Jonathan Levinson Seigle,Bill Dana,nm0199049
+role_b5fcacdc,Jerry Krovney,Gary Imhoff,nm0408189
+role_0d44ebca,Pam Krovney,Sarah Rush,nm0750706
+role_458430e6,Omar Mukhtar,Anthony Quinn,nm0000063
+role_0f9a3868,Gen. Rodolfo Graziani,Oliver Reed,nm0001657
+role_ede822ef,Mabrouka,Irene Papas,nm0660327
+role_98a125a4,Colonel Diodiece,Raf Vallone,nm0885203
+role_20fd08ad,Benito Mussolini,Rod Steiger,nm0001768
+role_1d97ba4c,Sharif El Gariani,John Gielgud,nm0000024
+role_d75c94cf,Salem,Andrew Keir,nm0445139
+role_974f1bd4,Major Tomelli,Gastone Moschin,nm0608311
+role_bb0daf78,Lt. Sandrini,Stefano Patrizi,nm0665981
+role_a51395a2,Colonel Sarsani,Adolfo Lastretti,nm0489947
+role_c4c2acf7,Sandy Bates,Woody Allen,nm0000095
+role_7527a4f4,Dorrie,Charlotte Rampling,nm0001648
+role_fe6026c5,Daisy,Jessica Harper,nm0363888
+role_458689ac,Isobel,Marie-Christine Barrault,nm0056763
+role_1eb60e3b,Tony,Tony Roberts,nm0731634
+role_10e47e65,Actor,Daniel Stern,nm0827663
+role_aed271ec,Shelley,Amy Wright,nm0942195
+role_9cdfa9d2,Vivian Orkin,Helen Hanft,nm0359834
+role_02508a01,Jack Abel,John Rothman,nm0745232
+role_8f2cdba8,Sandy's Sister,Anne DeSalvo,nm0211408
+role_4b38fc33,Howard Hughes,Jason Robards,nm0001673
+role_055826bc,Melvin Dummar,Paul Le Mat,nm0494432
+role_a45fc334,Darcy Dummar,Elizabeth Cheshire,nm0156187
+role_85256aaa,Lynda Dummar,Mary Steenburgen,nm0005460
+role_39a86878,Clark Taylor,Chip Taylor,nm0852118
+role_ac3518b7,Bus Depot Counterman,Melvin E. Dummar,nm0241594
+role_e339ff1d,Little Red,Michael J. Pollard,nm0689488
+role_53ec151e,Lucy,Denise Galik,nm0302113
+role_43f5d29a,Go-Go Club Owner #1,Gene Borkan,nm0096908
+role_30af93db,Go-Go Dancer,Lesley Margret Burton,nm0123652
+role_76914256,Village People: Policeman,Ray Simpson,nm0801163
+role_7271ab8b,Village People: Construction Worker,David Hodo,nm0388317
+role_3e8905bd,Village People: Indian,Felipe Rose,nm0741377
+role_596fdfe4,Village People: Cowboy,Randy Jones,nm0429062
+role_247492a8,Village People: Leatherman,Glenn Hughes,nm0400629
+role_a99a244e,Village People: G.I.,Alex Briley,nm0109298
+role_4af556e9,Samantha Simpson,Valerie Perrine,nm0674781
+role_8761de4c,Ron White,Caitlyn Jenner,nm0421063
+role_a624f319,Jack Morell,Steve Guttenberg,nm0000430
+role_0fce373b,Steve Waits,Paul Sand,nm0761190
+role_082ad4b6,Bronco Billy,Clint Eastwood,nm0000142
+role_43726130,Antoinette Lily,Sondra Locke,nm0516800
+role_9bc300b5,John Arlington,Geoffrey Lewis,nm0507212
+role_325d4d4f,Doc Lynch,Scatman Crothers,nm0001079
+role_0c8f6c70,Lefty LeBow,Bill McKinney,nm0571853
+role_1a6a8ad7,Leonard James,Sam Bottoms,nm0098734
+role_c20bf6cf,Chief Big Eagle,Dan Vadis,nm0883013
+role_bdbb5b74,Lorraine Running Water,Sierra Pecheur,nm0669579
+role_bed6197e,Sheriff Dix,Walter Barnes,nm0055812
+role_8e4f657f,Dr. Canterbury,Woodrow Parfrey,nm0661416
+role_c6ddc381,Snàporaz,Marcello Mastroianni,nm0000052
+role_a440173a,Elena,Anna Prucnal,nm0699147
+role_8b2f69d8,Woman on train,Bernice Stegers,nm0825231
+role_d41ddb38,Motorcyclist,Jole Silvani,nm0798574
+role_08d907bd,Donatella (Woman on roller skates),Donatella Damiani,nm0198767
+role_1e44de62,Dr. Xavier Katzone,Ettore Manni,nm0543188
+role_bbd82444,Oliver Hardy,Fiammetta Baralla,nm0052921
+role_1fd8f1a4,Feminist,Hélène Calzarelli,nm0131017
+role_de303c35,Commandant,Catherine Carrel,nm0140151
+role_9effaa26,Slave,Marcello Di Falco,nm0223794
+role_42fe468d,Dr. Tart,Tim Conway,nm0176792
+role_39236745,Inspector Winship,Don Knotts,nm0461455
+role_b53807ad,Mistress Phyllis Morley,Trisha Noble,nm0633682
+role_c1decab2,Justin,Bernard Fox,nm0288882
+role_645dbadc,Nanny,Grace Zabriskie,nm0951471
+role_8820c008,Mr. Uwatsum,John Fujioka,nm0297801
+role_ae390fa5,Tibet,Stan Ross,nm0743829
+role_0762abbb,Jock,Irwin Keyes,nm0450815
+role_d04429bb,Hilda,Suzy Mandel,nm0541681
+role_e1b66776,Lord Morley,Fred Stuthman,nm0836475
+role_b86801ef,Hank Anderson,Paul Newman,nm0000056
+role_b09630f0,Kay Kirby,Jacqueline Bisset,nm0000302
+role_852dff6b,Shelby Gilmore,William Holden,nm0000034
+role_80657774,Brian,Edward Albert,nm0001902
+role_f50cdbea,Francis Fendly,Red Buttons,nm0000999
+role_4a8f7407,Iolani,Barbara Carrera,nm0000324
+role_f106df77,Rose Valdez,Valentina Cortese,nm0181305
+role_be0f0121,Nikki,Veronica Hamel,nm0357557
+role_508480f5,Tiny Baker,Alex Karras,nm0440090
+role_19bd2c9d,Rene Valdez,Burgess Meredith,nm0580565
+role_8e300e0a,Browning,Chevy Chase,nm0000331
+role_7b9028cf,Benji a.k.a Browning,Benjean,nm1449294
+role_1c5840ac,Jackie,Jane Seymour,nm0005412
+role_324e1d4f,Bart,Omar Sharif,nm0001725
+role_0f3e7870,Bernie,Robert Morley,nm0605923
+role_03f4f45f,Higgins,Stuart Germain,nm0314492
+role_0ce870bf,Deaf Postie,Stuart Germain,nm0314492
+role_53134083,Freddie,Alan Sues,nm0837297
+role_e659a1c1,Alistair Becket,John Stride,nm0834438
+role_a8cd99ee,Montanero,Donnelly Rhodes,nm0722413
+role_70a326f9,Scott James,Chuck Norris,nm0001569
+role_08b1c4a0,Justine,Karen Carlson,nm0137948
+role_4cd3282c,McCarn,Lee Van Cleef,nm0001812
+role_ecd130b8,A. J.,Art Hindle,nm0385543
+role_8c30e784,Aura,Carol Bagdasarian,nm0046560
+role_18a6c262,Seikura,Tadashi Yamashita,nm0945632
+role_85dfc59f,Nancy,Kim Lankford,nm0486905
+role_dce2dfa3,Tibor,Larry D. Mann,nm0542847
+role_32fd450e,Doggo,Kurt Grayson,nm0337117
+role_84965379,Kyo - Seikura's Enforcer,Richard Norton,nm0636280
+role_9acfcab4,Steve Bancroft,Gary Collins,nm0004833
+role_63111251,Gordon Cain,Robert Vaughn,nm0001816
+role_62a506c1,Lew Price,James Hampton,nm0358996
+role_e9d6855d,Frank Morrison,Philip Abbott,nm0008041
+role_57d462ea,Frank Lafferty,Joseph Campanella,nm0132103
+role_1dec93a3,Sarah Michaels,Pamela Bellwood,nm0000900
+role_c14c5784,Phil Cameron,Tom Hallick,nm0356535
+role_95e8029d,Paul Bannister,Steven Keats,nm0444198
+role_b2bb2c99,Professor Mills,William Schallert,nm0769974
+role_0666bb26,Harry Forbes,Darren McGavin,nm0569000
+role_ea1fa992,Aunt Louise,Cloris Leachman,nm0001458
+role_7cf082ff,D.J.,Charles Martin Smith,nm0001747
+role_bc3dbc7d,Prindle,John Vernon,nm0006893
+role_281f6f30,Pete,Stephen W. Burns,nm0122881
+role_3b2754e7,Melissa,Elyssa Davalos,nm0202497
+role_585fe412,Paco,Joaquin Garay III,nm0304872
+role_d8ab6b9f,Captain Blythe,Harvey Korman,nm0466327
+role_b98ba1f0,Shepard,Richard Jaeckel,nm0001395
+role_cfa4ec82,Quinn,Alex Rocco,nm0733678
+role_67f89a30,Chief Steward,Fritz Feld,nm0270915
+role_30f9b7f0,Paul Dietrich,Richard Dreyfuss,nm0000377
+role_8230d9fd,Heidi Joan Schoonover,Amy Irving,nm0001388
+role_0c48f4ab,Greta Vandemann,Lee Remick,nm0001665
+role_a35f3ca1,Andrew Erskine,Sam Wanamaker,nm0910737
+role_f386876d,Jerry DiSalvo,Joseph Cali,nm0129955
+role_cdf05c37,Michael Humphries,Ty Henderson,nm0376621
+role_f5d088da,Tatjana Baronova,Vicki Kriegler,nm0471226
+role_97f0925f,Mark Landau,Adam Stern,nm0827617
+role_59eea9f6,Mr. Dietrich,Philip Sterling,nm0827572
+role_c540a872,Mrs. Dietrich,Gloria Stroock,nm0835083
+role_4b4e2d08,Kate Gunzinger,Jill Clayburgh,nm0001049
+role_133a0d0b,Ben Lewin,Michael Douglas,nm0000140
+role_cffa2224,Homer,Charles Grodin,nm0001301
+role_e555514a,Emma,Beverly Garland,nm0307500
+role_ed399909,Jacob,Steven Hill,nm0384696
+role_4ab0b261,Maryanne,Teresa Baxter,nm0062823
+role_439c24ee,Rita,Joan Copeland,nm0178616
+role_b806ff8f,Hunter,John Gabriel,nm0300235
+role_37c15ec3,Jerome,Charles Kimbrough,nm0453909
+role_86eb041c,Flicker,Roger Robinson,nm0733051
+role_3f584bdf,Buck Bonham,Willie Nelson,nm0005268
+role_ae64fa7f,Viv Bonham,Dyan Cannon,nm0001007
+role_ee08f11e,Lily Ramsey,Amy Irving,nm0001388
+role_b55925d5,Garland Ramsey,Slim Pickens,nm0001620
+role_2e9490ee,Jamie Bonham,Joey Floyd,nm0283269
+role_2db5f192,Sid,Charles Levin,nm0505570
+role_3a35d9b9,Rosella Ramsey,Priscilla Pointer,nm0688467
+role_8c57b3e1,Cotton Roberts,Mickey Rooney Jr.,nm0740296
+role_5d2fce20,Rooster,Pepe Serna,nm0785277
+role_df036644,Brag (Cotton's manager),Lane Smith,nm0809031
+role_ded0ad3c,Margaret,Rebecca Hall,nm0356017
+role_4841c60c,David,Tim Roth,nm0000619
+role_cf383a3c,Abbie,Grace Kaufman,nm4272103
+role_1d772fcb,Peter,Michael Esper,nm1092022
+role_a7ab5134,Gwyn,Angela Wong Carbone,nm7688164
+role_d588ae22,Officer Geary,Josh Drennen,nm0989156
+role_2653b787,Desk Clerk,Rosemary Howard,nm0397582
+role_aade7b7d,Tess,Winsome Brown,nm1175113
+role_bf373705,Amanda,Zarra Kaahn,nm9221491
+role_8273a7a2,Driver,Jaime Zevallos,nm0955245
+role_125a4d7c,Dominick DiNapoli,Dom DeLuise,nm0001123
+role_ad21f91f,Antoinette,Anne Bancroft,nm0000843
+role_1bdc77f4,Frankie,Ron Carey,nm0137030
+role_630eef82,Lydia,Candice Azzara,nm0044489
+role_7998b6a7,Charlie,Michael Lombard,nm0518323
+role_dea467ca,Vito,Sal Viscuso,nm0899601
+role_cf74246c,Ida Rendino,Delia Salvi,nm0759432
+role_43b38bf2,Johnny,Robert Costanzo,nm0182456
+role_7ea61392,Mrs. Goodman,Estelle Reiner,nm0717995
+role_64cb61d1,Sonny,Richard Karron,nm0440126
+role_2657ddbf,Katerina 'Katya' Tikhomirova,Vera Alentova,nm0018079
+role_d251d70c,Georgiy 'Gosha',Aleksey Batalov,nm0060692
+role_428d691f,Lyudmila Sviridova,Irina Muravyova,nm0613655
+role_f51f0498,Sergey 'Seryozha' Gurin,Aleksandr Fatyushin,nm0268945
+role_1aad12c8,Antonina Buyanova,Raisa Ryazanova,nm0752925
+role_65b1e359,Nikolay,Boris Smorchkov,nm0810672
+role_49a2547f,Rodion 'Rudolph' Rachkov,Yuriy Vasilev,nm0890588
+role_39b8e430,Aleksandra - Katerina's Daughter,Natalya Vavilova,nm0891347
+role_88f255bd,Volodya,Oleg Tabakov,nm0845867
+role_63b5f258,Rachkov's Mother,Yevgeniya Khanayeva,nm0451355
+role_f1f21379,Fu Manchu,Peter Sellers,nm0000634
+role_9abbfca9,Nayland Smith,Peter Sellers,nm0000634
+role_4d24aa7c,Alice Rage,Helen Mirren,nm0000545
+role_75afc6b3,Sir Roger Avery,David Tomlinson,nm0866835
+role_4a3db56f,Joe Capone,Sid Caesar,nm0128377
+role_b3be42d1,Robert Townsend,Simon Williams,nm0931702
+role_e42f0076,Pete Williams,Steve Franken,nm0291266
+role_4bfdf9c6,Ismail,Stratford Johns,nm0424368
+role_d96058d1,Perkins,John Le Mesurier,nm0494452
+role_4de7b461,Sir Nules Thudd,John Sharp,nm0789070
+role_a4782f1d,Harvey Holroyd,Martin Mull,nm0611898
+role_fc29d6d9,Kate Holroyd,Tuesday Weld,nm0001839
+role_2a20268c,Martha,Sally Kellerman,nm0001419
+role_418c7749,Stewart Luckman,Christopher Lee,nm0000489
+role_5c4d7baa,Skull,Christopher Lee,nm0000489
+role_5f1829f3,Sam Stone,Bill Macy,nm0534409
+role_e9258c22,Dr. Leonard Miller,Peter Bonerz,nm0094288
+role_b5b8a5f6,Rev. Spike,Tom Smothers,nm0810691
+role_d167cff5,Vivian,Barbara Rhoades,nm0722315
+role_9d232919,Carol,Pamela Bellwood,nm0000900
+role_8fe58e15,Steve Nichols,John Ritter,nm0000615
+role_26cec7fc,J. Marsh,Anne Archer,nm0000271
+role_52d22738,Walter Reeves,Bert Convy,nm0176622
+role_bebaeb39,Calvin Donnelly,Kevin McCarthy,nm0002994
+role_e1926a5e,Eddie,Harry Bellaver,nm0068772
+role_2823e703,Mrs. Havacheck,Anita Dangler,nm0199525
+role_c1422231,Gloria Preston,Jane Hallaren,nm0356284
+role_f65c0d65,Mayor,Leonard Harris,nm0364996
+role_40b95c7f,Milo,Rick Podell,nm0687940
+role_ff115545,Marty Fields,Allan Rich,nm0723590
+role_0bc8de2d,Harvey,Dudley Moore,nm0001545
+role_fe7e4eae,Herschel,Dudley Moore,nm0001545
+role_b542e162,Zoey,Laraine Newman,nm0628170
+role_c8710965,Zerelda,Laraine Newman,nm0628170
+role_ed0c9785,Hyssop,James Coco,nm0168394
+role_b8496030,Angel Of The Lord,Paul Sand,nm0761190
+role_9b80c903,Tailor,Jack Gilford,nm0318527
+role_5dba9238,Shadrach,Dom DeLuise,nm0001123
+role_0212aaf2,Archangel,John Houseman,nm0002144
+role_21845018,Sorceress,Madeline Kahn,nm0001404
+role_9bf0e7f6,Linus van Pelt,Daniel Anderson,nm0026561
+role_0660d9f8,Waiter,Scott Beach,nm0063502
+role_1172d5b9,Baron,Scott Beach,nm0063502
+role_287de76c,Driver,Scott Beach,nm0063502
+role_33334f7b,Tennis Announcer,Scott Beach,nm0063502
+role_f39b16f7,English Voice,Scott Beach,nm0063502
+role_3a52d2f0,American Male,Scott Beach,nm0063502
+role_bb9bcd4f,Marcie,Casey Carlson,nm1313870
+role_21749475,Stewardess,Debbie Muller,nm0612111
+role_7f4de511,Patricia 'Peppermint Patty' Reichardt,Patricia Patts,nm0666647
+role_8e0f601c,Brother Ambrose,Marty Feldman,nm0001204
+role_1e264fd2,Dr. Sebastian Melmoth,Peter Boyle,nm0001967
+role_ab90c8e0,Mary,Louise Lasser,nm0489837
+role_1689865d,G.O.D.,Richard Pryor,nm0001640
+role_82023c98,Armageddon T. Thunderbird,Andy Kaufman,nm0001412
+role_e2a9c867,Abbot Thelonious,Wilfrid Hyde-White,nm0405035
+role_dc43104c,Priest,Severn Darden,nm0201089
+role_f28e62c6,Waitress,Larri Thomas,nm0859129
+role_3befea08,Skateboarder,David Burton,nm0123556
+role_40573f4b,Gardener,Kaisen Chu,nm0160842
+role_0fb82ac7,Travis W. Redfish,Meat Loaf,nm0001533
+role_cf4abf8f,Lola Bouilliabase,Kaki Hunter,nm0402895
+role_2fbe0898,Corpus C. Redfish,Art Carney,nm0138770
+role_bcdf6174,B.B. Muldoon,Gailard Sartain,nm0765605
+role_02180231,Mohammed Johnson,Don Cornelius,nm0004843
+role_f7da9e4c,Alice Poo,Rhonda Bates,nm0061014
+role_3ee31975,Ace,Joe Spano,nm0816876
+role_25cd0e34,George,Richard Marion,nm0548003
+role_70498034,Bird,Sonny Carl Davis,nm0205479
+role_768f3fc6,Weather Girl,Ginger Varney,nm0890109
+role_c256076b,Bones Burton,Ali MacGraw,nm0532298
+role_238fd1f3,Max Herschel,Alan King,nm0454418
+role_b004b6ef,Stella Liberti,Myrna Loy,nm0001485
+role_2ba86fc9,Seymour Berger,Keenan Wynn,nm0943978
+role_66579224,Mike Berger,Tony Roberts,nm0731634
+role_c624308a,Steven Routledge,Peter Weller,nm0000693
+role_7b375550,Cathy,Sara Truslow,nm0874424
+role_51be9c67,Baby,Judy Kaye,nm0443332
+role_1ac2885f,Connie Herschel,Dina Merrill,nm0581277
+role_de330bff,Dr. Coleson,Joseph Maher,nm0536850
+role_4ea0b0bb,Noah Dugan,Elliott Gould,nm0001285
+role_3fa2fd45,Bernadette Lafleur,Geneviève Bujold,nm0000991
+role_f43ff367,Bobby,Ricky Schroder,nm0005401
+role_db00473b,Stoney,Vincent Gardenia,nm0306696
+role_ee6fd391,Julie,Tammy Lauren,nm0491079
+role_b5f12131,Cleveland,John Fujioka,nm0297801
+role_05439e2b,Hiro,Yuki Shimoda,nm0793715
+role_dff35694,Coslough,John P. Ryan,nm0752636
+role_c1b911eb,Benchley,Dana Elcar,nm0253020
+role_7c6ac2e8,Charlotte Braithwaite,Ruth Manning,nm0543371
+role_ce0e3312,Sorrowful Jones,Adolphe Menjou,nm0579663
+role_a6c5c9b3,Bangles Carson,Dorothy Dell,nm0217306
+role_798c8a2e,Big Steve Halloway,Charles Bickford,nm0001948
+role_bc16c25d,Marthy 'Marky' Jane,Shirley Temple,nm0000073
+role_a8a2f482,Regret,Lynne Overman,nm0653892
+role_32a45437,Doc Chesley,Frank McGlynn Sr.,nm0569466
+role_1dc3d93b,Sun Rise,John Sheehan,nm0790596
+role_8983e6df,Grinder,Garry Owen,nm0654136
+role_38f8cba2,Dizzy Memphis,Willie Best,nm0079008
+role_317fe22a,Eddie,Huey White,nm0924873
+role_f4c0ab24,Willie Kaufman,Michael Ontkean,nm0648920
+role_e2dd88cb,Jeannette Sutherland,Margot Kidder,nm0452288
+role_b20c7b11,Phil D'Amico,Ray Sharkey,nm0788829
+role_40653928,Mrs. Kaufman,Jan Miner,nm0591149
+role_0e20feea,Mr. Kaufman,Tom Brennan,nm0107418
+role_e18d3ad4,Maria D'Amico,Julie Bovasso,nm0100566
+role_bfbd2487,Salvatore D'Amico,Louis Guss,nm0348927
+role_eb84f00d,Mrs. Sutherland,Kathleen Maguire,nm0536594
+role_ef264c18,Patti Sutherland,Kaki Hunter,nm0402895
+role_4a8d6fcc,Rena,Kristine DeBell,nm0213374
+role_82be3465,Truck Driver,J.C. Currais,nm3660262
+role_8ec24988,Manny Torres,Diego Calva,nm3886586
+role_cd1389da,Elephant Wrangler,Jimmy Ortega,nm0650887
+role_ae43aa8e,Police Officer,Marcos A. Ferraez,nm0273836
+role_86da2c37,Dale,Shane Powers,nm0694615
+role_a0a6eb1c,Jane Thornton,Phoebe Tonkin,nm2100081
+role_21ce025a,Orville Pickwick,Troy Metcalf,nm1146786
+role_b81e2368,Sidney Palmer,Jovan Adepo,nm5381254
+role_51f25a4c,Joe Holiday,Hansford Prince,nm0697659
+role_d11a71c8,Reggie,Telvin Griffin,nm6666010
+role_3f14f712,Windwalker,Trevor Howard,nm0002145
+role_a296f1a5,Smiling Wolf,Nick Ramus,nm0709142
+role_93b9c014,Crow Brother,Nick Ramus,nm0709142
+role_46afe194,Narrator,Nick Ramus,nm0709142
+role_ff1a1885,Windwalker as a young man,James Remar,nm0001664
+role_6f65ec8b,Tashina,Serene Hedin,nm0373306
+role_925022fa,Dancing Moon,Dusty McCrea,nm0566945
+role_749e8763,Little Feather,Silvana Gallardo,nm0302637
+role_7828c94c,Spotted Deer,Emerson John,nm0424157
+role_d96f1beb,Horse That Follows,Jason Stevens,nm0828470
+role_4e715f92,Mehak,Radhika Apte,nm2331000
+role_72491163,Jiah,Amrita Bagchi,nm13633813
+role_70401183,Anusha,Nivedita Bhattacharya,nm12265866
+role_bc5d5549,Nikki,Yashaswini Dayama,nm8216309
+role_bfb9193c,Shaan,Satyadeep Misra,nm4288932
+role_9d1d3c7a,Joey,Arush Nand,nm8738703
+role_0b8c68de,Manu Malhotra,Ankur Vikal,nm1340178
+role_ce318071,Emily Hollander,Talia Shire,nm0001735
+role_3fa58712,Bob Luffrono,Joe Cortese,nm0181288
+role_3aa5c7ef,Andrea Glassen,Elizabeth Ashley,nm0039051
+role_5419a945,Ida Marx,Kay Medford,nm0575552
+role_a0ec0e86,Sam Marx,Michael Gorrin,nm0326284
+role_6c4fb587,Steven Hollander,Russell Horton,nm0395671
+role_0f0c9482,Dr. Marin,Michael Lipton,nm0513862
+role_4bf254f3,Lawrence Obecny,Rick Petrucelli,nm0678385
+role_eec8db08,Detective Swid,Ron Ryan,nm0752823
+role_4b89952b,Police Woman,Linda Gillen,nm0318838
+role_3cb1ec42,Evelyn,Shirley MacLaine,nm0000511
+role_7df0d7a1,Walter,James Coburn,nm0000336
+role_0bc27e2e,Stephanie,Susan Sarandon,nm0000215
+role_c998bb7e,Greg,Stephen Collins,nm0004834
+role_9bfe041b,Mrs. Liggett,Sally Kellerman,nm0001419
+role_ce3aaa4e,Walter's Nurse,Nan Martin,nm0552832
+role_542e54ab,Dulcy,Shelly Batt,nm0061277
+role_8730f734,Elegant Doctor,Bernard Behrens,nm0067049
+role_b805323c,Nurse,Anne Bloom,nm0089133
+role_38db3f89,Hotel Clerk,Fred Carney,nm0138790
+role_cf2335ce,Hotspur,Tom Glynn-Carney,nm6077951
+role_ef6e29e4,Scot Soldier,Gábor Czap,nm5994557
+role_5fb436c7,Northumberland,Tom Fisher,nm0279818
+role_2bbfb0a0,Cambridge,Edward Ashley,nm0039049
+role_11cdd733,Dorset,Steven Elder,nm0253097
+role_5056c7ef,Grey,Stephen Fewell,nm9941172
+role_f086a9b7,William,Sean Harris,nm0365317
+role_76d5343e,Scrope,Ivan Kaye,nm0443321
+role_65dc194f,Westmoreland,Tom Lawrence,nm0493058
+role_98d41772,King Henry IV,Ben Mendelsohn,nm0578853
+role_7c003c16,God,George Burns,nm0122675
+role_95cc3ea9,Paula Richards,Suzanne Pleshette,nm0687189
+role_30225356,Don Richards,David Birney,nm0083709
+role_5fb87581,Tracy Richards,Louanne,nm0521608
+role_a684614d,Shingo,John Louie,nm0521829
+role_d7440c2e,Charles Benson - School Principal,Conrad Janis,nm0417641
+role_fc78d899,Dr. Jerome Newell,Anthony Holland,nm0390603
+role_1155e03d,NBC Newscaster,Hugh Downs,nm0236180
+role_d59781d7,Herself on NBC,Joyce Brothers,nm0112579
+role_86fa387a,Judge Thomas Miller,Wilfrid Hyde-White,nm0405035
+role_9d1c8fdf,Harry Crystal,Frank Langella,nm0001449
+role_3cb4e8ee,Ramona,Glynnis O'Connor,nm0640344
+role_e7fa8048,Artie Shoemaker,Tom Hulce,nm0001371
+role_cd4aa031,Mr. Shoemaker,Jerry Stiller,nm0005467
+role_ebb523b4,Dr. Julius Fuldauer,Herbert Berghof,nm0074596
+role_236a8d9c,Mickey Bellinger,Kevin McCarthy,nm0002994
+role_a78fff07,Fibby Geyer,Joseph Maher,nm0536850
+role_d7bcc713,Sherman Sprat,George Morfogen,nm0604420
+role_41cdc869,Cooky,Marshall Colt,nm0173268
+role_e1810903,D'Angeli,Anthony Mannino,nm0543409
+role_c7e7319f,Albin Mougeotte,Michel Serrault,nm0785664
+role_42c068a5,'Zaza Napoli',Michel Serrault,nm0785664
+role_522aefa8,Renato Baldi,Ugo Tognazzi,nm0865575
+role_1d6ffd1d,Broca,Marcel Bozzuffi,nm0102566
+role_e1770472,Mrs. Baldi,Paola Borboni,nm0095979
+role_a2ace284,Milan,Giovanni Vettorazzo,nm0895477
+role_10a04ae7,Luigi,Glauco Onorato,nm0648852
+role_32af743a,Ralph,Roberto Bisacco,nm0083838
+role_37e75419,Jacob,Benny Luke,nm0525574
+role_dbf1343d,Simon Charrier,Michel Galabru,nm0301556
+role_a912c22a,Red,Robin Altman,nm0022928
+role_10729a90,Chuck Barris,Chuck Barris,nm0057567
+role_5b94b19e,Bum,Brian O'Mullin,nm0641873
+role_c3bc90de,Violin Player (Elderly Man),Jack Bernardi,nm0076022
+role_50bdde82,Singing Group,Satisfaction,nm14588787
+role_45e6cb60,Winking Man,William Tregoe,nm0871741
+role_d900d8c3,Trumpet Man,Harvey Alpert,nm2654887
+role_dae33aff,Mabel,Mabel King,nm0455028
+role_3fd6766f,Mabel's Mama,Lillie Shelton,nm0791360
+role_33f52daf,Buddy Didlo,James B. Douglas,nm0235096
+role_2e9686bc,Self,Gilda Radner,nm0705717
+role_eb57b6d7,Self - Various,Gilda Radner,nm0705717
+role_857e7fd0,Father Guido Sarducci,Don Novello,nm0637038
+role_33069344,Don Kirshner,Paul Shaffer,nm0787238
+role_fff2e047,Arnie Schnachtman,Paul Shaffer,nm0787238
+role_be93dcad,Student Body President,Paul Shaffer,nm0787238
+role_d1569489,The Candy Slice Group,Paul Shaffer,nm0787238
+role_be28adc6,Roadie,Nils Nichols,nm0629680
+role_e9dad1fc,Audition Scene Pianist,Bob Christianson,nm0160242
+role_7e4a377f,The Candy Slice Group,Howard Shore,nm0006290
+role_2a39e9b1,Cletus,Treat Williams,nm0001852
+role_82d6f136,Kay,Lisa Eichhorn,nm0002059
+role_156c77dc,Jeorge,Gabriel Macht,nm0532683
+role_f5843fe9,Amy,Susan Heldfond,nm0374954
+role_e85cda87,Faith,Anne Byrne Hoffman,nm0126117
+role_1b3fc92a,Mrs. Bok,Valerie Curtin,nm0193224
+role_efa178ae,Mrs. Crumpe,Jocelyn Brando,nm0104720
+role_3dfe8753,Walter,Nicolas Coster,nm0182661
+role_897eb5a4,Dr. Barbour,Severn Darden,nm0201089
+role_d0b15fdf,Paul,Sonny Carl Davis,nm0205479
+role_1f1c5097,Gloria Link,Gilda Radner,nm0705717
+role_70551942,President Manfred Link,Bob Newhart,nm0627878
+role_dd4a274c,Mrs. Constance Link,Madeline Kahn,nm0001404
+role_a90486b4,Press Secretary Bunthorne,Richard Benjamin,nm0000907
+role_8011116e,Vice-President William Shockley,Bob Dishy,nm0228336
+role_335039ea,Ambassador Spender,Harvey Korman,nm0466327
+role_5d46e76d,Dr. Alexander Grade,Austin Pendleton,nm0671721
+role_c8b144e9,General G. E. Dumpston,Rip Torn,nm0001800
+role_32dee890,Presidential Assistant Feebleman,Fred Willard,nm0929609
+role_82548fac,President Mazai Kalundra,John Hancock,nm0359379
+role_a197ae06,Ah Chi,Ka-Yan Leung,nm0415777
+role_85e28431,Yang Han Wai,Mien Fang,nm1533682
+role_cace7e1e,Master Chow Tung,Siu-Tin Yuen,nm0803298
+role_e0da0ad6,Indy,Harrison Ford,nm0000148
+role_140708cb,Marion,Karen Allen,nm0000261
+role_9e66a31e,Belloq,Paul Freeman,nm0293550
+role_60f168b5,Toht,Ronald Lacey,nm0479951
+role_f5c7558f,Sallah,John Rhys-Davies,nm0722636
+role_f590cc8b,Brody,Denholm Elliott,nm0001186
+role_af5b50c4,Satipo,Alfred Molina,nm0000547
+role_67a04285,Dietrich,Wolf Kahler,nm0434759
+role_1c0ea00e,Gobler,Anthony Higgins,nm0001891
+role_cae41ce2,Barranca,Vic Tablian,nm0846004
+role_819245af,Ned Racine,William Hurt,nm0000458
+role_eacc3448,Matty Walker,Kathleen Turner,nm0000678
+role_e970a239,Edmund Walker,Richard Crenna,nm0001077
+role_b6362553,Peter Lowenstein,Ted Danson,nm0001101
+role_64bbc34a,Det. Oscar Grace,J.A. Preston,nm0696430
+role_a420c065,Teddy Lewis,Mickey Rourke,nm0000620
+role_43bb3fac,Mary Ann,Kim Zimmer,nm0956631
+role_05ee369d,Stella,Jane Hallaren,nm0356284
+role_fb21de1e,Roz Kraft,Lanna Saunders,nm0766869
+role_a79362c6,Heather Kraft,Carola McGuinness,nm0570123
+role_b96188a3,Truck Driver,Joe Belcher,nm0067643
+role_acad0661,David Kessler,David Naughton,nm0622544
+role_82dd5ded,Jack Goodman,Griffin Dunne,nm0001162
+role_9065aa3c,Dart Player,David Schofield,nm0774516
+role_33a52942,Chess Player,Brian Glover,nm0323093
+role_639b074e,Barmaid,Lila Kaye,nm0443343
+role_34086661,2nd Chess Player,Rik Mayall,nm0562201
+role_ebe813ef,2nd Dart Player,Sean Baker,nm0048917
+role_d5bf3cd7,First Werewolf,Paddy Ryan,nm0752761
+role_bad9ce63,Alex Price,Jenny Agutter,nm0000256
+role_9f6feb21,Snake Plissken,Kurt Russell,nm0000621
+role_0be0dd9f,Hauk,Lee Van Cleef,nm0001812
+role_fb0acb59,Cabbie,Ernest Borgnine,nm0000308
+role_220466a5,President,Donald Pleasence,nm0000587
+role_29bdbc1e,The Duke,Isaac Hayes,nm0005002
+role_da2a1038,Girl in Chock Full O'Nuts,Season Hubley,nm0399530
+role_4beaad73,Harold 'Brain' Hellman,Harry Dean Stanton,nm0001765
+role_eaf9f22d,Maggie,Adrienne Barbeau,nm0000105
+role_824cecc0,Rehme,Tom Atkins,nm0040662
+role_2759ab63,Secretary of State,Charles Cyphers,nm0194234
+role_65293b69,Ashley 'Ash' J. Williams,Bruce Campbell,nm0132257
+role_a8cb2f2f,Cheryl,Ellen Sandweiss,nm0762445
+role_defdd107,Scott,Richard DeManincor,nm0217822
+role_4298c99c,Linda,Betsy Baker,nm0048260
+role_67714577,Shelly,Theresa Tilly,nm0863462
+role_1d62f106,Fake Shemp,Philip A. Gillis,nm0319310
+role_ebaf0f54,Fake Shemp,Dorothy Tapert,nm0849962
+role_d41431b5,Fake Shemp,Cheryl Guttridge,nm0349762
+role_f26d4c78,Fake Shemp,Barbara Carey,nm0136908
+role_cd87b983,Fake Shemp,David Horton,nm0395583
+role_4b68215b,Pee Wee,Dan Monahan,nm0597517
+role_1f871de6,Billy,Mark Herrier,nm0380628
+role_17f05bc5,Tommy,Wyatt Knight,nm0461129
+role_7358fa93,Mickey,Roger Wilson,nm0934059
+role_990d5c8c,Tim Cavanaugh,Cyril O'Reilly,nm0642429
+role_55d6c553,Meat,Tony Ganios,nm0304393
+role_8ecd0509,Wendy,Kaki Hunter,nm0402895
+role_51ece5e1,Honeywell,Kim Cattrall,nm0000326
+role_c3045056,Beulah Balbricker,Nancy Parsons,nm0663878
+role_4eb6deb9,Brian Schwartz,Scott Colomby,nm0173082
+role_a3d52741,Jack,John Travolta,nm0000237
+role_dd16f845,Sally,Nancy Allen,nm0000262
+role_d30ff913,Burke,John Lithgow,nm0001475
+role_b0ba6018,Manny Karp,Dennis Franz,nm0001240
+role_68919f15,Sam,Peter Boyden,nm0101972
+role_80602f8e,Donahue,Curt May,nm0561903
+role_233c74b7,Detective Mackey,John Aquino,nm0032640
+role_2ce576ba,Lawrence Henry,John McMartin,nm0533979
+role_9187a9ea,Hooker,Deborah Everton,nm0263715
+role_6f9501b5,Detective at Hospital,J. Patrick McNamara,nm0573688
+role_8bf6e425,Perseus,Sam Worthington,nm0941777
+role_e552b120,Zeus,Liam Neeson,nm0000553
+role_44af363d,Hades,Ralph Fiennes,nm0000146
+role_df853f7a,Calibos,Jason Flemyng,nm0002076
+role_8c1a549f,Acrisius,Jason Flemyng,nm0002076
+role_e4fad124,Io,Gemma Arterton,nm2605345
+role_377ed540,Andromeda,Alexa Davalos,nm1111968
+role_1bd92798,Danae,Tine Stapelfeldt,nm3548867
+role_949a48bd,Draco,Mads Mikkelsen,nm0586568
+role_378c4a86,Apollo,Luke Evans,nm11437243
+role_04f1b046,King Arthur,Nigel Terry,nm0856050
+role_783be4ff,Morgana,Helen Mirren,nm0000545
+role_64f726b7,Lancelot,Nicholas Clay,nm0165551
+role_2dbc2467,Guenevere,Cherie Lunghi,nm0526724
+role_af1790a5,Perceval,Paul Geoffrey,nm0313264
+role_b0b20065,Merlin,Nicol Williamson,nm0932116
+role_239d94c8,Mordred,Robert Addie,nm0011665
+role_f76cbb5e,Uther Pendragon,Gabriel Byrne,nm0000321
+role_be0bb7fe,Uryens,Keith Buckley,nm0118645
+role_62716eb4,Igrayne,Katrine Boorman,nm0095573
+role_88dfdfde,Max,Mel Gibson,nm0000154
+role_75819bec,The Gyro Captain,Bruce Spence,nm0817748
+role_97d4422d,Pappagallo,Michael Preston,nm0696463
+role_9caf781d,The Toadie,Max Phipps,nm0681041
+role_6177c097,Wez,Vernon Wells,nm0920460
+role_c9197cd1,The Humungus,Kjell Nilsson,nm0632250
+role_d0dc5e47,The Feral Kid,Emil Minty,nm0591755
+role_c05b6f61,Warrior Woman,Virginia Hey,nm0382162
+role_ad83b5f5,Zetta,William Zappa,nm0953265
+role_c8663796,The Captain's Girl,Arkie Whiteley,nm0925800
+role_bfcab807,Capt.-Lt. Henrich Lehmann-Willenbrock - Der Alte,Jürgen Prochnow,nm0001638
+role_f4513ac0,Lt. Werner - Correspondent,Herbert Grönemeyer,nm0344963
+role_9ac3eb76,Chief Engineer Fritz Grade - Der Leitende-Der LI,Klaus Wennemann,nm0921044
+role_1af830b9,1st Lieutenant - Number One-1WO,Hubertus Bengsch,nm0071059
+role_dde8d9c2,2nd Lieutenant - 2WO,Martin Semmelrogge,nm0783847
+role_ebc05869,Kriechbaum - Chief Quartermaster-Navigator,Bernd Tauber,nm0851427
+role_465c9371,Johann,Erwin Leder,nm0496441
+role_4144a80c,Ullman,Martin May,nm0562056
+role_5772b8d9,Hinrich,Heinz Hoenig,nm0388517
+role_012c3ddf,Chief Bosun,Uwe Ochsenknecht,nm0643805
+role_b6e6e8b9,John,Bill Murray,nm0000195
+role_866081d7,Russell,Harold Ramis,nm0000601
+role_1c183827,Sgt. Hulka,Warren Oates,nm0643105
+role_d4e03ba2,Stella,P.J. Soles,nm0001753
+role_1c12bb6d,Louise,Sean Young,nm0000707
+role_daba45f2,Ox,John Candy,nm0001006
+role_ce41fd0f,Capt. Stillman,John Larroquette,nm0488662
+role_ae37f0b7,Stillman's Aide,John Voldstad,nm0901390
+role_0fe8714d,Cruiser,John Diehl,nm0225963
+role_bc235cca,Col. Glass,Lance LeGault,nm0499223
+role_2e8220eb,Anna,Isabelle Adjani,nm0000254
+role_b90efb34,Helen,Isabelle Adjani,nm0000254
+role_73b6846e,Mark,Sam Neill,nm0000554
+role_6b499265,Margit Gluckmeister,Margit Carstensen,nm0141380
+role_21d4d708,Heinrich,Heinz Bennent,nm0071502
+role_dfaec2e1,Heinrich's Mother,Johanna Hofer,nm0388682
+role_fcec88f3,Detective,Carl Duering,nm0240268
+role_29ee990b,Zimmermann,Shaun Lawton,nm0493391
+role_612cd736,Bob,Michael Hogben,nm0389660
+role_a4be8c66,Man with Pink Socks,Maximilian Rüthlein,nm0754144
+role_1ed06209,J. J. McClure,Burt Reynolds,nm0000608
+role_9bbedd4a,Seymour,Roger Moore,nm0000549
+role_33eddcfc,Pamela,Farrah Fawcett,nm0000396
+role_f1417fc2,Victor Prinzim,Dom DeLuise,nm0001123
+role_b33a8225,Jamie Blake,Dean Martin,nm0001509
+role_6639ee27,Fenderbaum,Sammy Davis Jr.,nm0002035
+role_a8bc8df6,Doctor Nikolas Van Helsing,Jack Elam,nm0001181
+role_e712288b,Marcie,Adrienne Barbeau,nm0000105
+role_e05d336a,Terry,Terry Bradshaw,nm0103537
+role_19eeb4d2,Subaru Driver #1,Jackie Chan,nm0000329
+role_b476e1b1,Frank,James Caan,nm0001001
+role_47f656ce,Jessie,Tuesday Weld,nm0001839
+role_18782faa,Okla,Willie Nelson,nm0005268
+role_9724ac3a,Barry,Jim Belushi,nm0000902
+role_837ae14f,Leo,Robert Prosky,nm0698764
+role_045174c7,Attaglia,Tom Signorelli,nm0797529
+role_c8c52654,Carl,Dennis Farina,nm0001199
+role_db9667b4,Nick,Nick Nickeas,nm0629973
+role_a9cfe5be,Mitch,W.R. Brown,nm0114873
+role_6b2de0a0,Guido,Norm Tobin,nm0864957
+role_3f61e154,David Elliot,Alex Pettyfer,nm1641117
+role_f82b673f,Jade Butterfield,Gabriella Wilde,nm13523339
+role_d38ad18c,Hugh Butterfield,Bruce Greenwood,nm0339304
+role_d64c1b5e,Anne Butterfield,Joely Richardson,nm0000613
+role_d94d3050,Harry Elliot,Robert Patrick,nm0001598
+role_ce9629a9,Keith Butterfield,Rhys Wakefield,nm1973422
+role_394b7bc1,Mace,Dayo Okeniyi,nm3912883
+role_0e872ae5,Jenny,Emma Rigby,nm12972521
+role_8cec80ea,Sabine,Anna Enger Ritch,nm2738196
+role_91e7b83e,Checka,Fabianne Therese,nm4211652
+role_178ae0fe,Robin Hood,John Cleese,nm0000092
+role_a1d343e2,King Agamemnon,Sean Connery,nm0000125
+role_1e66119b,Fireman,Sean Connery,nm0000125
+role_8e3484de,Dame Pansy,Shelley Duvall,nm0001167
+role_94bb6632,Pansy,Shelley Duvall,nm0001167
+role_63ad6e27,Mrs. Ogre,Katherine Helmond,nm0001340
+role_d82f4c66,Napoleon,Ian Holm,nm0000453
+role_390443cd,Vincent,Michael Palin,nm0001589
+role_8ac809a0,Supreme Being,Ralph Richardson,nm0724732
+role_13c3a268,Winston the Ogre,Peter Vaughan,nm0891092
+role_4148a89d,Jack Burroughs,Alan Alda,nm0000257
+role_ab85862b,Kate Burroughs,Carol Burnett,nm0000993
+role_22f090bb,Nick Callan,Len Cariou,nm0137230
+role_d985d49a,Anne Callan,Sandy Dennis,nm0006800
+role_6056d0cf,Claudia Zimmer,Rita Moreno,nm0001549
+role_8513e6c4,Danny Zimmer,Jack Weston,nm0922967
+role_065b43d3,Ginny Newley (Callan),Bess Armstrong,nm0000787
+role_a7617bc5,Beth Burroughs,Elizabeth Alda,nm0017374
+role_75511a7e,Lisa Callan,Beatrice Alda,nm0017373
+role_0b47cc7c,Room Clerk,Robert Hitt,nm0386966
+role_b8029976,Ginny,Amy Steel,nm0824386
+role_d4e83fe1,Paul,John Furey,nm0298859
+role_a6699654,Alice,Adrienne King,nm0454415
+role_ef7dbf3f,Terry,Kirsten Baker,nm0048661
+role_808e2776,Ted,Stuart Charno,nm0153385
+role_09630478,Jason,Warrington Gillette,nm0319068
+role_638989c7,Crazy Ralph,Walt Gorney,nm0331189
+role_0fbd34e0,Sandra,Marta Kober,nm0462118
+role_86df547f,Mark,Tom McBride,nm0564381
+role_b5a20990,Jeff,Bill Randolph,nm0709876
+role_6929056f,Kim Obrist,Jennifer O'Neill,nm0642198
+role_78190997,Cameron Vale,Stephen Lack,nm0480099
+role_25dfd8be,Dr. Paul Ruth,Patrick McGoohan,nm0001526
+role_fb1f860c,Braedon Keller,Lawrence Dane,nm0199325
+role_a2a7a2a7,Darryl Revok,Michael Ironside,nm0000461
+role_b067caad,Benjamin Pierce,Robert A. Silverman,nm0798887
+role_3606e57f,Security One,Lee Broker,nm0111240
+role_f43f4bd0,Trevellyan,Mavor Moore,nm0601603
+role_ad6e1269,Arno Crostic,Adam Ludwig,nm0524970
+role_43c20593,Programmer 1,Murray Cruchley,nm0189927
+role_56ed5214,James Bond,Roger Moore,nm0000549
+role_57be7a6a,Melina,Carole Bouquet,nm0000962
+role_2f386ed7,Columbo,Topol,nm0867694
+role_9df8455d,Bibi,Lynn-Holly Johnson,nm0000468
+role_2680ab37,Kristatos,Julian Glover,nm0002103
+role_efe8c180,Lisl,Cassandra Harris,nm0364520
+role_6506886b,Brink,Jill Bennett,nm0071824
+role_fb8b3256,Locque,Michael Gothard,nm0331788
+role_51cf64bc,Kriegler,John Wyman,nm0943840
+role_e008257e,Havelock,Jack Hedley,nm0373324
+role_9e4e9dd0,Laurie Strode,Jamie Lee Curtis,nm0000130
+role_ef22b9c6,Sam Loomis,Donald Pleasence,nm0000587
+role_c8502559,Leigh Brackett,Charles Cyphers,nm0194234
+role_a9f813cd,Graham,Jeffrey Kramer,nm0469552
+role_902fe14c,Jimmy,Lance Guest,nm0346411
+role_06748b6c,Karen,Pamela Susan Shoop,nm0794870
+role_d9bbf980,Gary Hunt,Hunter von Leer,nm0902608
+role_5946b3b5,The Shape,Dick Warlock,nm0006441
+role_42c81fe0,Patrolman #3,Dick Warlock,nm0006441
+role_5240b9b1,Budd,Leo Rossi,nm0744234
+role_08351c72,General Harlan Bache,George C. Scott,nm0001715
+role_2ac68b0b,Brian Moreland,Timothy Hutton,nm0000459
+role_8e3b6002,Colonel Kerby,Ronny Cox,nm0001074
+role_6bb2efea,Alex Dwyer,Sean Penn,nm0000576
+role_89e3c76a,David Shawn,Tom Cruise,nm0000129
+role_0d7f44e0,Charlie Auden,Brendan Ward,nm0911421
+role_fc52572a,Edward West,Evan Handler,nm0359577
+role_5c13d0a8,Derek Mellott,John P. Navin Jr.,nm0623117
+role_c4888577,Bug,Billy Van Zandt,nm0888345
+role_06e6d7f6,J.C. Pierce,Giancarlo Esposito,nm0002064
+role_2bc754d2,John Reed,Warren Beatty,nm0000886
+role_272c5502,Louise Bryant,Diane Keaton,nm0000473
+role_c7806266,Max Eastman,Edward Herrmann,nm0001346
+role_fc6834d9,Grigory Zinoviev,Jerzy Kosinski,nm0467085
+role_c246384a,Eugene O'Neill,Jack Nicholson,nm0000197
+role_7fdbb940,Louis Fraina,Paul Sorvino,nm0000649
+role_c7f4b6c4,Emma Goldman,Maureen Stapleton,nm0822972
+role_dd2ded6c,Paul Trullinger,Nicolas Coster,nm0182661
+role_840df989,Speaker - Liberal Club,M. Emmet Walsh,nm0001826
+role_da4dd17c,Mr. Partlow,Ian Wolfe,nm0938052
+role_3611cae6,Ethel Thayer,Katharine Hepburn,nm0000031
+role_da2eead5,Norman Thayer Jr.,Henry Fonda,nm0000020
+role_7fdf6b7a,Chelsea Thayer Wayne,Jane Fonda,nm0000404
+role_1fcf71bc,Billy Ray,Doug McKeon,nm0571630
+role_385a1318,Bill Ray,Dabney Coleman,nm0001056
+role_5b970c6b,Charlie Martin,William Lanteau,nm0487140
+role_ce2b9cd9,Sumner Todd,Christopher Rydell,nm0753068
+role_2e448e09,Young Boy on Jetty,Troy Garity,nm0004949
+role_bcf2a1a3,Tod,Mickey Rooney,nm0001682
+role_a769900a,Copper,Kurt Russell,nm0000621
+role_1616ae06,Big Mama,Pearl Bailey,nm0047440
+role_f0120ab1,Amos Slade,Jack Albertson,nm0016776
+role_482fd350,Vixey,Sandy Duncan,nm0242098
+role_3a84df89,Widow Tweed,Jeanette Nolan,nm0634282
+role_52c0ef95,Chief,Pat Buttram,nm0125426
+role_1132b24b,Porcupine,John Fiedler,nm0275835
+role_892aa207,Badger,John McIntire,nm0570615
+role_37e0ca22,Dinky,Richard Bakalyan,nm0048147
+role_08803a92,Aubrey Montague,Nicholas Farrell,nm0268297
+role_9ced2054,Lord Andrew Lindsay,Nigel Havers,nm0369814
+role_205d24ac,Eric Liddell,Ian Charleson,nm0153182
+role_d9fc1428,Harold Abrahams,Ben Cross,nm0002027
+role_2c8a2385,Henry Stallard,Daniel Gerroll,nm0314776
+role_7531c804,Sam Mussabini,Ian Holm,nm0000453
+role_f31df6db,Master of Trinity,John Gielgud,nm0000024
+role_593fe146,Master of Caius,Lindsay Anderson,nm0000755
+role_60a6adf6,Lord Birkenhead,Nigel Davenport,nm0202638
+role_062ed02b,Jennie Liddell,Cheryl Campbell,nm0132293
+role_99b697d6,Michael Colin Gallagher,Paul Newman,nm0000056
+role_5c873e8d,Megan Carter,Sally Field,nm0000398
+role_decf5e90,Elliott Rosen,Bob Balaban,nm0000837
+role_2aa5edef,Teresa Perrone,Melinda Dillon,nm0227039
+role_9fbbf274,Santos Malderone,Luther Adler,nm0012204
+role_5861bf0b,Bob Waddell,Barry Primus,nm0697587
+role_7d4d9fe5,McAdam,Josef Sommer,nm0813977
+role_ac3761e1,Davidek,John Harkins,nm0363157
+role_478fb0b1,District Attorney Quinn,Don Hood,nm0393458
+role_9c5c0d9c,James J. Wells,Wilford Brimley,nm0000979
+role_f6c804fd,Tarzan,Johnny Weissmuller,nm0919321
+role_e310086c,Harry Holt,Neil Hamilton,nm0358076
+role_70fa26a3,James Parker,C. Aubrey Smith,nm0807580
+role_4ed9ba6b,Jane Parker,Maureen O'Sullivan,nm0001577
+role_63ce98fc,Mrs. Cutten,Doris Lloyd,nm0515967
+role_b90a3b5b,Beamish,Forrester Harvey,nm0367516
+role_2c3323be,Riano,Ivory Williams,nm0930797
+role_96b465a6,Evil Dwarf,Franz Balluck,nm7573140
+role_ad8dd713,Evil Dwarf,Charles Becker,nm0065373
+role_9712b05f,Evil Dwarf,Burre Billingsley,act_22c40b99
+role_cd0d75c8,The Players: U.S.A. - Capt. Robert Hatch,Sylvester Stallone,nm0000230
+role_33bb5ab9,The Players: England - Capt. John Colby,Michael Caine,nm0000323
+role_e0c62af0,The Players: Brazil - Cpl. Luis Fernandez,Pelé,nm0671446
+role_94b8dc19,The Players: England - Terry Brady,Bobby Moore,nm0600961
+role_c2d891e8,The Players: Argentina - Carlos Rey,Osvaldo Ardiles,nm0034055
+role_2cea9e83,The Players: Belgium - Michel Fileu,Paul Van Himst,nm0887122
+role_30af7385,The Players: Poland - Paul Wolchek,Kazimierz Deyna,nm0223391
+role_a64fb4aa,The Players: Norway - Gunnar Hilsson,Hallvar Thoresen,nm0861228
+role_b9824a46,The Players: England - Sid Harmor,Mike Summerbee,nm0838620
+role_adf9d435,The Players: Holland - Pieter Van Beck,Co Prins,nm0697848
+role_57de8571,Arthur Bach,Dudley Moore,nm0001545
+role_a11d4e6a,Linda Marolla,Liza Minnelli,nm0591485
+role_c6735dd6,Hobson,John Gielgud,nm0000024
+role_19f41089,Martha Bach,Geraldine Fitzgerald,nm0280242
+role_46b11019,Susan Johnson,Jill Eikenberry,nm0251708
+role_15ab584f,Burt Johnson,Stephen Elliott,nm0254634
+role_a685e67f,Bitterman,Ted Ross,nm0743874
+role_144ca436,Ralph Marolla,Barney Martin,nm0551949
+role_e193fc63,Stanford Bach,Thomas Barbour,nm0053856
+role_1b978724,Gloria,Anne DeSalvo,nm0211408
+role_571b7309,Andre Gregory,Andre Gregory,nm0339737
+role_2f27e566,Wallace Shawn,Wallace Shawn,nm0001728
+role_e3ca04b0,Waiter,Jean Lenauer,nm0501721
+role_8bd8ffa2,Bartender,Roy Butler,nm0125122
+role_fb9a60b6,Patron,Deborah Eisenberg,nm0251977
+role_b6b09689,Atouk,Ringo Starr,nm0823592
+role_ba62b1cc,Lar,Dennis Quaid,nm0000598
+role_9f41b9eb,Tala,Shelley Long,nm0001480
+role_8a1467a9,Gog,Jack Gilford,nm0318527
+role_4db5fef8,Ta,Cork Hubbert,nm0399155
+role_ce39bb72,Ruck,Mark King,nm0455040
+role_dcbdfa21,Flok,Paco Morayta,nm0603218
+role_7bb50b42,Nook,Evan C. Kim,nm0453447
+role_79e2ec61,Kalta,Ed Greenberg,nm0338504
+role_02daca97,Bork,Carl Lumbly,nm0525855
+role_2dbc3a27,Sheriff Dan Gillis,James Farentino,nm0267232
+role_383b12fa,Janet Gillis,Melody Anderson,nm0000758
+role_42509ab5,William G. Dobbs,Jack Albertson,nm0016776
+role_a686682d,Ron,Dennis Redfield,nm0714836
+role_68a436c5,Linda,Nancy Locke,nm0198553
+role_64f3d6c7,Girl on the Beach,Lisa Blount,nm0089408
+role_1fb247dc,Nurse Lisa,Lisa Blount,nm0089408
+role_7841c828,Harry,Robert Englund,nm0000387
+role_55fd6c1c,Ernie,Bill Quinn,nm0703767
+role_b05df3d6,Herman,Michael Currie,nm0192980
+role_06b1e5fe,Moses,Mel Brooks,nm0000316
+role_f6bae501,Comicus,Mel Brooks,nm0000316
+role_fad92486,Torquemada,Mel Brooks,nm0000316
+role_7f19adc7,Jacques,Mel Brooks,nm0000316
+role_639ed764,King Louis XVI,Mel Brooks,nm0000316
+role_6039e4c9,Emperor Nero,Dom DeLuise,nm0001123
+role_9d0d32a2,Empress Nympho,Madeline Kahn,nm0001404
+role_19999f8e,Count de Monet,Harvey Korman,nm0466327
+role_aa61728d,Madame Defarge,Cloris Leachman,nm0001458
+role_53989f9f,Swiftus,Ron Carey,nm0137030
+role_98e5a164,Karen White,Dee Wallace,nm0908914
+role_9adfd8fe,Dr. George Waggner,Patrick Macnee,nm0001495
+role_0789c855,Chris Howard,Dennis Dugan,nm0240797
+role_3e2c02b6,R. William 'Bill' Neill,Christopher Stone,nm0831791
+role_d6897d82,Terry Fisher,Belinda Balaski,nm0049470
+role_8423ecb7,Fred Francis,Kevin McCarthy,nm0002994
+role_b5d7cb20,Erle Kenton,John Carradine,nm0001017
+role_a5ce35dc,Sam Newfield,Slim Pickens,nm0001620
+role_0a5b66a2,Marsha Quist,Elisabeth Brooks,nm0111974
+role_9bbef648,Eddie Quist,Robert Picardo,nm0000585
+role_54b930f6,Galen,Peter MacNicol,nm0001493
+role_033220b3,Valerian,Caitlin Clarke,nm0164680
+role_a804d051,Ulrich,Ralph Richardson,nm0724732
+role_f10b7e44,Tyrian,John Hallam,nm0356268
+role_d602a25b,Casiodorus Rex,Peter Eyre,nm0264235
+role_e44ed9b0,Greil,Albert Salmi,nm0758692
+role_3f1cb55c,Hodge,Sydney Bromley,nm0111356
+role_e4ec3303,Princess Elspeth,Chloe Salaman,nm0757474
+role_24a8be77,Valerian's Father,Emrys James,nm0416476
+role_04ed7b43,Horsrik,Roger Kemp,nm0447358
+role_3d7dd272,Richard Bone,Jeff Bridges,nm0000313
+role_a376d791,Alex Cutter,John Heard,nm0001334
+role_89fcd192,"Maureen Cutter, 'Mo'",Lisa Eichhorn,nm0002059
+role_4bfd4fdb,Valerie Duran,Ann Dusenberry,nm0244619
+role_4e4d80b4,J.J. Cord,Stephen Elliott,nm0254634
+role_da14c522,George Swanson,Arthur Rosenberg,nm0742172
+role_d6941cef,Woman in the Hotel,Nina van Pallandt,nm0887684
+role_5619970a,Mrs. Cord,Patricia Donahue,nm0231978
+role_8cdaf9d4,Susie Swanson,Geraldine Baron,nm0056240
+role_973ea6cc,Toyota Woman,Katherine Pass,nm0664776
+role_9d3e8e1b,Naoh,Everett McGill,nm0569239
+role_11f1b5e7,Amoukar,Ron Perlman,nm0000579
+role_84d98330,Gaw,Nicholas Kadi,nm0252832
+role_550ddc61,Ika,Rae Dawn Chong,nm0001044
+role_2f386bc8,Rouka - The Ulam Tribe,Gary Schwartz,nm0777229
+role_b78f9c04,Nam - The Ulam Tribe,Naseer El-Kadi,nm1874510
+role_a59bc58d,Aghoo - The Ulam Tribe,Franck-Olivier Bonnet,nm0094958
+role_f3a343f0,Lakar - The Ulam Tribe,Jean-Michel Kindt,nm0454338
+role_413d849f,Faum - The Ulam Tribe,Kurt Schiegl,nm0771391
+role_82272aaf,Modoc - The Ulam Tribe,Brian Gill,nm0318633
+role_25f78447,Damien,Sam Neill,nm0000554
+role_5112886a,De Carlo,Rossano Brazzi,nm0106387
+role_6769d1dc,Dean,Don Gordon,nm0330150
+role_5833fe63,Kate Reynolds,Lisa Harrow,nm0366027
+role_16872c09,Peter,Barnaby Holm,nm0391476
+role_e3d49430,President,Mason Adams,nm0011199
+role_27f7e3b1,American Ambassador,Robert Arden,nm0034013
+role_a101316d,Barbara,Leueen Willoughby,nm0932587
+role_20e5a743,Brother Benito,Marc Boyle,nm0102291
+role_67d574c0,Brother Martin,Milos Kirek,nm0449266
+role_1740ac60,Joan Crawford,Faye Dunaway,nm0001159
+role_ac03e9d3,Christina Crawford - Adult,Diana Scarwid,nm0769311
+role_ee727e8f,Greg Savitt,Steve Forrest,nm0002079
+role_d897ee71,L.B. Mayer,Howard Da Silva,nm0196247
+role_0dae4b32,Christina Crawford - Child,Mara Hobel,nm0387664
+role_0ceb8358,Carol Ann,Rutanya Alda,nm0017377
+role_178fb2b9,Al Steele,Harry Goz,nm0333100
+role_d5cff425,Ted Gelber,Michael Edwards,nm0250218
+role_b25d209a,Barbara Bennett,Jocelyn Brando,nm0104720
+role_6c89cd31,Mrs. Chadwick,Priscilla Pointer,nm0688467
+role_367e41b3,Mallow,Sylvia Kristel,nm0000482
+role_6218cb9a,Lester,Howard Hesseman,nm0381606
+role_1382c0bc,Philly,Eric Brown,nm0113525
+role_dab6b184,Sherman,Patrick Piccininni,nm0681523
+role_6387d2a4,Jack Travis,Ed Begley Jr.,nm0000893
+role_93af0773,Joyce,Pamela Jean Bryant,nm0117200
+role_bbe48a86,Miss Phipps,Meridith Baer,nm0046369
+role_d9134ed0,Fillmore,Ron Foster,nm0288031
+role_d3890d09,Waiter,Peter Elbling,nm0253004
+role_f351972d,Green,Beans Morocco,nm0057885
+role_fa26d2e4,Frank Chambers,Jack Nicholson,nm0000197
+role_77785f1f,Cora Papadakis,Jessica Lange,nm0001448
+role_f6be0c54,Nick Papadakis,John Colicos,nm0171475
+role_6c708261,Mr. Katz,Michael Lerner,nm0503627
+role_2bf26c87,Kennedy,John P. Ryan,nm0752636
+role_0a4c96a9,Madge,Anjelica Huston,nm0001378
+role_72e8fd89,Sackett,William Traylor,nm0871501
+role_3a7fd72c,Barlow,Thomas Hill,nm0384718
+role_7f55d81e,Motorcycle Cop,Jon Van Ness,nm0887551
+role_2e63d0bc,Mortenson,Brian Farrell,nm0268185
+role_16acd96b,New York Police Commissioner Rhinelander Waldo,James Cagney,nm0000010
+role_e0cac3a5,Younger Brother,Brad Dourif,nm0000374
+role_7fa24a5a,Booker T. Washington,Moses Gunn,nm0348214
+role_181232fe,Evelyn Nesbit,Elizabeth McGovern,nm0001527
+role_0f4e145e,Willie Conklin,Kenneth McMillan,nm0573299
+role_8b418148,Delmas,Pat O'Brien,nm0002285
+role_f2335692,Evelyn's Dance Instructor,Donald O'Connor,nm0640307
+role_4131608e,Father,James Olson,nm0647921
+role_50284a34,Tateh,Mandy Patinkin,nm0001597
+role_9ab7cd2e,Coalhouse Walker Jr.,Howard E. Rollins Jr.,nm0738415
+role_1e88b762,Martha Schmidt,Maren Jensen,nm0421596
+role_a06761e4,Lana Marcus,Sharon Stone,nm0000232
+role_33e6ecee,Vicky Anderson,Susan Buckner,nm0118761
+role_35ca7219,John Schmidt,Jeff East,nm0247532
+role_0cc71b58,Melissa,Colleen Riley,nm0727006
+role_7b674d64,Jim Schmidt,Douglas Barr,nm0056491
+role_e9183731,Faith Stohler,Lisa Hartman,nm0004998
+role_f1b4987c,Louisa Stohler,Lois Nettleton,nm0626728
+role_033ab9e9,Isaiah Schmidt,Ernest Borgnine,nm0000308
+role_c0e0ff4d,William Gluntz,Michael Berryman,nm0077720
+role_18b953b7,Daryll Deever,William Hurt,nm0000458
+role_7265f86e,Tony Sokolow,Sigourney Weaver,nm0000244
+role_58802c22,Joseph,Christopher Plummer,nm0001626
+role_6109d4e5,Aldo,James Woods,nm0000249
+role_8840f2df,Mrs. Sokolow,Irene Worth,nm0941683
+role_039f3d02,Mr. Deever,Kenneth McMillan,nm0573299
+role_4895ca19,Linda Mercer,Pamela Reed,nm0715622
+role_29b24ea3,Mr. Sokolow,Albert Paulsen,nm0667292
+role_19d37383,Lt. Jacobs,Steven Hill,nm0384696
+role_34d125be,Lt. Black,Morgan Freeman,nm0000151
+role_224ea215,Archy Hamilton,Mark Lee,nm0497826
+role_f85350d7,Jack,Bill Kerr,nm0449652
+role_a8d8df50,Les McCann,Harold Hopkins,nm0394176
+role_81252a5f,Zac,Charles Lathalu Yunipingu,nm0950971
+role_8cee874e,Stockman,Heath Harris,nm0364759
+role_8b69fc62,Wallace Hamilton,Ron Graham,nm0334277
+role_9dec16ab,Rose Hamilton,Gerda Nicolson,nm0630490
+role_2a8b583c,Frank Dunne,Mel Gibson,nm0000154
+role_a1282321,Billy,Robert Grubb,nm0344188
+role_709ea56b,Barney,Tim McKenzie,nm0571619
+role_db0a0efb,Marshal William T. O'Niel,Sean Connery,nm0000125
+role_3fda733f,Sheppard,Peter Boyle,nm0001967
+role_660ed4ef,Dr. Marian Lazarus,Frances Sternhagen,nm0827973
+role_b78042e4,Sergeant Montone,James Sikking,nm0797725
+role_e163d0e6,Carol G. O'Niel,Kika Markham,nm0548440
+role_44d28c0d,Ballard,Clarke Peters,nm0676370
+role_00080d1d,Sagan,Steven Berkoff,nm0000925
+role_105e27ac,Tarlow,John Ratzenberger,nm0001652
+role_248b08fe,Paul O'Niel,Nicholas Barnes,nm0055715
+role_bcce8945,Lowell,Manning Redwood,nm0715197
+role_a7ff81f7,Spencer,Keith Carradine,nm0001018
+role_3cbeceb3,Hardin,Powers Boothe,nm0000959
+role_ba08df51,Reece,Fred Ward,nm0911542
+role_11e28c61,Simms,Franklyn Seales,nm0780546
+role_ce7ad65b,Cribbs,T.K. Carter,nm0141953
+role_d193958c,Stuckey,Lewis Smith,nm0809095
+role_82a73543,Casper,Les Lannom,nm0486985
+role_5b46005f,Poole,Peter Coyote,nm0001075
+role_7cc9fe30,Bowden,Alan Autry,nm0042641
+role_015502fd,Trapper,Brion James,nm0001397
+role_090c9732,Sally Miles,Julie Andrews,nm0000267
+role_80fcf722,Tim Culley,William Holden,nm0000034
+role_6b225440,Mavis,Marisa Berenson,nm0001943
+role_4697c635,Dick Benson,Larry Hagman,nm0001306
+role_14d1b66c,Herb Maskowitz,Robert Loggia,nm0005162
+role_dd1c12d7,Gary Murdock,Stuart Margolin,nm0546765
+role_2fe7a2a7,Felix Farmer,Richard Mulligan,nm0612321
+role_4279661e,Dr. Irving Finegarten,Robert Preston,nm0696481
+role_12c30b92,Willard,Craig Stevens,nm0301887
+role_24062d35,Polly Reed,Loretta Swit,nm0842794
+role_14fef32d,Gillian Laroux,Jane Perry,nm0675110
+role_3882e6dd,Alex Grant,Nigel Barber,nm0053443
+role_7b479749,Jessica Johnson,Noeleen Comiskey,nm3582727
+role_bafbc780,Jessica 2.0,Noeleen Comiskey,nm3582727
+role_ac1ca2f5,Dr. Kuresh,Ezra Faroque Khan,nm1542545
+role_78d69cef,Jessica 2.0,Kosha Engler,nm1017942
+role_ad445efb,Mickey Locross,Stuart Ashton,nm1452724
+role_f250a9e5,Soldier 2.0,Alexander Clay,nm3103544
+role_e3c119bf,Mary Laroux,Louisa Hollway,nm7668234
+role_b2b522cf,Jim Marcell,Wes Nike,nm3624545
+role_3ea95d81,Ricky Hawthorne,Fred Astaire,nm0000001
+role_de7ffa68,John Jaffrey,Melvyn Douglas,nm0002048
+role_44f9962f,Edward Wanderley,Douglas Fairbanks Jr.,nm0001195
+role_5092e2e8,Sears James,John Houseman,nm0002144
+role_de84bf0d,Don,Craig Wasson,nm0913738
+role_b11566b9,David,Craig Wasson,nm0913738
+role_3e646a57,Stella,Patricia Neal,nm0623658
+role_ce639ed2,Alma,Alice Krige,nm0000481
+role_60799d28,Eva,Alice Krige,nm0000481
+role_2b521647,Milly,Jacqueline Brookes,nm0111795
+role_f00e8f81,Tom Hanniger,Jensen Ackles,nm0010075
+role_286c8b93,Sarah Palmer,Jaime King,nm0454809
+role_356dc347,Axel Palmer,Kerr Smith,nm0005445
+role_4f4f6d85,Irene,Betsy Rue,nm2175732
+role_42f85068,Deputy Martin,Edi Gathegi,nm1346230
+role_132aa45f,Burke,Tom Atkins,nm0040662
+role_ab130d0d,Ben Foley,Kevin Tighe,nm0001798
+role_b29d9cad,Megan,Megan Boone,nm1443644
+role_37477961,Deputy Ferris,Karen Baum,nm2182505
+role_285a42d9,Rosa,Joy de la Paz,nm3193079
+role_3a979675,Amy Harper,Elizabeth Berridge,nm0000931
+role_a68c6eba,Joey Harper,Shawn Carson,nm0141323
+role_95c7c754,Mrs. Harper,Jeanne Austin,nm0042415
+role_8ead8576,Mr. Harper,Jack McDermott,nm0567524
+role_f32a0956,Buzz Dawson,Cooper Huckabee,nm0399590
+role_c5691c94,Liz Duncan,Largo Woodruff,nm0940462
+role_e9aaded1,Richie Atterbury,Miles Chapin,nm0152187
+role_7467eaec,Geek,David Carson,nm0141213
+role_e1f31563,Bag Lady,Sonia Zomina,nm0957784
+role_24f39c49,Truck Driver,Ralph Morino,nm0605630
+role_b4a32cbc,Hank,Frederic Forrest,nm0002078
+role_9cf985f6,Frannie,Teri Garr,nm0000414
+role_32afa343,Ray,Raul Julia,nm0000471
+role_884a4494,Leila,Nastassja Kinski,nm0000176
+role_39209d33,Maggie,Lainie Kazan,nm0443577
+role_614aa2d9,Moe,Harry Dean Stanton,nm0001765
+role_423e3f3c,Restaurant Owner,Allen Garfield,nm0307255
+role_612c63d8,Airline Ticket Agent,Jeff Hamlin,nm0358272
+role_65388cbc,Couple in Elevator,Italia Coppola,nm0178889
+role_f53bed45,Couple in Elevator,Carmine Coppola,nm0178874
+role_a359f22b,Sarah and Anna,Meryl Streep,nm0000658
+role_cc92cc3d,Charles and Mike,Jeremy Irons,nm0000460
+role_4bae67b5,Sam,Hilton McRae,nm0574436
+role_61d7f08b,Mary,Emily Morgan,nm0604640
+role_0f7c180c,Mrs. Tranter,Charlotte Mitchell,nm0593209
+role_7d31a298,Ernestina,Lynsey Baxter,nm0062785
+role_04c6ed20,Cook,Jean Faulds,nm0269029
+role_4345fd03,Mr. Freeman,Peter Vaughan,nm0891092
+role_0164707d,Vicar,Colin Jeavons,nm0420010
+role_4e333f90,Mrs. Fairley,Liz Smith,nm0809131
+role_63f4e15b,Kermit the Frog,Jim Henson,nm0001345
+role_b7df6646,Rowlf,Jim Henson,nm0001345
+role_1511f084,Dr. Teeth,Jim Henson,nm0001345
+role_c845b71e,Swedish Chef,Jim Henson,nm0001345
+role_891d9b99,Waldorf,Jim Henson,nm0001345
+role_bafc55be,The Muppet Newsman,Jim Henson,nm0001345
+role_4fa9bada,Zeke,Jim Henson,nm0001345
+role_dac47f3b,Man having Snapshot in Restaurant,Jim Henson,nm0001345
+role_e9abd608,Miss Piggy,Frank Oz,nm0000568
+role_f7fdc7a4,Fozzie Bear,Frank Oz,nm0000568
+role_ab4c4976,Des Spellacy,Robert De Niro,nm0000134
+role_58545b3b,Det. Sgt. Tom Spellacy,Robert Duvall,nm0000380
+role_79cd182b,Jack Amsterdam,Charles Durning,nm0001164
+role_72da4685,Det. Frank Crotty,Kenneth McMillan,nm0573299
+role_5cb505db,Dan T. Campion,Ed Flanders,nm0281130
+role_b78d5f5a,Cardinal Danaher,Cyril Cusack,nm0159258
+role_e897ab1a,Msgr. Seamus Fargo,Burgess Meredith,nm0580565
+role_fb9758be,Brenda Samuels,Rose Gregorio,nm0339717
+role_986239ad,Howard Terkel,Dan Hedaya,nm0000445
+role_809288cd,Mrs. Fazenda,Gwen Van Dam,nm0885934
+role_b19084e9,Dr. Larry Roberts,Albert Finney,nm0001215
+role_80ac9717,John Reston,James Coburn,nm0000336
+role_c0e556e7,Cindy Fairmont,Susan Dey,nm0001138
+role_1e6916e9,Jennifer Long,Leigh Taylor-Young,nm0853375
+role_91dbc2db,Lieutenant Masters,Dorian Harewood,nm0002126
+role_9732e81d,Moustache Man,Tim Rossovich,nm0744523
+role_988b946a,Dr. Jim Belfield,Darryl Hickman,nm0382718
+role_3a9b8cc7,Tina Cassidy,Kathryn Witt,nm0936874
+role_5f43f837,Lisa Convey,Terri Welles,nm0919957
+role_803290e6,Senator Robert Harrison,Michael Hawkins,nm0370186
+role_6cd42b89,Deke DaSilva,Sylvester Stallone,nm0000230
+role_8a4e4ebe,Matthew Fox,Billy Dee Williams,nm0001850
+role_bcf7f4fc,Irene,Lindsay Wagner,nm0905993
+role_c13c9dd1,Shakka,Persis Khambatta,nm0001422
+role_4876d12b,Peter Hartman,Nigel Davenport,nm0202638
+role_45bcacba,Wulfgar,Rutger Hauer,nm0000442
+role_1066252f,Pam,Hilarie Thompson,nm0860208
+role_ef00d185,Lt. Munafo,Joe Spinell,nm0818874
+role_084e0700,Commissioner,Walter Mathews,nm0558732
+role_51f2cbdd,Sergeant,E. Brian Dean,nm0212759
+role_d78f2c64,Chong,Tommy Chong,nm0001045
+role_fea13aaa,Cheech,Cheech Marin,nm0001507
+role_6133ddcb,"Mrs. Del Whacko, Owner Casa Del Whacko",Benita Barrie,nm0057365
+role_575be2fd,Girl Nut,Sandra Bernhard,nm0000928
+role_ae9bbf27,Male Nurse #2,Big Yank,nm0081698
+role_5b00e78c,Nut #7,Don Carlson,nm0137901
+role_5021165a,Nut #8,David Castle,nm0145259
+role_594731bb,Male Nurse #1,Jerry Chambers,nm0150353
+role_810576aa,Dishwater,Jennifer Child,nm0157460
+role_ecf12f40,Blondie Group #5,Jennifer Child,nm0157460
+role_26beffa2,Sharky,Burt Reynolds,nm0000608
+role_2a87ce78,Victor,Vittorio Gassman,nm0002094
+role_42e2cbb6,Papa,Brian Keith,nm0001417
+role_3f9ff6e1,Friscoe,Charles Durning,nm0001164
+role_9d8139bc,Hotchkins,Earl Holliman,nm0391096
+role_4457baea,Arch,Bernie Casey,nm0143378
+role_e45d84a7,Billy Score,Henry Silva,nm0798328
+role_936757cb,Nosh,Richard Libertini,nm0508844
+role_e65f7045,Smiley,Darryl Hickman,nm0382718
+role_fe1c8783,Dominoe,Rachel Ward,nm0001829
+role_71ff388a,Mac Radner,Seth Rogen,nm0736622
+role_53e71ce5,Kelly Radner,Rose Byrne,nm0126284
+role_4f3f944c,Stella,Elise Vargas,nm5746224
+role_07398cbd,Stella,Zoey Vargas,nm5746225
+role_c256e492,Bill Wazowkowski,Brian Huskey,nm1111656
+role_ad392b2a,Jimmy,Ike Barinholtz,nm0054697
+role_8d6580ee,Paula,Carla Gallo,nm0303013
+role_c6f2a625,Teddy Sanders,Zac Efron,nm1374980
+role_3cf21d70,Pete,Dave Franco,nm11860668
+role_669c6232,Brooke,Halston Sage,nm4296013
+role_7fad417a,Debbie Vickers,Nell Schofield,nm0774537
+role_5f7932ff,Sue Knight,Jad Capelja,nm0135035
+role_10080cbd,Garry,Jeffrey Rhoe,nm0722564
+role_31735222,Danny,Tony Hughes,nm0400976
+role_fdfdf2db,Tracy,Sandy Paul,nm0666986
+role_e187983b,Cheryl,Leander Brett,nm0107959
+role_2faca280,Bruce,Jay Hackett,nm0352462
+role_f1f9d97e,Strach,Ned Lander,nm0484593
+role_5979e4f5,Vicki,Joanne Olsen,nm0647686
+role_1431e09c,Kim,Julie Medana,nm0575398
+role_46c79cc1,Faber,Donald Sutherland,nm0000661
+role_48507b7f,Lieutenant,Stephen MacKenna,nm0533249
+role_8fa045b6,Billy Parkin,Philip Martin Brown,nm0114441
+role_e560cd49,Lucy Rose,Kate Nelligan,nm0625075
+role_7717756f,David Rose,Christopher Cazenove,nm0147392
+role_5a4996f4,Lucy's Father,George Belbin,nm0067620
+role_a44c3aab,Lucy's Mother,Faith Brook,nm0111623
+role_7eb51f83,David's Mother,Barbara Graley,nm0334479
+role_670bdf27,Constable,George Lee,nm0497304
+role_adde6d31,Peterson,Arthur Lovegrove,nm0522467
+role_d2261f40,Dewey Wilson,Albert Finney,nm0001215
+role_059c5da7,Rebecca Neff,Diane Venora,nm0893204
+role_706e5e69,Eddie Holt,Edward James Olmos,nm0001579
+role_4096b322,Whittington,Gregory Hines,nm0002138
+role_0f26ca92,Ferguson,Tom Noonan,nm0006888
+role_1b40e479,Warren,Dick O'Neill,nm0642143
+role_4db0b737,Old Indian,Dehl Berti,nm0078046
+role_190621d5,Ross,Peter Michael Goetz,nm0324533
+role_1db59a76,Mayor,Sam Gray,nm0336935
+role_7efcee3e,Commissioner,Ralph Bell,nm0068466
+role_92efd859,Toby,Kristen Riter,nm0728779
+role_70d46e2c,Hardy,Matthew Goldsby,nm0325999
+role_13f13d8e,The Breather,Richard Brando,act_fc50242f
+role_070b6547,Mr. Dumpkin,Joe Flood,nm0282551
+role_88f0c1e8,Principal Peters,Joe Talarowski,nm0847824
+role_0a093761,Miss Mumsley,Mimi Weddell,nm0917114
+role_1c3023bf,Dr. Sigmund,Carl Jacobs,nm0414351
+role_57c83f5b,Ms. Van Dyke,Peggy Cooper,nm0178296
+role_fdd865d0,Nurse Krud,Janice E. O'Malley,nm0641734
+role_5c7f45dd,Scott,Kevin Mannis,nm0543432
+role_2ba0c46f,Detective Daniel Ciello,Treat Williams,nm0001852
+role_54e0be55,Detective Gus Levy,Jerry Orbach,nm0001583
+role_4cc77352,Detective Joe Marinaro,Richard Foronjy,nm0286561
+role_14cbbf92,Detective Bill Mayo,Don Billett,nm0082400
+role_0cf110d0,Dom Bando,Kenny Marino,nm1222818
+role_616b2e72,Detective Gino Mascone,Carmine Caridi,nm0137142
+role_64b76ce9,Detective Raf Alvarez,Tony Page,nm0656367
+role_34b8e59e,Assistant U.S. Atty. Rick Cappalino,Norman Parker,nm0006559
+role_3cc245cd,Assistant U.S. Atty. Brooks Paige,Paul Roebling,nm0736259
+role_ee0f24e7,Santimassino,Bob Balaban,nm0000837
+role_e5fd3b9c,Zhang,Chang Chen,nm0151654
+role_63a19d10,Master Jin,Feng Tien,nm0284608
+role_d4fa8fab,Hua's Servant - Ying,Chun-Luk Chan,nm1741757
+role_bde7fd79,Hua's Lover - Zhao,Jianjun Zhou,nm10700079
+role_dc885c3f,Tailor,Wing Tong Sheung,nm1742464
+role_8ff4ccc8,Tailor,Kim Tak Wong,nm1745524
+role_7e331f02,Tailor,Siu Man Ting,nm1745488
+role_2940213d,Tailor,Lai Fu Yim,nm1742636
+role_75194bf1,Tailor,Cheng You Shin,nm1742465
+role_e3a40cb1,Tailor,Wing-Kong Siu,nm1745463
+role_ae22c9d4,Ernie Souchak,John Belushi,nm0000004
+role_11e608b9,Nell Porter,Blair Brown,nm0001974
+role_894ea6a8,Howard McDermott,Allen Garfield,nm0307255
+role_82ed045e,Sylvia,Carlin Glynn,nm0323344
+role_e037b0b7,Max Bernbaum,Tony Ganios,nm0304393
+role_446a952d,Yablonowitz,Val Avery,nm0043088
+role_d28dfeba,Deke Lewis,Liam Russell,nm0751290
+role_7aeb29d3,Fiddle,Everett Smith,nm0808192
+role_f096826e,Train Conductor,Bill Henderson,nm0376347
+role_213a3d4f,Hellinger,Bruce Jarchow,nm0418589
+role_3d3ad336,Jules,Frédéric Andréi,nm0029268
+role_590d9855,Simon Weinstadt,Roland Bertin,nm0078109
+role_1591b26c,Serge Gorodish,Richard Bohringer,nm0092184
+role_9a5a9d5d,L' Antillais,Gérard Darmon,nm0201462
+role_f8a9ff4b,Nadia Kalanski,Chantal Deruaz,nm0220650
+role_2d3383f7,Commissaire Jean Saporta,Jacques Fabbri,nm0264429
+role_bcde62e7,Zatopek,Patrick Floersheim,nm0282505
+role_eb56dd0a,Alba,An Luu,nm0527625
+role_259566e3,Krantz,Jean-Jacques Moreau,nm0603398
+role_c8a33222,Le curé,Dominique Pinon,nm0684500
+role_c19cb096,Eddie Brock,Tom Hardy,nm0362766
+role_4241180c,Venom,Tom Hardy,nm0362766
+role_a412dc10,Anne Weying,Michelle Williams,nm0931329
+role_a54811c3,Carlton Drake,Riz Ahmed,nm1981893
+role_904d9254,Riot,Riz Ahmed,nm1981893
+role_e20c0da1,Security Chief Roland Treece,Scott Haze,nm2020278
+role_cbef6e73,Dr. Dan Lewis,Reid Scott,nm1169428
+role_e937d590,Dr. Dora Skirth,Jenny Slate,nm2809577
+role_e4c4c687,Homeless Woman Maria,Melora Walters,nm0001828
+role_7dc8c04e,Cletus Kasady,Woody Harrelson,nm0000437
+role_744d56a6,Murphy,Paul Newman,nm0000056
+role_a516c73d,Connolly,Edward Asner,nm0000799
+role_0fe19e52,Corelli,Ken Wahl,nm0906261
+role_b622235e,Morgan,Danny Aiello,nm0000732
+role_72819328,Isabella,Rachel Ticotin,nm0001797
+role_676787c3,Charlotte,Pam Grier,nm0000427
+role_f53e4dae,Theresa,Kathleen Beller,nm0000898
+role_3da61418,Jumper,Tito Goya,nm0333026
+role_2eaa364f,Detective,Tito Goya,nm0333026
+role_59b2e939,Hernando,Miguel Pinero,nm0684102
+role_868ef1d6,Jane Harris,Lauren Tewes,nm0856708
+role_ee3c94b1,Tracy Harris,Jennifer Jason Leigh,nm0000492
+role_a0df2113,Stanley Herbert,John DiSanti,nm0228277
+role_f379a612,David,Peter DuPre,nm0243397
+role_dfc0eded,Debbie,Gwen Lewis,nm0507244
+role_b64482da,Annette,Kitty Lunn,nm0526755
+role_bd058fb1,Jeff,Timothy Hawkins,nm0370235
+role_9197d3b6,Roger England,Ted Richert,nm0724925
+role_2183dfea,Mona,Toni Crabtree,nm0185619
+role_cf87ae18,Dr. Bob,Robert Small,nm0806427
+role_5d034745,Don Diego Vega,George Hamilton,nm0001313
+role_c4040aa1,Bunny Wigglesworth,George Hamilton,nm0001313
+role_6481a02f,Charlotte Taylor Wilson,Lauren Hutton,nm0001381
+role_8e3842d8,Florinda,Brenda Vaccaro,nm0882853
+role_83b01d04,Esteban,Ron Leibman,nm0500038
+role_897a8003,Paco,Donovan Scott,nm0779073
+role_7e41e140,Velasquez,James Booth,nm0095718
+role_21b4b7ec,Consuelo,Helen Burns,nm0122689
+role_6c6b6fdc,Garcia,Clive Revill,nm0720890
+role_4a93d276,Dolores,Carolyn Seymour,nm0786809
+role_bbf3b2ff,Bruce Thorpe,Chevy Chase,nm0000331
+role_c9be43fc,Annie Clark,Carrie Fisher,nm0000402
+role_a2e740d9,The Duchess,Eve Arden,nm0000781
+role_e4b6ae50,The Duke,Joseph Maher,nm0536850
+role_0d786eaa,The Assassin,Robert Donner,nm0232817
+role_93b6be44,Otto Kriegling,Billy Barty,nm0000863
+role_5ad6f75d,Nakomuri,Mako,nm0538683
+role_bf5df0e2,Rollo Sweet,Cork Hubbert,nm0399155
+role_a590de90,Tiny,Pat McCormick,nm0566588
+role_1fe2a3a3,Henry Hudson,Adam Arkin,nm0035060
+role_667432ad,Walter Whitney,George Segal,nm0001719
+role_0063c3b9,Vivian Whitney,Susan Saint James,nm0756634
+role_e6cf66fa,Nelson Longhurst,Jack Warden,nm0912001
+role_585de7de,Victor Bard,Dick Martin,nm0552189
+role_24381d39,Roger Porter,Denzel Washington,nm0000243
+role_4f89e793,Bob Garvey,Paul Winfield,nm0934902
+role_da399615,Tubby Wederholt,Macon McCalman,nm0564782
+role_5191da1d,Mary Ann,Vicky Dawson,nm0206290
+role_9d676a57,Dr. Bristol,Parley Baer,nm0046373
+role_bd0d527b,Wardlow,Vernon Weddle,nm0917136
+role_c612b499,Pat Kramer,Lily Tomlin,nm0005499
+role_b17cd123,Judith Beasley,Lily Tomlin,nm0005499
+role_b5f39b3d,Edith Ann,Lily Tomlin,nm0005499
+role_6dba844a,Ernestine,Lily Tomlin,nm0005499
+role_bc2f8633,Vance Kramer,Charles Grodin,nm0001301
+role_30c638c0,Dan Beame,Ned Beatty,nm0000885
+role_28c3d308,Dr. Eugene Nortz,Henry Gibson,nm0002099
+role_a8991e89,Dr. Ruth Ruth,Elizabeth Wilson,nm0933361
+role_7671ec2b,Rob,Mark Blankfield,nm0087578
+role_f6d3be9e,Concepcion,Maria Smith,nm0809220
+role_d2062da6,Amanda Child,Kristy McNichol,nm0001531
+role_04f1b8e0,Travis Child,Dennis Quaid,nm0000598
+role_a242f693,Conrad,Mark Hamill,nm0000434
+role_195a9fba,Melody,Sunny Johnson,nm0426286
+role_621ec4d7,Seth Ames,Don Stroud,nm0835144
+role_2a61eafe,Andy,Arlen Dean Snyder,nm0811405
+role_01d27caa,Wimbish,Barry Corbin,nm0179224
+role_44cdc7ae,Boogie Woogie,Lulu McNichol,nm0574004
+role_034cfdb1,Luther,Royce Clark,nm0164455
+role_3a717843,L.C.,Elijah Perry,nm0750739
+role_3c4a238c,Jean Horton,Maggie Smith,nm0001749
+role_ef4c11ee,Reggie Paget,Tom Courtenay,nm0183822
+role_f69f3526,Wilf Bond,Billy Connolly,nm0175262
+role_6335700a,Cissy Robson,Pauline Collins,nm0172604
+role_2c84123e,Cedric Livingstone,Michael Gambon,nm0002091
+role_98cbca06,Dr. Lucy Cogan,Sheridan Smith,nm0809956
+role_79935a4a,Bobby Swanson,Andrew Sachs,nm0755132
+role_1d7decdc,Anne Langley,Gwyneth Jones,nm0428186
+role_e3e349c1,George,Trevor Peacock,nm0668807
+role_f4147fad,Harry,David Ryall,nm0752379
+role_62d0d7b4,Coach George Michaels,Christopher George,nm0313387
+role_c1d97ac0,Anne Ramstead,Patch Mackenzie,nm0533378
+role_78f9b95f,Kevin,E. Danny Murphy,nm0614228
+role_19e96a20,Blondie,E.J. Peaker,nm0668855
+role_9d8a6f40,Guglione,Michael Pataki,nm0329029
+role_1e84fc18,Roberts,Richard Balin,nm0050250
+role_84779610,Halliday,Carmen Argenziano,nm0034492
+role_de6c462c,Elaine Ramstead,Beverly Dixon,nm0228765
+role_160fbf3d,MacGregor,Virgil Frye,nm0296901
+role_6103dfe2,Ronald Corliss,Hal Bokar,nm0092564
+role_5985ac69,Max Fielder,Chevy Chase,nm0000331
+role_3d904728,Darcy,Patti D'Arbanville,nm0001091
+role_54a35f18,Mark Winslow,Dabney Coleman,nm0001056
+role_c1cb55e0,Lorraine,Mary Kay Place,nm0005316
+role_81f36535,Dorita,Nell Carter,nm0141846
+role_cd1157f5,Brian Stills,Brian Doyle-Murray,nm0236519
+role_171953ca,Barry,Mitch Kreindel,nm0470656
+role_72cf5f8a,Mobile Supervisor,Arthur Sellers,nm0783334
+role_5693c9ea,Pete,Sandy Helberg,nm0374864
+role_a66a3980,Controller #1,Neil Thompson,nm0860541
+role_34184948,Arthur Parker,Steve Martin,nm0000188
+role_ecee7431,Eileen,Bernadette Peters,nm0001613
+role_23fc7b8e,Joan Parker,Jessica Harper,nm0363888
+role_3258482e,The Accordion Man,Vernel Bagneris,nm0046770
+role_eff88d91,Mr. Warner,John McMartin,nm0533979
+role_f382f09c,The Detective,John Karlen,nm0439482
+role_fd245df1,The Banker,Jay Garner,nm0307717
+role_33e3d92a,Al,Robert Fitch,nm0280023
+role_dc01185a,Ed,Tommy Rall,nm0707720
+role_f4693271,The Blind Girl,Eliska Krupka,nm0472786
+role_0b9a2cdb,Tony,Ron Thompson,nm0860658
+role_d89d0cc6,Pete,Ron Thompson,nm0860658
+role_6e96ce70,Frankie,Mews Small,nm0806500
+role_c7c1d113,Louie,Jerry Holland,nm0390723
+role_015b93f9,Bella,Lisa Jane Persky,nm0675484
+role_13e8504e,Zalmie,Jeffrey Lippa,nm0513578
+role_0be3c9d1,Eva Tanguay,Roz Kelly,nm0446840
+role_f0ec47c2,Crisco,Frank DeKova,nm0215308
+role_19c67b6c,Benny,Rick Singer,nm0802029
+role_f32c514c,Hannele,Elsa Raven,nm0712341
+role_af8e913b,The Lone Ranger,Klinton Spilsbury,nm0445719
+role_f8c43620,John Reid,Klinton Spilsbury,nm0445719
+role_ed8bbcc8,Tonto,Michael Horse,nm0395398
+role_802bed7e,Cavendish,Christopher Lloyd,nm0000502
+role_c8446e86,Sheriff Wiatt,Matt Clark,nm0164273
+role_ff7399d7,Amy Striker,Juanin Clay,nm0165536
+role_d1aecb55,President Grant,Jason Robards,nm0001673
+role_88f69c50,Dan Reid,John Bennett Perry,nm0675134
+role_64b8f8fa,Ranger Collins,David Hayward,nm0371730
+role_67453c12,Lucas Striker,John Hart,nm0366359
+role_479db396,Erica Baron,Lesley-Anne Down,nm0001153
+role_307b8cfa,Akmed Khazzan,Frank Langella,nm0001449
+role_df7eba5f,Yvon Mageot,Maurice Ronet,nm0740067
+role_52ccdde1,Abdu-Hamdi,John Gielgud,nm0000024
+role_46f603c4,Khalifa,Vic Tablian,nm0846004
+role_a49d5dc7,Muhammed,Martin Benson,nm0072578
+role_0ce082e6,Stephanos Markoulis,John Rhys-Davies,nm0722636
+role_5493e00c,Gamal,Nadim Sawalha,nm0768022
+role_b1f242a0,Tewfik,Tutte Lemkow,nm0501384
+role_b26df8fa,Selim,Saeed Jaffrey,nm0006762
+role_b12173eb,Teddy,Kevin Hart,nm0366389
+role_e7383326,Carrie,Tiffany Haddish,nm1840504
+role_0eea1fbf,Mackenzie,Rob Riggle,nm1443527
+role_4898d85a,Jaylen,Romany Malco,nm0539082
+role_d687c834,Stewart,Taran Killam,nm0453115
+role_d7f2ae7b,Lisa,Megalyn Echikunwoke,nm0248461
+role_5aaf9cb8,Luis,Al Madrigal,nm1371339
+role_9f40251c,Theresa,Mary Lynn Rajskub,nm0707476
+role_67a73e69,Gerald,Keith David,nm0202966
+role_fbbeccde,Mila,Anne Winters,nm3453476
+role_95ffed6b,Sean Kane,Chuck Norris,nm0001569
+role_b07a31f6,Morgan Canfield,Christopher Lee,nm0000489
+role_d0587f08,Capt. Stevens,Richard Roundtree,nm0745780
+role_f9d5abda,Tom McCoy,Matt Clark,nm0164273
+role_7939ec7d,James Chan,Mako,nm0538683
+role_fd3f8aa5,Heather Sullivan,Maggie Cooper,nm0178232
+role_9c21f9c5,Linda Chan,Rosalind Chao,nm0001034
+role_c24c0e43,The Professor,Professor Toru Tanaka,nm0849048
+role_0a3ca677,Nicky LaBelle,Stuart Pankin,nm0659573
+role_573a517f,Dave Pierce,Terry Kiser,nm0435218
+role_c5d04758,Henry Reyna,Daniel Valdez,nm0883639
+role_7cc30d19,El Pachuco,Edward James Olmos,nm0001579
+role_b711369d,George Shearer,Charles Aidman,nm0014493
+role_b4b26419,Alice Bloomfield,Tyne Daly,nm0002033
+role_4526bcbb,Judge F.W. Charles,John Anderson,nm0026930
+role_99e5bb88,Enrique,Abel Franco,nm0290496
+role_53146839,Joey,Mike Gomez,nm0327059
+role_f3a79066,Jose Torres,Mike Gomez,nm0327059
+role_c1afe0b4,Lupe,Alma Martinez,nm0554976
+role_79edc95a,Press,Francis X. McCarthy,nm0565133
+role_a94a8b82,Liz Hamilton,Jacqueline Bisset,nm0000302
+role_a383e30f,Merry Noel Blake,Candice Bergen,nm0000298
+role_62a5489c,Doug Blake,David Selby,nm0782978
+role_32ce424a,Chris Adams,Hart Bochner,nm0000952
+role_2bb147ea,Jules Levi,Steven Hill,nm0384696
+role_8147ea44,Debby - Age 18,Meg Ryan,nm0000212
+role_b68f2605,The Boy - Jim,Matt Lattanzi,nm0490402
+role_7e93420f,Ginger Trinidad,Daniel Faraldo,nm0267066
+role_ecdeb02b,Debby - Age 8,Nicole Eggert,nm0001176
+role_a0b43af1,Martin Fornam,Joe Maross,nm0549557
+role_c32efa92,Victor Clooney,Jack Lemmon,nm0000493
+role_eeed4693,Trabucco,Walter Matthau,nm0000527
+role_dc8018ab,Celia Clooney,Paula Prentiss,nm0696038
+role_3b61ee9b,Dr. Hugo Zuckerbrot,Klaus Kinski,nm0001428
+role_e5b50059,Capt. Hubris,Dana Elcar,nm0253020
+role_8d8f540b,Eddie the Bellhop,Miles Chapin,nm0152187
+role_51218fa9,Assistant Manager,Michael Ensign,nm0258117
+role_8ae2fedc,Receptionist,Joan Shawlee,nm0790064
+role_004a40b6,Rudy 'Disco' Gambola,Fil Formicola,nm0286426
+role_edfd0fc4,Kowalski,C.J. Hunt,nm0402368
+role_498c588e,Joe Braxton,Richard Pryor,nm0001640
+role_01feb0fc,Vivian Perry,Cicely Tyson,nm0001807
+role_08cc9955,Julio,Angel Ramirez Jr.,nm0709337
+role_1cb338a6,Harold,Jimmy Hughes,nm0400691
+role_9d1605be,Ernesto,Edwin DeLeon,nm0216736
+role_3f22079c,Anthony,Edwin Kinter,nm0455929
+role_faed780d,Linda,Tami Luchow,nm0524536
+role_c8cb3c24,Annie,Janet Wong,nm0939131
+role_8ed1d061,Martin,Alphonso Alexander,nm0018245
+role_b568a070,Samantha,Kia Cooper,nm0178195
+role_935bbe8c,Robert Cole,Albert Brooks,nm0000983
+role_f6d908a5,Mary Harvard,Kathryn Harrold,nm0002130
+role_1383e0da,Waitress,Tyann Means,nm0575187
+role_5bb92ad7,Jay,Bruno Kirby,nm0456124
+role_1cb3ce91,Ellen,Jane Hallaren,nm0356284
+role_61626b86,Neighbor,Karen Chandler,nm0151413
+role_d5d5c974,Health Food Salesman,Dennis Kort,nm0466728
+role_7d8854e7,Sporting Goods Salesman,Bob Einstein,nm0251872
+role_77e19dc5,Bank Receptionist,Virginia Feingold,nm0270727
+role_7b83d63b,Mother,Thelma Leeds,nm0077157
+role_1a35d2d6,Val,Andy Kaufman,nm0001412
+role_30ada844,Aqua,Bernadette Peters,nm0001613
+role_6c515927,Charlie,Randy Quaid,nm0001642
+role_11c08952,Max,Kenneth McMillan,nm0573299
+role_fce9d4bf,Susan,Melanie Mayron,nm0563039
+role_21476d1d,Calvin,Christopher Guest,nm0001302
+role_23833779,Factory Boss,Richard B. Shull,nm0795711
+role_2faedbee,Factory Watchman,Dick Miller,nm0588241
+role_20a3c7fe,Helicopter Pilot,Kathleen Freeman,nm0293466
+role_7a4c43df,Party House Owner,Mary Woronov,nm0001862
+role_7c7f8b44,Harley Altmeyer,Alex Pettyfer,nm1641117
+role_64762c2a,Callie Mercer,Jennifer Morrison,nm0607184
+role_550ab39f,Amber Altmeyer,Nicola Peltz Beckham,nm2443758
+role_df1b08d3,Misty Altmeyer,Chiara Aurelia,nm5988570
+role_d193f6a5,Jody Altmeyer,Hala Finley,nm6442629
+role_3c43e33a,Betty Parks,June Carryl,nm0518547
+role_530c0166,Chief Mansour,Robert Patrick,nm0001598
+role_73c9c59a,Bonnie Altmeyer,Juliette Lewis,nm0000496
+role_d55ed437,Uncle Mike,Robert Longstreet,nm0519486
+role_a337d11b,Rick,Jeff Pope,nm0691131
+role_9aec8fba,Frank Macklin,Robert Hays,nm0001332
+role_69582814,J.M. Halstead,Barbara Hershey,nm0001347
+role_6a4aa2dc,Harry Meade,David Keith,nm0001418
+role_96bf8327,Ray Binkowski,Tim Thomerson,nm0859772
+role_f436dc0c,Samuel Ellison,Eddie Albert,nm0000734
+role_f78bd502,Lenore Meade,Penelope Milford,nm0587340
+role_84951fee,Hooker,Charlie Rich,nm0723615
+role_35a03fbb,Dick Ebersol,Martin Mull,nm0611898
+role_b541dbca,Charlie Pickett,Art Carney,nm0138770
+role_0ef52662,Mooney,David Allan Coe,nm0019892
+role_d8fce6a4,Nita,Sissy Spacek,nm0000651
+role_b9f3cb15,Teddy,Eric Roberts,nm0000616
+role_1a49465b,Bailey,Sam Shepard,nm0001731
+role_5196f4ce,Calvin,William Sanderson,nm0761836
+role_f2c33e39,Arnold,Tracey Walter,nm0910145
+role_c720c7a6,Rigby,R.G. Armstrong,nm0035866
+role_e0d52058,Harry,Henry Thomas,nm0001794
+role_c11a4764,Henry,Carey Hollis Jr.,nm0391178
+role_91487447,Mr. Calloway,Ed Geldart,nm0312239
+role_6dde71b9,Sheriff,Bill Thurman,nm0862174
+role_b8be3153,Ken Harrison,Richard Dreyfuss,nm0000377
+role_19a75d52,Dr. Michael Emerson,John Cassavetes,nm0001023
+role_5cc3d1ff,Dr. Clare Scott,Christine Lahti,nm0001441
+role_254c3789,Carter Hill,Bob Balaban,nm0000837
+role_c460ba02,Judge Wyler,Kenneth McMillan,nm0573299
+role_0bb83ecc,Mary Jo Sadler,Kaki Hunter,nm0402895
+role_cd132ac6,Orderly John,Thomas Carter,nm0141960
+role_f9bae8b7,Nurse Rodriguez,Alba Oms,nm0648479
+role_f785526b,Pat,Janet Eilber,nm0251733
+role_c13874c8,Mrs. Boyle,Kathryn Grody,nm0342852
+role_43715bc1,Gen. Douglas MacArthur,Laurence Olivier,nm0000059
+role_cd37f307,Barbara Hallsworth,Jacqueline Bisset,nm0000302
+role_062cddd0,Maj. Frank Hallsworth,Ben Gazzara,nm0001262
+role_f2861d73,Saito-San,Toshirô Mifune,nm0001536
+role_f31f70c1,Sgt. Augustus Henderson,Richard Roundtree,nm0745780
+role_8eac99d0,David Feld,David Janssen,nm0418148
+role_02b1dbdd,Park,Won Namkung,nm0938860
+role_f846fc5e,Turkish Brigadier General,Gabriele Ferzetti,nm0275213
+role_3ddcb11b,Mr. Longfellow,Rex Reed,nm0715643
+role_51e7a1d5,Marguerite,Sabine Sun,nm0754744
+role_49c8722c,George Dupler,Gene Hackman,nm0000432
+role_2cbb63ac,Cheryl Gibbons,Barbra Streisand,nm0000659
+role_83f14dbb,Helen Dupler,Diane Ladd,nm0002663
+role_fadacb62,Freddie Dupler,Dennis Quaid,nm0000598
+role_d6e32db4,Bobby Gibbons,Kevin Dobson,nm0004878
+role_f89d04ab,Richard H. Copleston,William Daniels,nm0200122
+role_125ca7a4,Grandmother Gibbons,Ann Doran,nm0233352
+role_ac775205,Grandfather Gibbons,James Nolan,nm0634278
+role_ce56edc8,Joan Gibbons,Judy Kerr,nm0449742
+role_2e1c197f,Jennifer Gibbons,Marlyn Gates,nm0309598
+role_d51fbfca,Gruen,Robert Duvall,nm0000380
+role_4505c12f,Meade,Treat Williams,nm0001852
+role_85ab445e,Hannah,Kathryn Harrold,nm0002130
+role_9878abd2,Brigadier,Ed Flanders,nm0281130
+role_aeb20653,Remson,Paul Gleason,nm0322339
+role_e3db510d,Dempsey,R.G. Armstrong,nm0035866
+role_b3e1da88,Denise,Dorothy Fielding,nm0276127
+role_08d88adf,Avery,Nicolas Coster,nm0182661
+role_e1971378,Homer,Cooper Huckabee,nm0399590
+role_6c92e77e,Howard K. Smith,Howard K. Smith,nm0808485
+role_661ca295,Lee Winters,Jane Fonda,nm0000404
+role_8d69e293,Hubbell 'Hub' Smith,Kris Kristofferson,nm0001434
+role_116a256b,Maxwell Emery,Hume Cronyn,nm0002025
+role_c3156b46,Roy Lefcourt,Josef Sommer,nm0813977
+role_a7510f9c,Sal Naftari,Bob Gunton,nm0348409
+role_d1ebb2ad,Jerry Fewster,Macon McCalman,nm0564782
+role_a5227f3d,Gil Hovey,Ron Frazier,nm0292623
+role_d0993587,Betsy Okamoto,Jodi Long,nm0519023
+role_a2e7cf81,Warner Ackerman,Crocker Nevin,nm0627493
+role_dc38e630,Henry Lipscomb,Marvin Chatinover,nm0154059
+role_5489f23d,Georgia,Marsha Mason,nm0556850
+role_f4434e20,Dr. Komack,Ed Moore,nm0601153
+role_e6b5cbb9,Toby,Joan Hackett,nm0352466
+role_2d6a05fd,Jimmy,James Coco,nm0168394
+role_5d8eaba2,Polly,Kristy McNichol,nm0001531
+role_c6b42245,Heidi,Nancy Nagler,nm0619383
+role_28f9be34,Jason,Dan Monahan,nm0597517
+role_91408f45,David,David Dukes,nm0241232
+role_be745da5,Receptionist,Ellen La Gamba,nm0478617
+role_59b9efb9,Paul,Michael A. Ross,nm0743693
+role_2c963204,Eddie White,David Rasche,nm0711058
+role_f27d97b5,T.J. Tupus,Paul Jabara,nm0412955
+role_80582065,Snapper,Howard Hesseman,nm0381606
+role_2154da22,Ericka,Teri Garr,nm0000414
+role_2367a3f9,Delia,Jenn Thompson,nm0860279
+role_52494419,Little Billy,Peter Billingsley,nm0082526
+role_12debe0b,Duane Hansen,Beau Bridges,nm0000977
+role_67644dd5,Carmen Odessa Shelby,Beverly D'Angelo,nm0000350
+role_eec579fb,Hitchhiker,Daniel Stern,nm0827663
+role_a9af7386,Prostitute,Sandra McCabe,nm0564504
+role_0d47ac0c,Buddy Evans,Burt Reynolds,nm0000608
+role_5850605f,Maggie,Beverly D'Angelo,nm0000350
+role_6616fef5,Larry,Norman Fell,nm0001205
+role_ca223d31,Kurt,Paul Dooley,nm0233209
+role_48a488be,Sophia Thatcher,Elizabeth Ashley,nm0039051
+role_53c3f5a1,Jenny Lofton,Lauren Hutton,nm0001381
+role_835dd5d0,Celia,Juanita Moore,nm0601428
+role_f60eabe5,Tad,Peter Billingsley,nm0082526
+role_44cf62ea,Aunt Ethel,Jacqueline Brookes,nm0111795
+role_34c4799c,Cathy,Linda Gillen,nm0318838
+role_f591a5a9,Steve,Harry Hamlin,nm0002122
+role_d7c77843,Buddy,Joseph Bottoms,nm0098733
+role_330d363f,Tina,Deborah Van Valkenburgh,nm0888154
+role_52d99604,Roger,Richard Cox,nm0185210
+role_94f9fd6d,Cal,Dennis Hopper,nm0000454
+role_b13f548c,Rick,Dan Haggerty,nm0353624
+role_00ab5c00,Barry Tanner,Seymour Cassel,nm0001025
+role_a41498f1,Billy T,Sloan Roberts,nm0805982
+role_40a5fd72,Policeman,Steve Jones,nm0429283
+role_3bf0caa1,Elaine,Ashley Cox,nm0184915
+role_50dadfae,Casey,Drew Barrymore,nm0000106
+role_fd366198,Phone Voice,Roger Jackson,nm0413994
+role_2de45f54,Steve,Kevin Patrick Walls,nm0909384
+role_633b596d,Casey's Father,David Booth,nm0095672
+role_e5fe495b,Casey's Mother,Carla Hatley,nm0368938
+role_a1b8c6b8,Sidney,Neve Campbell,nm0000117
+role_17995c3f,Billy,Skeet Ulrich,nm0000240
+role_57f15efb,Mr. Prescott,Lawrence Hecht,nm0372967
+role_9fd7080f,Gale Weathers,Courteney Cox,nm0001073
+role_649e6c60,Kenny,W. Earl Brown,nm0114868
+role_9b9a10cc,Max Devlin,Elliott Gould,nm0001285
+role_63d65a80,Barney Satin,Bill Cosby,nm0001070
+role_687891a4,Penny Hart,Susan Anspach,nm0000769
+role_d8293c93,Toby Hart,Adam Rich,nm0723588
+role_928565ab,Stella Summers,Julie Budd,nm0118920
+role_c5ae7502,Big Billy Hunniker,Sonny Shroyer,nm0795449
+role_b894015f,Nerve Nordlinger,David Knell,nm0460671
+role_a1c143c9,Jerry Nadler,Chuck Shamata,nm0787825
+role_2702e720,Heidi,Deborah Baltzell,nm0051259
+role_0e6d3f29,Greg Weems,Ronnie Schell,nm0770742
