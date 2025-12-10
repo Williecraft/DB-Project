@@ -5,7 +5,7 @@ DB_PATH = "db_project.db"
 
 schema_sql = """
 CREATE TABLE Movie(
-    movie_id VARCHAR(15) PRIMARY KEY,
+    movie_id VARCHAR(15) PRIMARY KEY UNIQUE ,
     director_id INT,
     title VARCHAR(100) NOT NULL,
     release_year YEAR NOT NULL,
@@ -16,21 +16,21 @@ CREATE TABLE Movie(
 );
 
 CREATE TABLE Director(
-    director_id VARCHAR(15) PRIMARY KEY,
+    director_id VARCHAR(15) PRIMARY KEY UNIQUE,
     name VARCHAR(30) NOT NULL,
     birth_year YEAR NOT NULL,
     nationality VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE Company(
-    company_id VARCHAR(15) PRIMARY KEY,
+    company_id VARCHAR(15) PRIMARY KEY UNIQUE,
     name VARCHAR(30) NOT NULL UNIQUE,
     founded_year YEAR NOT NULL,
     country VARCHAR(10) NOT NULL
 );
 
 CREATE TABLE Actor(
-    actor_id VARCHAR(15) PRIMARY KEY,
+    actor_id VARCHAR(15) PRIMARY KEY UNIQUE,
     name VARCHAR(30) NOT NULL,
     birth_year YEAR NOT NULL,
     nationality VARCHAR(10) NOT NULL,
@@ -38,17 +38,17 @@ CREATE TABLE Actor(
 );
 
 CREATE TABLE Role(
-    role_id VARCHAR(15) PRIMARY KEY,
+    role_id VARCHAR(15) PRIMARY KEY UNIQUE,
     name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE Genre(
-    genre_id VARCHAR(15) PRIMARY KEY,
+    genre_id VARCHAR(15) PRIMARY KEY UNIQUE,
     name VARCHAR(15) NOT NULL UNIQUE
 );
 
 CREATE TABLE User(
-    user_id VARCHAR(15) PRIMARY KEY,
+    user_id VARCHAR(15) PRIMARY KEY UNIQUE,
     name VARCHAR(10) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE ,
     password VARCHAR(10) ,
@@ -58,7 +58,7 @@ CREATE TABLE User(
 );
 
 CREATE TABLE Review(
-    review_id VARCHAR(15) PRIMARY KEY,
+    review_id VARCHAR(15) PRIMARY KEY UNIQUE,
     user_id VARCHAR(15) NOT NULL ,
     movie_id VARCHAR(15) NOT NULL ,
     rating TINYINT NOT NULL,
