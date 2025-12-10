@@ -22,9 +22,9 @@ def generate_user_id(db: sqlite3.Connection) -> str:
             "SELECT 1 FROM User WHERE user_id = ?",
             (user_id,)
         )
+        #如果上面那句SQL沒有結果回傳，代表user_id不重複
         if cur.fetchone() is None:
             return user_id
-
 
 
 app = FastAPI(title="Movie Review API")
@@ -40,22 +40,27 @@ app.add_middleware(
 def create_user(payload: UserCreate, db: sqlite3.Connection = Depends(get_db)):
     #檢查 email 是否重複
     cur = db.execute("SELECT 1 FROM User WHERE email = ?", (payload.email,))
+    #如果上面那句SQL有結果回傳，代表email重複
     if cur.fetchone():
         raise HTTPException(status_code=409, detail="Email already exists")
 
     user_id = generate_user_id(db)
     join_date = date.today().isoformat()
 
+    #執行一條SQL語句
     db.execute(
         "INSERT INTO User (user_id, name, email, password, join_date, age) VALUES (?, ?, ?, ?, ?, ?)",
         (user_id, payload.name, payload.email, payload.password, join_date, payload.age)
     )
-    db.commit()
+    #把之前對資料庫做的變更寫入檔案
+    db.commit() 
 
+    
     cur = db.execute(
         "SELECT user_id, name, email, join_date, age FROM User WHERE email = ?",
         (payload.email,)
     )
+    #從查詢結果取出"一筆"資料
     row = cur.fetchone()
     return UserOut(
         user_id=row["user_id"],
