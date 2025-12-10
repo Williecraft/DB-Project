@@ -2,6 +2,8 @@ from pydantic import BaseModel
 from typing import Optional
 from datetime import date, datetime
 
+# 這邊定義前端送出去或資料庫送回來的JSON檔案格式
+
 class UserCreate(BaseModel):
     name: str
     email: str
