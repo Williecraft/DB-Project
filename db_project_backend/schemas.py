@@ -25,6 +25,7 @@ class MovieOut(BaseModel):
     duration: int
     language: str
     country: str
+    average_rating: int
 
 class GenreOut(BaseModel):
     genre_id: str
