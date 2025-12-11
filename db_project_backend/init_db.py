@@ -6,7 +6,7 @@ DB_PATH = "db_project.db"
 schema_sql = """
 CREATE TABLE Movie(
     movie_id VARCHAR(15) PRIMARY KEY UNIQUE ,
-    director_id INT,
+    director_id VARCHAR(15),
     title VARCHAR(100) NOT NULL,
     release_year YEAR NOT NULL,
     duration INT NOT NULL,
