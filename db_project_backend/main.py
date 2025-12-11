@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import sqlite3
 import random
 from datetime import date
-from typing import List
+from typing import List, Optional
 
 from db import get_db
 from schemas import *
