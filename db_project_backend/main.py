@@ -205,7 +205,6 @@ class SignInRequest(BaseModel):
 def get_user_by_email(email: str, password: str, db: sqlite3.Connection = Depends(get_db)):
     """
     Sign in：用 email & password 取得使用者基本資料。
-    （作業單純一點，直接用 GET + query string）
     """
     cur = db.execute(
         "SELECT user_id, name, email, password, join_date, age FROM User WHERE email = ?",
@@ -867,3 +866,7 @@ def get_actor_director_over_k(
         )
 
     return result
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
