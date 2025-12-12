@@ -27,10 +27,11 @@ def generate_user_id(db: sqlite3.Connection) -> str:
             return user_id
 
 
+origins = ["http://127.0.0.1:5500", "http://localhost:5500", "http://localhost:8000", "*"]
 app = FastAPI(title="Movie Review API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500", "http://localhost:5500"], 
+    allow_origins=origins, 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -87,3 +88,80 @@ def get_user(name: str, db: sqlite3.Connection = Depends(get_db)):
         join_date=row["join_date"],
         age=row["age"]
     )
+
+@app.get("/user_detail/{user_id}", response_model=UserDetailOut)
+def get_user_detail(user_id: str, db: sqlite3.Connection = Depends(get_db)):
+    try:    
+        # 抓使用者資料
+        get_user = db.execute('''
+            SELECT *
+            FROM User u
+            WHERE user_id = ?''',
+            (user_id,)
+        )
+
+        row = get_user.fetchone()
+        if row is None:
+            raise HTTPException(status_code=404, detail="User not found")
+        else :
+            user = UserOut(
+                user_id=row["user_id"],
+                name=row["name"],
+                email=row["email"],
+                join_date=row["join_date"],
+                age=row["age"]
+            )
+
+        # 抓評論過的電影
+        get_commented_movie = db.execute('''
+            SELECT DISTINCT m.movie_id, m.title
+            FROM Movie m
+            JOIN Review R on m.movie_id = R.movie_id
+            WHERE R.user_id = ?''',
+            (user_id,)
+        )
+
+        get_commented_movie_result = get_commented_movie.fetchall()
+        movies = []
+        for row in get_commented_movie_result:
+            movie = MovieOut(
+                movie_id=row['movie_id'],
+                title=row['title']
+            )
+            movies.append(movie)
+
+        # 統計評論最多的類型
+        get_most_commented_genre = db.execute('''
+            SELECT g.name, g.genre_id, COUNT(*) as r_count
+            FROM Review r
+            JOIN MovieGenre mg ON r.movie_id = mg.movie_id
+            JOIN Genre g ON mg.genre_id = g.genre_id
+            WHERE r.user_id = ?
+            GROUP BY g.name
+            ORDER BY r_count DESC''',
+            (user_id,)
+        )
+
+        get_most_commented_genre_result = get_most_commented_genre.fetchall()
+        genres = []
+        for row in get_most_commented_genre_result:
+            genre = GenreOut(
+                genre_id=row['genre_id'],
+                name=row['name']
+            )
+            genres.append(genre)
+
+        return UserDetailOut(
+            user_info=user,
+            movie_list=movies,
+            genre_list=genres
+        )
+    
+    except Exception as e:
+        print("發生錯誤：", e)
+        raise HTTPException(status_code=500, detail=str(e))
+    
+    
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

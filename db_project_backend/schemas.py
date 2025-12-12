@@ -14,17 +14,17 @@ class UserOut(BaseModel):
     user_id : str
     name : str
     email: str
-    join_date : date
+    join_date : str
     age: int
 
 class MovieOut(BaseModel):
     movie_id: str
-    director_id: str
+    director_id: str | None = None
     title: str
-    release_year: int
-    duration: int
-    language: str
-    country: str
+    release_year: int | None = None
+    duration: int| None = None
+    language: str| None = None
+    country: str| None = None
 
 class GenreOut(BaseModel):
     genre_id: str
@@ -122,7 +122,8 @@ class AdvancdeSearchParams(BaseModel):
     actor_name: str | None = None 
 
     # genre
-    genre_top_rating_of_year_limit: int | False = False # top rating of year會搜尋該年份最高評分的K個電影
+    genre_top_rating_of_year: False = False # top rating of year會搜尋該年份最高評分的K個電影
+    genre_top_rating_of_year_limit: int | None = None
     genre_top_rating_of_year: int | None = None
     genre_name: str | None = None
 
