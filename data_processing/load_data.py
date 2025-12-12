@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 
 # ===== 全域設定 =====
-DB_PATH = "db_project.db"
+DB_PATH = "db_project_backend/db_project.db"
 
 TABLE_DIR = Path("data/generated")
 
