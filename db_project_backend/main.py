@@ -192,7 +192,7 @@ def generate_review_id(db: sqlite3.Connection) -> str:
         if cur.fetchone() is None:
             return review_id
 
-# User頁面
+# ===================== User 頁面 =====================
 @app.get("/user_detail/{user_id}", response_model=UserDetailOut)
 def get_user_detail(user_id: str, db: sqlite3.Connection = Depends(get_db)):
     try:    
@@ -270,7 +270,6 @@ def get_user_detail(user_id: str, db: sqlite3.Connection = Depends(get_db)):
 class SignInRequest(BaseModel):
     email: str
     password: str
-
 
 @app.post("/login", response_model=UserOut)
 def get_user_by_email(payload: SignInRequest, db: sqlite3.Connection = Depends(get_db)):
