@@ -61,7 +61,7 @@ class ReviewIn(BaseModel):
 
 class ReviewOut(BaseModel):
     review_id: str
-    user_id : str
+    user_name : str
     movie_id: str
     rating: int
     comment: str
@@ -98,8 +98,8 @@ class CompanyDetailOut(BaseModel):
     company_info: CompanyOut
     movie_list: list[MovieOut]
 
-# 呈現company頁面的payload
-class CompanyDetailOut(BaseModel):
+# 呈現actor頁面的payload(movie_list的index對應到role_list必須有關聯)
+class ActorDetailOut(BaseModel):
     actor_info: ActorOut
     movie_list: list[MovieOut]
     role_list: list[RoleOut]
