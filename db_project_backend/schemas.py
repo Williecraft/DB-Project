@@ -25,7 +25,6 @@ class MovieOut(BaseModel):
     duration: int
     language: str
     country: str
-    average_rating: int
 
 class GenreOut(BaseModel):
     genre_id: str
@@ -68,7 +67,42 @@ class ReviewOut(BaseModel):
     comment: str
     _date: date
 
+# 呈現導覽列搜尋結果的payload
+class NavOut(BaseModel):
+    movie_list: list[MovieOut] | None = None
+    genre_list: list[GenreOut] | None = None
+    actor_list: list[ActorOut] | None = None
+    company_list: list[CompanyOut] | None = None
+    director_list: list[DirectorOut] | None = None
+    user_list: list[UserOut] | None = None
+    role_list: list[RoleOut] | None = None
 
+# 呈現movie頁面的payload
+class MovieDetailOut(BaseModel):
+    movie_info: MovieOut
+    genre_list: list[GenreOut]
+    actor_list: list[ActorOut]
+    company_list: list[CompanyOut]
+    director: DirectorOut
+    average_rating: int
+    review_list: list[ReviewOut]
+
+# 呈現user頁面的payload
+class UserDetailOut(BaseModel):
+    user_info: UserOut
+    movie_list: list[MovieOut]
+    genre_list: list[GenreOut]
+
+# 呈現company頁面的payload
+class CompanyDetailOut(BaseModel):
+    company_info: CompanyOut
+    movie_list: list[MovieOut]
+
+# 呈現company頁面的payload
+class CompanyDetailOut(BaseModel):
+    actor_info: ActorOut
+    movie_list: list[MovieOut]
+    role_list: list[RoleOut]
 
 # 處理進階搜尋頁面的參數。"="前面是type，後面是預設值
 class AdvancdeSearchParams(BaseModel):
