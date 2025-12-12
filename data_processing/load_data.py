@@ -16,6 +16,9 @@ ROLE_CSV = TABLE_DIR / "role.csv"
 GENRE_CSV = TABLE_DIR / "genre.csv"
 USER_CSV = TABLE_DIR / "user.csv"
 REVIEW_CSV = TABLE_DIR / "review.csv"
+ROLE_IN_MOVIE_CSV = TABLE_DIR / "role_in_movie.csv"
+OWNS_CSV = TABLE_DIR / "owns.csv"
+MOVIE_GENRE_CSV = TABLE_DIR / "movie_genre.csv"
 
 
 def insert_csv(conn, table, csv_path, columns, extra_values=None):
@@ -114,11 +117,42 @@ def main():
             conn,
             table="Movie",
             csv_path=MOVIE_CSV,
-            columns=["movie_id", "director_id", "title", "release_year",
-                     "duration", "language", "country"],
+            columns=[
+                "movie_id",
+                "director_id",
+                "title",
+                "release_year",
+                "duration",
+                "language",
+                "country",
+            ],
         )
 
-        # 8. Review（有 FK → User, Movie）
+        # 8. Owns（有 FK → Company, Movie）
+        insert_csv(
+            conn,
+            table="Owns",
+            csv_path=OWNS_CSV,
+            columns=["company_id", "movie_id"],
+        )
+
+        # 9. MovieGenre（有 FK → Genre, Movie）
+        insert_csv(
+            conn,
+            table="MovieGenre",
+            csv_path=MOVIE_GENRE_CSV,
+            columns=["genre_id", "movie_id"],
+        )
+
+        # 10. RoleInMovie_Played（有 FK → Role, Actor, Movie）
+        insert_csv(
+            conn,
+            table="RoleInMovie_Played",
+            csv_path=ROLE_IN_MOVIE_CSV,
+            columns=["role_id", "actor_id", "movie_id"],
+        )
+
+        # 11. Review（有 FK → User, Movie）
         insert_csv(
             conn,
             table="Review",

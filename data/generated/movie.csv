@@ -1,201 +1,201 @@
 movie_id,director_id,title,release_year,duration,language,country
-tt0081505,dir_19ad70b7,The Shining,1980,146,En,United Kingdom
-tt0080453,dir_385318c2,The Blue Lagoon,1980,104,En,United States
-tt0080684,dir_d987c33c,Star Wars: Episode V - The Emp,1980,124,En,United States
-tt0080339,dir_2af122d6,Airplane!,1980,88,En,United States
-tt0080487,dir_9b910141,Caddyshack,1980,98,En,United States
-tt0080761,dir_82456bde,Friday the 13th,1980,95,En,United States
-tt0080455,dir_117c6089,The Blues Brothers,1980,133,En,United States
-tt0081398,dir_10f60739,Raging Bull,1980,129,En,United States
-tt0081573,dir_b8671cbb,Superman II,1980,127,En,United States
-tt0081071,dir_eafa044f,The Long Riders,1980,100,En,United States
-tt0080377,dir_03db8413,Any Which Way You Can,1980,116,En,United States
-tt0080801,dir_50a1b0a9,The Gods Must Be Crazy,1980,109,En,South Africa
-tt0081353,dir_586b6aec,Popeye,1980,114,En,United States
-tt0081283,dir_417d3baf,Ordinary People,1980,124,En,United States
-tt0080661,dir_4afb7c19,Dressed to Kill,1980,104,En,United States
-tt0081534,dir_1acde006,Somewhere in Time,1980,103,En,United States
-tt0080716,dir_31d71ec5,Fame,1980,134,En,United States
-tt32212477,dir_4a7a05a6,9 to 5,1980,109,En,United States
-tt0080749,dir_c4686f2f,The Fog,1980,89,En,United States
-tt0081562,dir_13655f1b,Stir Crazy,1980,111,En,United States
-tt0080569,dir_9663890c,Cruising,1980,102,En,West Germany
-tt0080855,dir_f40571a5,Heaven's Gate,1980,219,En,United States
-tt0080736,dir_87e93cd8,The Final Countdown,1980,103,En,United States
-tt0081777,dir_0e949f79,Xanadu,1980,96,En,United States
-tt0081696,dir_3c66e2a0,Urban Cowboy,1980,132,En,United States
-tt0080360,dir_55d51baf,Altered States,1980,102,En,United States
-tt0081060,dir_29aea13d,Little Darlings,1980,96,En,United States
-tt0081400,dir_59742d71,Raise the Titanic,1980,115,En,United Kingdom
-tt0080474,dir_ffc7a05f,Brubaker,1980,131,En,United States
-tt0080365,dir_d33cafc5,American Gigolo,1980,117,En,United States
-tt0081207,dir_c61639c1,My Bodyguard,1980,102,En,United States
-tt0926129,dir_986e71c3,Prom Night,1980,92,En,Canada
-tt0081529,dir_9539c75e,Smokey and the Bandit II,1980,100,En,United States
-tt0082145,dir_0fee845f,Cattle Annie and Little Britch,1980,97,En,United States
-tt0081480,dir_35710b11,Seems Like Old Times,1980,102,En,United States
-tt0081375,dir_ad0643c2,Private Benjamin,1980,109,En,United States
-tt0080881,dir_9774639c,The Hollywood Knights,1980,91,En,United States
-tt0081184,dir_d3a277cc,Motel Hell,1980,101,En,United States
-tt0080948,dir_5e1b14ac,The Jazz Singer,1980,115,En,United States
-tt0080549,dir_993df264,Coal Miner's Daughter,1980,124,En,United States
-tt0081738,dir_6cd60af8,The Watcher in the Woods,1980,84,En,United States
-tt0080310,dir_8fbb493f,Breaker Morant,1980,107,En,Australia
-tt0081568,dir_4e894713,The Stunt Man,1980,131,En,United States
-tt0030969,dir_b7d8b48b,Where the Buffalo Roam,1980,99,En,United States
-tt1687901,dir_8ad8030f,The Awakening,1980,101,En,United Kingdom
-tt0080520,dir_fbe49adc,Cheech and Chong's Next Movie,1980,99,En,United States
-tt0399201,dir_5368418b,The Island,1980,109,En,United States
-tt0080464,dir_9f9ed642,The Boogey Man,1980,82,En,United States
-tt0081249,dir_893c5c03,The Nude Bomb,1980,94,En,United States
-tt0081059,dir_c9eb5689,Lion of the Desert,1980,173,En,Libya
-tt0081554,dir_72da736c,Stardust Memories,1980,89,En,United States
-tt0081150,dir_56e53ef1,Melvin and Howard,1980,95,En,United States
-tt0080492,dir_2560e548,Can't Stop the Music,1980,124,En,United States
-tt0080472,dir_b84954cb,Bronco Billy,1980,116,En,United States
-tt0080539,dir_24841658,City of Women,1980,139,En,Italy
-tt0081376,dir_114ccb98,The Private Eyes,1980,91,En,United States
-tt0081747,dir_16414036,When Time Ran Out...,1980,121,En,United States
-tt0081269,dir_215c3421,Oh Heavenly Dog,1980,103,En,United States
-tt0081259,dir_c8af8e07,The Octagon,1980,103,En,United States
-tt0080836,dir_9eeede56,Hangar 18,1980,97,En,United States
-tt0080861,dir_1feb58e2,Herbie Goes Bananas,1980,100,En,United States
-tt0080556,dir_65d67de1,The Competition,1980,123,En,United States
-tt0080936,dir_02f7ed3e,It's My Turn,1980,91,En,United States
-tt0080888,dir_299e0821,Honeysuckle Rose,1980,119,En,United States
-tt11540726,dir_07fa121c,Resurrection,1980,103,En,United States
-tt0080724,dir_532253b1,Fatso,1980,93,En,United States
-tt0079579,dir_2539586d,Moscow Does Not Believe in Tea,1980,150,En,Soviet Union
-tt0080731,dir_4f9be955,The Fiendish Plot of Dr. Fu Ma,1980,100,En,United States
-tt0081485,dir_bee8a4ff,Serial,1980,86,En,United States
-tt0080863,dir_2cf62e74,Hero at Large,1980,98,En,United States
-tt0081751,dir_ad391cee,Wholly Moses!,1980,103,En,United States
-tt0080461,dir_a2167f08,"Bon Voyage, Charlie Brown (and",1980,75,En,United States
-tt0080917,dir_f7b4ceac,In God We Trust (or Gimme That,1980,97,En,United States
-tt1450330,dir_d5bb2ace,Roadie,1980,106,En,United States
-tt0080975,dir_344f87f5,Just Tell Me What You Want,1980,112,En,United States
-tt0081031,dir_e78078a9,The Last Flight of Noah's Ark,1980,97,En,United States
-tt0081063,dir_40cf9b2a,Little Miss Marker,1980,103,En,United States
-tt0081758,dir_2678b383,Willie & Phil,1980,115,En,United States
-tt10640346,dir_eb11f976,Babylon,1980,95,En,United Kingdom
-tt0081760,dir_587ed7d9,Windwalker,1980,108,En,United States
-tt5743656,dir_8dd4cb1d,Phobia,1980,94,En,Canada
-tt0081759,dir_5bf19965,Windows,1980,96,En,United States
-tt0081080,dir_c551d6c0,Loving Couples,1980,97,En,United States
-tt0079820,dir_41b5781d,The King and the Mockingbird,1980,83,En,France
-tt0081268,dir_64df101f,"Oh, God! Book II",1980,94,En,United States
-tt0081625,dir_48bad847,"Those Lips, Those Eyes",1980,105,En,United States
-tt0080489,dir_c48a9109,La Cage aux Folles II,1980,102,En,France
-tt0080808,dir_40ab0acb,The Gong Show Movie,1980,89,En,United States
-tt0080790,dir_835309d9,Gilda Live,1980,96,En,United States
-tt0081753,dir_cb5ad178,Why Would I Lie?,1980,105,En,United States
-tt0080739,dir_95e2d7fb,First Family,1980,97,En,United States
-tt0087145,dir_aeab713b,Mantis Fist Fighter,1980,89,En,Hong Kong
-tt0082971,dir_d1d98f34,Indiana Jones and the Raiders ,1981,115,En,United States
-tt0082089,dir_1f6d0d98,Body Heat,1981,113,En,United States
-tt0082010,dir_117c6089,An American Werewolf in London,1981,97,En,United Kingdom
-tt0082340,dir_c4686f2f,Escape from New York,1981,99,En,United States
-tt0083907,dir_234c4922,The Evil Dead,1981,85,En,United States
-tt0084522,dir_5e6819ab,Porky's,1981,94,En,Canada
-tt0082085,dir_4afb7c19,Blow Out,1981,108,En,United States
-tt0800320,dir_4a0e9f97,Clash of the Titans,1981,118,En,United Kingdom
-tt0082348,dir_c13c2785,Excalibur,1981,140,En,United Kingdom
-tt0082694,dir_401b0a40,Mad Max 2,1981,96,En,Australia
-tt0082096,dir_431fbf1a,Das Boot,1981,149,En,West Germany
-tt0083131,dir_2f558182,Stripes,1981,106,En,United States
-tt0082933,dir_58c74005,Possession,1981,124,En,France
-tt0082136,dir_9539c75e,The Cannonball Run,1981,95,En,United States
-tt0083190,dir_917b9d05,Thief,1981,123,En,United States
-tt2318092,dir_2745df20,Endless Love,1981,116,En,United States
-tt0081633,dir_327b190f,Time Bandits,1981,110,En,United Kingdom
-tt0082405,dir_5cff8e0d,The Four Seasons,1981,107,En,United States
-tt0082418,dir_51fd78c9,Friday the 13th Part 2,1981,87,En,United States
-tt0081455,dir_3a6fe23b,Scanners,1981,103,En,Canada
-tt0082398,dir_1769389d,For Your Eyes Only,1981,127,En,United Kingdom
-tt0082495,dir_895d4a8f,Halloween II,1981,92,En,United States
-tt0083169,dir_9cb3a855,Taps,1981,126,En,United States
-tt0082979,dir_0bacc07d,Reds,1981,195,En,United States
-tt0082846,dir_babe7f4f,On Golden Pond,1981,109,En,United States
-tt0082406,dir_a81d7a07,The Fox and the Hound,1981,83,En,United States
-tt0082158,dir_8926897f,Chariots of Fire,1981,125,En,United Kingdom
-tt0081974,dir_b9bc01a1,Absence of Malice,1981,116,En,United States
-tt0023551,dir_536b1314,Tarzan the Ape Man,1981,115,En,United States
-tt0083284,dir_8dd4cb1d,Victory,1981,116,En,United Kingdom
-tt0082031,dir_30daf9d5,Arthur,1981,97,En,United States
-tt0082783,dir_180477c5,My Dinner with Andre,1981,110,En,United States
-tt0082146,dir_aac25e60,Caveman,1981,91,En,United States
-tt0082242,dir_36f52a66,Dead & Buried,1981,94,En,United States
-tt0082517,dir_5fa4f6cf,History of the World: Part I,1981,92,En,United States
-tt0082533,dir_07897a53,The Howling,1981,91,En,United States
-tt0082288,dir_eba74c79,Dragonslayer,1981,109,En,United Kingdom
-tt0082220,dir_0e82ecac,Cutter's Way,1981,109,En,United States
-tt0082484,dir_79de55ec,Quest for Fire,1981,100,En,Canada
-tt0082377,dir_fdad0116,The Final Conflict,1981,108,En,United Kingdom
-tt0082766,dir_f58701cb,Mommie Dearest,1981,129,En,United States
-tt0082948,dir_0b29d1c7,Private Lessons,1981,87,En,United States
-tt0082934,dir_74ba880c,The Postman Always Rings Twice,1981,122,En,West Germany
-tt0082970,dir_bb4ebaa5,Ragtime,1981,155,En,United States
-tt0082245,dir_bd4823c9,Deadly Blessing,1981,100,En,United States
-tt0066420,dir_1ae1b23e,Eyewitness,1981,103,En,United States
-tt0082432,dir_65a48861,Gallipoli,1981,110,En,Australia
-tt0082869,dir_d5cac47b,Outland,1981,109,En,United Kingdom
-tt0083111,dir_eafa044f,Southern Comfort,1981,106,En,United States
-tt0083015,dir_c60a5cc0,S.O.B.,1981,122,En,United States
-tt5723416,dir_c530c4f6,The Beyond,1981,87,En,Italy
-tt0082449,dir_498240b6,Ghost Story,1981,110,En,United States
-tt0082782,dir_0e56f18c,My Bloody Valentine,1981,90,En,Canada
-tt0082427,dir_b5cb22ff,The Funhouse,1981,96,En,United States
-tt0084445,dir_5602db76,One from the Heart,1981,107,En,United States
-tt0082416,dir_3a41cf5e,The French Lieutenant's Woman,1981,124,En,United Kingdom
-tt0082474,dir_0f2d1019,The Great Muppet Caper,1981,97,En,United Kingdom
-tt0083232,dir_d2bd1d0f,True Confessions,1981,108,En,United States
-tt0082677,dir_1d58b4a8,Looker,1981,93,En,United States
-tt0082817,dir_42c53b73,Nighthawks,1981,99,En,United States
-tt0082163,dir_fbe49adc,Nice Dreams,1981,88,En,United States
-tt0083064,dir_25ad5198,Sharky's Machine,1981,122,En,United States
-tt2004420,dir_267db263,Neighbors,1981,94,En,United States
-tt0082956,dir_8fbb493f,Puberty Blues,1981,87,En,Australia
-tt0082351,dir_e28aabee,Eye of the Needle,1981,112,En,United Kingdom
-tt0083336,dir_13684738,Wolfen,1981,115,En,United States
-tt0083133,dir_d0420118,Student Bodies,1981,86,En,United States
-tt0082945,dir_344f87f5,Prince of the City,1981,167,En,United States
-tt15165236,dir_1a7bcc18,The Hand,1981,104,En,United States
-tt0082200,dir_993df264,Continental Divide,1981,103,En,United States
-tt0082269,dir_3a20b2fd,Diva,1981,117,En,France
-tt1270797,dir_4f9be955,Venom,1981,92,En,United Kingdom
-tt0082402,dir_07fa121c,Fort Apache the Bronx,1981,125,En,United States
-tt0082352,dir_52a9331c,Eyes of a Stranger,1981,84,En,United States
-tt0083366,dir_ddbc7978,Zorro: The Gay Blade,1981,93,En,United States
+tt3722070,dir_5e27090a,The Lady in the Van,2015,104,En,United Kingdom
+tt0467110,dir_b0797a28,Underdog,2007,84,En,United States
+tt2221640,dir_b4a69c3d,Now You See Me,2013,115,En,United States
+tt0425253,dir_22aab3cf,Mini's First Time,2006,91,En,United States
+tt0218619,dir_faac4568,Soul Survivors,2001,84,En,United States
+tt1121096,dir_16bc2932,Seventh Son,2014,102,En,United States
+tt0091188,dir_835309d9,Heartburn,1986,108,En,United States
+tt1235189,dir_3542ffa5,Wild Target,2010,98,En,United Kingdom
+tt3850214,dir_f5243a67,Dope,2015,103,En,United States
+tt0086192,dir_c010e578,Revenge of the Ninja,1983,90,En,United States
+tt0141974,dir_acbf67ba,The War Zone,1999,98,En,Italy
+tt0105316,dir_83339cc3,Sarafina!,1992,117,En,South Africa
+tt1753383,dir_5a0a78a4,A Dog's Purpose,2017,100,En,United States
+tt0105046,dir_6a3d7402,Of Mice and Men,1992,115,En,United States
+tt3289724,dir_375e8054,Welcome to Marwen,2018,116,En,Japan
+tt0113540,dir_59100d09,Kids,1995,91,En,United States
+tt0114108,dir_9389859b,The Pebble and the Penguin,1995,74,En,Ireland
+tt1615160,dir_38e54ba5,The Foreigner,2017,113,En,United Kingdom
+tt0097194,dir_1935eff2,Devil in the Flesh,1986,114,En,Italy
+tt1086772,dir_89c515cb,Blended,2014,117,En,United States
+tt7985692,dir_71cb4db3,After the Wedding,2006,120,En,Denmark
 tt0083254,dir_eb2134bc,Under the Rainbow,1981,98,En,United States
-tt0082138,dir_cd24f882,Carbon Copy,1981,92,En,United States
-tt0082558,dir_fb010b27,The Incredible Shrinking Woman,1981,88,En,United States
-tt0082816,dir_29aea13d,The Night the Lights Went Out ,1981,112,En,United States
-tt1441951,dir_ff6da71a,Quartet,1981,101,En,United Kingdom
-tt0082467,dir_5e97a233,Graduation Day,1981,96,En,United States
-tt0082763,dir_dcd0b08c,Modern Problems,1981,93,En,United States
-tt0082894,dir_9fd4e006,Pennies from Heaven,1981,108,En,United States
-tt0082009,dir_a4d73ab2,American Pop,1981,96,En,United States
-tt0242593,dir_4792837b,The Legend of the Lone Ranger,1981,98,En,United States
-tt0083113,dir_039f6ca1,Sphinx,1981,118,En,United Kingdom
-tt6781982,dir_9268e787,Night School,1981,88,En,United States
-tt0082350,dir_a5ecac14,An Eye for an Eye,1981,106,En,United States
-tt0083365,dir_2dee20c5,Zoot Suit,1981,103,En,United States
-tt0082992,dir_cb1b61f9,Rich and Famous,1981,117,En,United States
-tt0082111,dir_f77887a1,Buddy Buddy,1981,96,En,United States
-tt0082121,dir_af970cf8,Bustin' Loose,1981,94,En,United States
-tt0082764,dir_5ec668dd,Modern Romance,1981,93,En,United States
-tt0082507,dir_e9fdee43,Heartbeeps,1981,78,En,United States
-tt0972544,dir_a5de5d37,Back Roads,1981,94,En,United States
-tt0083163,dir_14101604,Take This Job and Shove It,1981,100,En,United States
-tt0082969,dir_fd2f5bd8,Raggedy Man,1981,94,En,United States
-tt0083326,dir_0e746315,Whose Life Is It Anyway?,1981,119,En,United States
-tt0084132,dir_a1d96cbb,Inchon,1981,140,En,South Korea
-tt0082001,dir_73ba0ffc,All Night Long,1981,87,En,United States
-tt0082958,dir_59f5f619,The Pursuit of D.B. Cooper,1981,100,En,United States
-tt0083006,dir_b9e5fbae,Rollover,1981,116,En,United States
-tt0082853,dir_0f8fc235,Only When I Laugh,1981,120,En,United States
-tt0082525,dir_fdb14099,Honky Tonk Freeway,1981,107,En,United States
-tt0082886,dir_3b18e620,Paternity,1981,94,En,United States
-tt3592196,dir_93eab734,King of the Mountain,1981,90,En,United States
-tt0117571,dir_d043db49,Scream,1981,82,En,United States
-tt0082263,dir_ca7c8207,The Devil and Max Devlin,1981,96,En,United States
+tt0090693,dir_342f22d3,Band of the Hand,1986,109,En,United States
+tt0372824,dir_eeaa65fa,The Chorus,2004,97,En,France
+tt3009772,dir_72813683,Ode to Joy,2019,97,En,United States
+tt0989757,dir_5a0a78a4,Dear John,2010,108,En,United States
+tt0276919,dir_01959f76,Dogville,2003,178,En,Denmark
+tt6802308,dir_b84954cb,The 15:17 to Paris,2018,94,En,United States
+tt0090357,dir_66b8541a,Young Sherlock Holmes,1985,109,En,United States
+tt0084714,dir_71db5d57,Split Image,1982,110,En,Canada
+tt0107144,dir_2af122d6,Hot Shots! Part Deux,1993,86,En,United States
+tt6791096,dir_853d0159,I Feel Pretty,2018,110,En,China
+tt0080455,dir_117c6089,The Blues Brothers,1980,133,En,United States
+tt0064787,dir_a38a47fa,Paranoia,2013,106,En,United States
+tt0112389,dir_adc7eb77,The Thief and the Cobbler,1993,90,En,United Kingdom
+tt0118564,dir_d33cafc5,Affliction,1997,114,En,United States
+tt0098536,dir_59f5f619,Turner & Hooch,1989,97,En,United States
+tt0097263,dir_7c451d08,Edge of Sanity,1989,85,En,United Kingdom
+tt0095652,dir_e00ce356,Monkey Shines,1988,113,En,United States
+tt0098575,dir_bb4ebaa5,Valmont,1989,137,En,France
+tt2387433,dir_6f445152,Dark Skies,2013,97,En,United States
+tt0087746,dir_b86a4f33,Mortuary,1983,93,En,United States
+tt0095286,dir_26471560,Heart of Midnight,1988,93,En,United States
+tt0460890,dir_4ab7b828,The Only Living Boy in New Yor,2017,89,En,United States
+tt0102753,dir_e2ac58d8,Rambling Rose,1991,112,En,United States
+tt1905041,dir_6a884e64,Fast & Furious 6,2013,130,En,United States
+tt0889573,dir_b5c71201,The Switch,2010,101,En,United States
+tt0258038,dir_5052c112,Pootie Tang,2001,81,En,United States
+tt1444308,dir_385318c2,Flight of the Navigator,1986,90,En,United States
+tt0311113,dir_65a48861,Master and Commander: the Far ,2003,138,En,United States
+tt6905696,dir_820c6004,Slaughterhouse Rulez,2018,104,En,United Kingdom
+tt0104291,dir_6a3bce24,Forever Young,1983,84,En,United Kingdom
+tt0968264,dir_417d3baf,The Conspirator,2010,122,En,United States
+tt1645769,dir_37163438,Loveless,2017,127,En,Russia
+tt0079080,dir_006d6868,Dreamer,2005,106,En,United States
+tt1509767,dir_b48a0e09,The Three Musketeers,1993,105,En,Austria
+tt0101452,dir_40b96642,Bill & Ted's Bogus Journey,1991,93,En,United States
+tt0102138,dir_1a7bcc18,JFK,1991,189,En,United States
+tt0080749,dir_c4686f2f,The Fog,1980,89,En,United States
+tt0103184,dir_62707fcc,V.I. Warshawski,1991,89,En,United States
+tt0109480,dir_5368418b,Cops and Robbersons,1994,93,En,United States
+tt0090022,dir_1f6d0d98,Silverado,1985,133,En,United States
+tt0120716,dir_30bbc784,Jakob the Liar,1999,120,En,United States
+tt0479500,dir_9ac364b7,Nancy Drew,2007,99,En,United States
+tt0095243,dir_993df264,Gorillas in the Mist,1988,129,En,United States
+tt0099365,dir_234c4922,Darkman,1990,96,En,United States
+tt0087065,dir_e5784a8b,Cloak & Dagger,1984,101,En,United States
+tt0103873,dir_bd4019aa,Dead Alive,1992,104,En,New Zealand
+tt0080888,dir_299e0821,Honeysuckle Rose,1980,119,En,United States
+tt0084917,dir_00e8566a,The World According to Garp,1982,136,En,United States
+tt0092718,dir_eb2134bc,Can't Buy Me Love,1987,94,En,United States
+tt6303866,dir_cff6ebcf,Beach Rats,2017,98,En,United States
+tt0084704,dir_9b263d09,The Soldier,1982,96,En,United States
+tt4126438,dir_d750e4e9,The Ones Below,2015,87,En,United Kingdom
+tt0369339,dir_917b9d05,Collateral,2004,120,En,United States
+tt0093964,dir_cb73155c,Shy People,1987,118,En,United States
+tt5727282,dir_5871ed7d,Borg vs. McEnroe,2017,107,En,Sweden
+tt0098577,dir_14b60524,Vampire's Kiss,1988,103,En,United States
+tt0377471,dir_a2154ccd,Be Cool,2005,118,En,United States
+tt0101026,dir_2c21ac58,Tie Me Up! Tie Me Down!,1989,101,En,Spain
+tt0105217,dir_4afb7c19,Raising Cain,1992,92,En,United States
+tt0088944,dir_be6ed56d,Commando,1985,90,En,United States
+tt0206226,dir_4690942d,Psycho Beach Party,2000,95,En,Australia
+tt2381941,dir_2f900d6c,Focus,2015,105,En,United States
+tt0091159,dir_2f9d8ef4,Gung Ho,1986,111,En,United States
+tt0387564,dir_49d24a15,Saw,2004,103,En,United States
+tt4116284,dir_59bf652e,The Lego Batman Movie,2017,104,En,United States
+tt0085640,dir_95ec569e,Hammett,1982,97,En,United States
+tt0443489,dir_59eba5b9,Dreamgirls,2006,130,En,United States
+tt0086154,dir_e5784a8b,Psycho II,1983,113,En,United States
+tt1374992,dir_c4098353,Upside Down,2012,109,En,Canada
+tt0106307,dir_44e9815d,Arizona Dream,1993,142,En,France
+tt0120645,dir_20ef0b91,Meet the Deedles,1998,93,En,United States
+tt6977338,dir_7bf583cf,Good Boys,2019,90,En,United States
+tt0382189,dir_fb3af768,My Summer of Love,2004,86,En,United Kingdom
+tt0112883,dir_ac561df0,Don Juan DeMarco,1994,97,En,United States
+tt0494238,dir_12330771,Inkheart,2008,106,En,Germany
+tt0481369,dir_fb010b27,The Number 23,2007,98,En,United States
+tt0213790,dir_e060df5d,The Ladies Man,2000,84,En,United States
+tt0097243,dir_59bab7f3,A Dry White Season,1989,106,En,United States
+tt3104988,dir_efed3a34,Crazy Rich Asians,2018,120,En,United States
+tt1726669,dir_9663890c,Killer Joe,2011,102,En,United States
+tt7549776,dir_c82449a5,Tod@s Caen,2019,120,En,Mexico
+tt0380389,dir_a3a345f4,Goal! The Dream Begins,2005,118,En,United States
+tt0089208,dir_df0effca,Girls Just Want to Have Fun,1985,90,En,United States
+tt0110216,dir_2f558182,Junior,1994,109,En,United States
+tt26743210,dir_0802ef1c,How to Train Your Dragon,2010,98,En,United States
+tt0105165,dir_e966e77f,Prelude to a Kiss,1992,105,En,United States
+tt0119738,dir_5bdee67f,My Best Friend's Wedding,1997,105,En,United States
+tt0476964,dir_fb624c75,The Brave One,2007,122,En,United States
+tt0083598,dir_f8829aea,Author! Author!,1982,110,En,United States
+tt0120177,dir_3f835aa0,Spawn,1997,96,En,United States
+tt0133093,dir_1139b7bb,The Matrix,1999,136,En,United States
+tt0977855,dir_f3967b59,Fair Game,1995,91,En,United States
+tt1284575,dir_026cb370,Bad Teacher,2011,92,En,United States
+tt0203755,dir_2f76978a,One Night at McCool's,2001,93,En,United States
+tt1680114,dir_8432c9aa,The Snowtown Murders,2011,119,En,Australia
+tt0098724,dir_3d24fa8b,"Sex, Lies, and Videotape",1989,100,En,United States
+tt0120751,dir_9ae87fa6,Mighty Joe Young,1998,114,En,United States
+tt1703148,dir_ed6a1eae,The Hunter,2011,100,En,Australia
+tt7284204,dir_e33d876c,Summer '03,2018,95,En,United States
+tt1243957,dir_1a20357c,The Tourist,2010,103,En,United States
+tt0101595,dir_24e32ea5,Close My Eyes,1991,108,En,United Kingdom
+tt0301199,dir_f3f10b64,Dirty Pretty Things,2002,97,En,United Kingdom
+tt3837166,dir_c48a9109,Just the Way You Are,1984,94,En,United States
+tt7784604,dir_35388693,Hereditary,2018,127,En,United States
+tt0082934,dir_74ba880c,The Postman Always Rings Twice,1981,122,En,West Germany
+tt0120188,dir_6998a8cf,Three Kings,1999,114,En,United States
+tt3553976,dir_0d342036,Captain Fantastic,2016,118,En,United States
+tt0427309,dir_d1cefea0,The Great Debaters,2007,126,En,United States
+tt0107594,dir_9ac029a6,Money for Nothing,1993,100,En,United States
+tt0770703,dir_8bbdd17e,What's Your Number?,2011,106,En,United States
+tt0019585,dir_9382fef9,The Wind,2018,88,En,United States
+tt0457510,dir_3619b4f2,Nacho Libre,2006,92,En,United States
+tt2312718,dir_9b323de0,Homefront,2013,100,En,United States
+tt7349950,dir_7171e7c9,It Chapter Two,2019,169,En,United States
+tt0099994,dir_ed32416e,Leatherface: Texas Chainsaw Ma,1990,85,En,United States
+tt2119543,dir_61c1e7d3,The House with a Clock in Its ,2018,105,En,United States
+tt0322259,dir_d7348611,2 Fast 2 Furious,2003,107,En,United States
+tt0109015,dir_b234c847,3 Ninjas Kick Back,1994,93,En,United States
+tt0095626,dir_7b7452ef,Messenger of Death,1988,91,En,United States
+tt0106557,dir_698e2a61,Children of the Corn II: the F,1992,92,En,United States
+tt0119051,dir_6221f915,The Edge,1997,117,En,United States
+tt0088272,dir_9fdf5e0b,Tightrope,1984,114,En,United States
+tt0092699,dir_29e8f7d0,Broadcast News,1987,133,En,United States
+tt0208874,dir_b3b838a5,The Contender,2000,126,En,United States
+tt15789472,dir_9e5b26a5,Nowhere,1997,82,En,United States
+tt1130988,dir_64e4e864,JCVD,2008,97,En,Belgium
+tt0120701,dir_b48a0e09,Holy Man,1998,114,En,United States
+tt0112602,dir_45459486,Bushwhacked,1995,90,En,United States
+tt0800069,dir_3b882904,The Hills Have Eyes 2,2007,89,En,United States
+tt0211933,dir_d64d5025,Awake,2007,84,En,United States
+tt8550208,dir_e18cf5b8,Romeo Akbar Walter,2019,141,En,India
+tt0089153,dir_45674bba,Flesh+Blood,1985,126,En,Netherlands
+tt0785077,dir_d6f95c8e,Who's Your Caddy?,2007,93,En,United States
+tt0384793,dir_90cf6653,Accepted,2006,93,En,United States
+tt0099575,dir_2716714e,Fire Birds,1990,85,En,United States
+tt0239948,dir_d74a5424,Saving Silverman,2001,90,En,United States
+tt3045616,dir_3e52fcca,Mortdecai,2015,107,En,United Kingdom
+tt0093693,dir_b334adc6,Overboard,1987,112,En,United States
+tt7957956,dir_82bec498,Young & Beautiful,2013,95,En,France
+tt0094921,dir_4b0a033d,Crossing Delancey,1988,97,En,United States
+tt0105001,dir_08f5ab38,Night and the City,1992,105,En,United States
+tt4287320,dir_d88693b9,The Circle,2017,110,En,United Arab Emi
+tt0212712,dir_a76b0447,2046,2004,129,En,Hong Kong
+tt1131734,dir_77e830da,Jennifer's Body,2009,102,En,United States
+tt0098067,dir_2f9d8ef4,Parenthood,1989,124,En,United States
+tt0250687,dir_2accbf9f,Rat Race,2001,112,En,United States
+tt0171804,dir_da341438,Boys Don't Cry,1999,118,En,United States
+tt1740047,dir_669f7609,The Trip,2010,112,En,United Kingdom
+tt1396218,dir_c272bf6d,Mr. Popper's Penguins,2011,94,En,United States
+tt6108178,dir_0bafab9a,Disobedience,2017,114,En,Ireland
+tt1185616,dir_923ac623,Waltz with Bashir,2008,90,En,Israel
+tt0465538,dir_681951cf,Michael Clayton,2007,119,En,United States
+tt0160401,dir_224334d3,In Too Deep,1999,95,En,United States
+tt0406375,dir_e7ab29d1,Zathura: A Space Adventure,2005,101,En,United States
+tt7370952,dir_fb665eff,Bennett's War,2019,94,En,United States
+tt0093727,dir_b0f321c3,Personal Services,1987,105,En,United Kingdom
+tt1253863,dir_c0bb5183,300: Rise of an Empire,2014,102,En,United States
+tt0082096,dir_431fbf1a,Das Boot,1981,149,En,West Germany
+tt0159382,dir_c382873e,Croupier,1998,94,En,Ireland
+tt0120844,dir_06b43f1e,Star Trek: Insurrection,1998,103,En,United States
+tt2091935,dir_d190d0b2,Mr. Right,2015,95,En,United States
+tt0116282,dir_96357a4f,Fargo,1996,98,En,United States
+tt0120857,dir_2745df20,Tea with Mussolini,1999,117,En,Italy
+tt0119906,dir_6639b5a2,Playing God,1997,94,En,United States
+tt0211387,dir_82bec498,Water Drops on Burning Rocks,2000,82,En,France
+tt0220099,dir_0421b6c0,The Tigger Movie,2000,77,En,United States
+tt1232200,dir_c964ccde,That's My Boy,2012,116,En,United States
+tt0363589,dir_12a54980,Elephant,2003,81,En,United States
+tt0110116,dir_f5551654,Immortal Beloved,1994,121,En,United Kingdom
+tt0083284,dir_8dd4cb1d,Victory,1981,116,En,United Kingdom
+tt0174480,dir_42c6db7e,Autumn in New York,2000,103,En,United States
+tt0120797,dir_8ad8030f,Pushing Tin,1999,124,En,United States
+tt1032846,dir_bf7a05fc,"4 Months, 3 Weeks and 2 Days",2007,113,En,Romania
+tt6968614,dir_f43892b2,The Mother,2003,112,En,United Kingdom
+tt0091024,dir_cfddecde,Extremities,1986,89,En,United States
+tt5795144,dir_d145e8e8,Bad Blood,1986,105,En,Switzerland
+tt1650043,dir_47117180,Diary of a Wimpy Kid: Rodrick ,2011,99,En,United States
+tt0365885,dir_e9e966db,The Upside of Anger,2005,118,En,United States

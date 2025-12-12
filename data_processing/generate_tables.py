@@ -44,6 +44,9 @@ ROLE_OUT = OUT_DIR / "role.csv"
 GENRE_OUT = OUT_DIR / "genre.csv"
 USER_OUT = OUT_DIR / "user.csv"
 REVIEW_OUT = OUT_DIR / "review.csv"
+ROLE_IN_MOVIE_OUT = OUT_DIR / "role_in_movie.csv"
+OWNS_OUT = OUT_DIR / "owns.csv"
+MOVIE_GENRE_OUT = OUT_DIR / "movie_genre.csv"
 
 
 # ========== HTTP Session ==========
@@ -76,6 +79,17 @@ def make_deterministic_id(prefix: str, key: str) -> str:
     h = hashlib.md5(str(key).encode("utf-8")).hexdigest()[:8]
     return f"{prefix}_{h}"
 
+def make_fake_imdb_actor_id(key: str) -> str:
+    """
+    產生跟 IMDb nconst 類似的 ID：
+    形式為 nmXXXXXXX（7 位數字），同一個 key 會得到同一個結果。
+    """
+    import hashlib
+    h = hashlib.md5(str(key).encode("utf-8")).hexdigest()
+    # 取前 8 個 hex 當數字，用 10^7 取模 → 0 ~ 9,999,999
+    num = int(h[:8], 16) % 10_000_000
+    return f"nm{num:07d}"
+
 
 def normalize_title_for_match(title: str) -> str:
     """用於 IMDb find 結果比對的簡單 normalizer。"""
@@ -95,22 +109,28 @@ def load_progress() -> Dict[str, Any]:
     """
     if not PROGRESS_PATH.exists():
         return {
-            "movies": {},            # tt_id -> movie_row
-            "directors": {},         # name -> director_row
-            "companies": {},         # name -> company_row
-            "genres": {},            # name -> genre_row
-            "actors": {},            # name -> actor_row
-            "roles": [],             # list of role_row
-            "users": {},             # imdb_user_id -> {user_id,name}
-            "reviews": [],           # list of review_row
-            "seen_movie_ids": [],    # list of tt_id
-            "title_index": 0,        # 目前跑到 titles_list 的第幾個 index
+            "movies": {},             # tt_id -> movie_row
+            "directors": {},          # name -> director_row
+            "companies": {},          # name -> company_row
+            "genres": {},             # name -> genre_row
+            "actors": {},             # name -> actor_row
+            "roles": [],              # list of role_row
+            "users": {},              # imdb_user_id -> {user_id,name}
+            "reviews": [],            # list of review_row
+
+            "role_in_movie": [],      # list of {role_id, actor_id, movie_id}
+            "owns": [],               # list of {company_id, movie_id}
+            "movie_genre": [],        # list of {genre_id, movie_id}
+
+            "seen_movie_ids": [],     # list of tt_id（已建立 movie 的 ttID）
+            "title_index": 0,         # 舊的順序 index（現在可當統計用）
+            "seen_title_indices": [], # list[int]，已嘗試過的 title idx
         }
 
     with PROGRESS_PATH.open("r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # 確保類型正確
+    # 舊版 progress.json 可能沒有新欄位，用 setdefault 補齊
     data.setdefault("movies", {})
     data.setdefault("directors", {})
     data.setdefault("companies", {})
@@ -119,8 +139,12 @@ def load_progress() -> Dict[str, Any]:
     data.setdefault("roles", [])
     data.setdefault("users", {})
     data.setdefault("reviews", [])
+    data.setdefault("role_in_movie", [])
+    data.setdefault("owns", [])
+    data.setdefault("movie_genre", [])
     data.setdefault("seen_movie_ids", [])
     data.setdefault("title_index", 0)
+    data.setdefault("seen_title_indices", [])
 
     return data
 
@@ -428,6 +452,8 @@ def build_movie_and_related_from_industry(
     director_by_name: Dict[str, Dict[str, Any]],
     company_by_name: Dict[str, Dict[str, Any]],
     genre_by_name: Dict[str, Dict[str, Any]],
+    owns_rows: List[Dict[str, Any]],
+    movie_genre_rows: List[Dict[str, Any]],
 ) -> Dict[str, Any] | None:
     """
     根據 title 從 industry df 找一筆 row 來填 movie / director / company / genre。
@@ -470,7 +496,6 @@ def build_movie_and_related_from_industry(
         }
     director_id = director_by_name[director_name]["director_id"]
 
-    # company
     if company_name:
         if company_name not in company_by_name:
             company_id = make_deterministic_id("com", company_name)
@@ -483,18 +508,35 @@ def build_movie_and_related_from_industry(
                 "country": comp_country,
             }
 
-    # genre(s)
+        # 無論是不是新公司，都寫一筆 Owns (company_id, movie_id)
+        company_id = company_by_name[company_name]["company_id"]
+        owns_rows.append({
+            "company_id": company_id,
+            "movie_id": tt_id,
+        })
+
     if genre_str:
+        seen_genres_this_movie = set()
         for g in genre_str.split(","):
             g = g.strip()
             if not g:
                 continue
+            if g in seen_genres_this_movie:
+                continue
+            seen_genres_this_movie.add(g)
+
             if g not in genre_by_name:
                 gid = make_deterministic_id("gen", g)
                 genre_by_name[g] = {
                     "genre_id": gid,
                     "name": truncate(g, 15),
                 }
+
+            gid = genre_by_name[g]["genre_id"]
+            movie_genre_rows.append({
+                "genre_id": gid,
+                "movie_id": tt_id,
+            })
 
     # movie row
     movie_row = {
@@ -562,8 +604,8 @@ def build_actor_from_name(
         gender = infer_gender_from_profession(prof)
 
     else:
-        # Kaggle 找不到這個人，就全隨機
-        actor_id = make_deterministic_id("act", clean)
+        # Kaggle 找不到這個人，就全隨機，但 actor_id 要長得像 IMDb nconst
+        actor_id = make_fake_imdb_actor_id(clean)
         birth_year = random_year(1940, 2005)
         nationality = random_nationality()
         gender = random.choice(["M", "F"])
@@ -637,124 +679,20 @@ def build_user_rows_from_scraped_users(users_map: Dict[str, Dict[str, Any]]) -> 
         })
     return out_rows
 
-
-# ========== 主流程 ==========
-
-def main():
-    # 載入 Kaggle Dataset
-    ind_df = load_industry_df()
-    actors_source = load_actors_source_df()
-
-    # 讀 input titles
-    titles_df = pd.read_csv(INPUT_TITLES_CSV)
-    if TITLE_COLUMN not in titles_df.columns:
-        raise ValueError(f"Column {TITLE_COLUMN!r} not found in {INPUT_TITLES_CSV}")
-    titles_list = [str(t) for t in titles_df[TITLE_COLUMN].dropna().tolist()]
-
-    # ===== 讀取 / 初始化 progress =====
-    progress = load_progress()
-
-    movies: Dict[str, Dict[str, Any]] = progress["movies"]
-    directors_by_name: Dict[str, Dict[str, Any]] = progress["directors"]
-    companies_by_name: Dict[str, Dict[str, Any]] = progress["companies"]
-    genres_by_name: Dict[str, Dict[str, Any]] = progress["genres"]
-
-    actors_by_name: Dict[str, Dict[str, Any]] = progress["actors"]
-    roles_rows: List[Dict[str, Any]] = progress["roles"]
-
-    users_all: Dict[str, Dict[str, Any]] = progress["users"]
-    reviews_rows: List[Dict[str, Any]] = progress["reviews"]
-
-    seen_movie_ids: set = set(progress.get("seen_movie_ids", []))
-    idx: int = int(progress.get("title_index", 0))
-    processed_movies = len(movies)
-
-    print(f"[progress] Loaded progress: {processed_movies} movies, next title index = {idx}")
-
-    # ===== 主要爬蟲迴圈 =====
-    while processed_movies < MAX_MOVIES and idx < len(titles_list):
-        title = titles_list[idx]
-        idx += 1  # 下次從下一個 title 開始
-
-        # 1. 先找 IMDb ID
-        tt_id = search_imdb_id_by_find(title)
-        if not tt_id:
-            # 更新 progress 中的 title_index（即使這部失敗，下次也不要重複試）
-            progress["title_index"] = idx
-            save_progress(progress)
-            continue
-
-        # 已處理過的 ttID 就略過
-        if tt_id in seen_movie_ids:
-            print(f"[main] Duplicate ttID {tt_id}, skip")
-            progress["title_index"] = idx
-            save_progress(progress)
-            continue
-
-        # 2. industry 要有這部電影，才能建 movie
-        movie_row = build_movie_and_related_from_industry(
-            tt_id=tt_id,
-            title=title,
-            ind_df=ind_df,
-            director_by_name=directors_by_name,
-            company_by_name=companies_by_name,
-            genre_by_name=genres_by_name,
-        )
-        if movie_row is None:
-            # 這部電影資料不夠 → 略過
-            progress["title_index"] = idx
-            save_progress(progress)
-            continue
-
-        # 3. 抓 reviews
-        sleep_a_bit()
-        users_map, reviews_map = scrape_reviews_for_movie(tt_id, GET_REV_COUNT)
-
-        # 4. 抓 roles & actors
-        sleep_a_bit()
-        roles = scrape_roles_for_movie(tt_id, GET_ROLE_COUNT)
-
-        # 把 roles 用來建 actor.csv & role.csv（role.csv 只存 role_id, name）
-        for role_name, actor_name in roles:
-            actor = build_actor_from_name(actor_name, actors_source, actors_by_name)
-            role_id = make_id("role")
-            roles_rows.append({
-                "role_id": role_id,
-                "name": truncate(role_name, 30),
-            })
-
-        # 5. 累積 user / review
-        for uid, u in users_map.items():
-            if uid not in users_all:
-                users_all[uid] = u
-
-        for _rid, r in reviews_map.items():
-            reviews_rows.append(r)
-
-        # 6. 累積 movie
-        movies[tt_id] = movie_row
-        seen_movie_ids.add(tt_id)
-        processed_movies += 1
-        print(f"[main] Processed movies: {processed_movies}/{MAX_MOVIES}")
-
-        # 7. 更新 progress 並存檔（★ 這裡是關鍵：每部電影存一次）
-        progress["movies"] = movies
-        progress["directors"] = directors_by_name
-        progress["companies"] = companies_by_name
-        progress["genres"] = genres_by_name
-        progress["actors"] = actors_by_name
-        progress["roles"] = roles_rows
-        progress["users"] = users_all
-        progress["reviews"] = reviews_rows
-        progress["seen_movie_ids"] = list(seen_movie_ids)
-        progress["title_index"] = idx
-
-        save_progress(progress)
-
-        sleep_a_bit()
-
-    # ===== 全部電影處理完後，一次性寫出 8 個 CSV =====
-
+# ========== 寫 CSV ==========
+def write_all_csv(
+    movies: Dict[str, Dict[str, Any]],
+    directors_by_name: Dict[str, Dict[str, Any]],
+    companies_by_name: Dict[str, Dict[str, Any]],
+    actors_by_name: Dict[str, Dict[str, Any]],
+    roles_rows: List[Dict[str, Any]],
+    genres_by_name: Dict[str, Dict[str, Any]],
+    users_all: Dict[str, Dict[str, Any]],
+    reviews_rows: List[Dict[str, Any]],
+    role_in_movie_rows: List[Dict[str, Any]],
+    owns_rows: List[Dict[str, Any]],
+    movie_genre_rows: List[Dict[str, Any]],
+) -> None:
     # 1. movie.csv
     with MOVIE_OUT.open("w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
@@ -865,14 +803,238 @@ def main():
             ])
     print(f"[out] {REVIEW_OUT} ({len(reviews_rows)} rows)")
 
-    # 全部輸出完成，progress.json 就可以刪掉
-    if PROGRESS_PATH.exists():
-        PROGRESS_PATH.unlink()
-        print(f"[progress] Removed {PROGRESS_PATH}")
+    # 9. role_in_movie.csv
+    with ROLE_IN_MOVIE_OUT.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["role_id", "actor_id", "movie_id"])
+        for row in role_in_movie_rows:
+            writer.writerow([
+                row["role_id"],
+                row["actor_id"],
+                row["movie_id"],
+            ])
+    print(f"[out] {ROLE_IN_MOVIE_OUT} ({len(role_in_movie_rows)} rows)")
+
+    # 10. owns.csv
+    with OWNS_OUT.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["company_id", "movie_id"])
+        for row in owns_rows:
+            writer.writerow([
+                row["company_id"],
+                row["movie_id"],
+            ])
+    print(f"[out] {OWNS_OUT} ({len(owns_rows)} rows)")
+
+    # 11. movie_genre.csv
+    with MOVIE_GENRE_OUT.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["genre_id", "movie_id"])
+        for row in movie_genre_rows:
+            writer.writerow([
+                row["genre_id"],
+                row["movie_id"],
+            ])
+    print(f"[out] {MOVIE_GENRE_OUT} ({len(movie_genre_rows)} rows)")
+
+# ========== 主流程 ==========
+
+def main():
+    # 載入 Kaggle Dataset
+    ind_df = load_industry_df()
+    actors_source = load_actors_source_df()
+
+    # 讀 input titles
+    titles_df = pd.read_csv(INPUT_TITLES_CSV)
+    if TITLE_COLUMN not in titles_df.columns:
+        raise ValueError(f"Column {TITLE_COLUMN!r} not found in {INPUT_TITLES_CSV}")
+    titles_list = [str(t) for t in titles_df[TITLE_COLUMN].dropna().tolist()]
+
+    # ===== 讀取 / 初始化 progress =====
+    progress = load_progress()
+
+    movies: Dict[str, Dict[str, Any]] = progress["movies"]
+    directors_by_name: Dict[str, Dict[str, Any]] = progress["directors"]
+    companies_by_name: Dict[str, Dict[str, Any]] = progress["companies"]
+    genres_by_name: Dict[str, Dict[str, Any]] = progress["genres"]
+
+    actors_by_name: Dict[str, Dict[str, Any]] = progress["actors"]
+    roles_rows: List[Dict[str, Any]] = progress["roles"]
+
+    role_in_movie_rows: List[Dict[str, Any]] = progress["role_in_movie"]
+    owns_rows: List[Dict[str, Any]] = progress["owns"]
+    movie_genre_rows: List[Dict[str, Any]] = progress["movie_genre"]
+
+    users_all: Dict[str, Dict[str, Any]] = progress["users"]
+    reviews_rows: List[Dict[str, Any]] = progress["reviews"]
+
+    # 已建立 movie 的 ttID
+    seen_movie_ids: set = set(progress.get("seen_movie_ids", []))
+    # 已經嘗試過（不管成功與否）的 title index
+    seen_title_indices: set = set(progress.get("seen_title_indices", []))
+
+    processed_movies = len(movies)
+
+    # 建立所有 index 與候選集合
+    all_indices = set(range(len(titles_list)))
+    candidate_indices: List[int] = list(all_indices - seen_title_indices)
+
+    print(
+        f"[progress] Loaded progress: {processed_movies} movies, "
+        f"titles tried = {len(seen_title_indices)}, "
+        f"remaining candidates = {len(candidate_indices)}"
+    )
+
+    # ===== 主要爬蟲迴圈 =====
+    while processed_movies < MAX_MOVIES and candidate_indices:
+        # 隨機挑一個還沒嘗試過的 title index
+        idx = random.choice(candidate_indices)
+        candidate_indices.remove(idx)
+        seen_title_indices.add(idx)
+
+        print("-"*30)
+
+        title = titles_list[idx]
+        print(f"[main] Pick idx={idx}, title={title!r}")
+
+        # 1. 先找 IMDb ID
+        tt_id = search_imdb_id_by_find(title)
+        if not tt_id:
+            # 記錄這個 idx 已經嘗試過
+            progress["seen_title_indices"] = list(seen_title_indices)
+            # title_index 可以當「已嘗試 title 數量」統計用
+            progress["title_index"] = len(seen_title_indices)
+            save_progress(progress)
+            continue
+
+        # 已處理過的 ttID 就略過（但這個 idx 一樣視為「已嘗試」）
+        if tt_id in seen_movie_ids:
+            print(f"[main] Duplicate ttID {tt_id}, skip")
+            progress["seen_title_indices"] = list(seen_title_indices)
+            progress["title_index"] = len(seen_title_indices)
+            save_progress(progress)
+            continue
+
+        # 2. industry 要有這部電影，才能建 movie
+        movie_row = build_movie_and_related_from_industry(
+            tt_id=tt_id,
+            title=title,
+            ind_df=ind_df,
+            director_by_name=directors_by_name,
+            company_by_name=companies_by_name,
+            genre_by_name=genres_by_name,
+            owns_rows=owns_rows,
+            movie_genre_rows=movie_genre_rows,
+        )
+        if movie_row is None:
+            # 這部電影資料不夠 → 略過（但 idx 已經列入 seen_title_indices）
+            progress["seen_title_indices"] = list(seen_title_indices)
+            progress["title_index"] = len(seen_title_indices)
+            save_progress(progress)
+            continue
+
+        # 3. 抓 reviews
+        sleep_a_bit()
+        users_map, reviews_map = scrape_reviews_for_movie(tt_id, GET_REV_COUNT)
+
+        # 4. 抓 roles & actors
+        sleep_a_bit()
+        roles = scrape_roles_for_movie(tt_id, GET_ROLE_COUNT)
+
+        # 把 roles 用來建 actor.csv & role.csv，
+        # 並同步更新 role_in_movie (role_id, actor_id, movie_id)
+        actors_in_this_movie = set()  # 確保同一演員在同一電影只出現一次
+
+        for role_name, actor_name in roles:
+            actor = build_actor_from_name(actor_name, actors_source, actors_by_name)
+            actor_id = actor["actor_id"]
+
+            if actor_id in actors_in_this_movie:
+                # DB schema: PRIMARY KEY (actor_id, movie_id)，不允許同演員同片多筆
+                continue
+            actors_in_this_movie.add(actor_id)
+
+            role_id = make_id("role")
+            role_name_trimmed = truncate(role_name, 30)
+
+            roles_rows.append({
+                "role_id": role_id,
+                "name": role_name_trimmed,
+            })
+
+            role_in_movie_rows.append({
+                "role_id": role_id,
+                "actor_id": actor_id,
+                "movie_id": tt_id,
+            })
+
+        # 5. 累積 user / review
+        for uid, u in users_map.items():
+            if uid not in users_all:
+                users_all[uid] = u
+
+        for _rid, r in reviews_map.items():
+            reviews_rows.append(r)
+
+        # 6. 累積 movie
+        movies[tt_id] = movie_row
+        seen_movie_ids.add(tt_id)
+        processed_movies += 1
+        print(f"[main] Processed movies: {processed_movies}/{MAX_MOVIES}")
+        print("-"*30)
+
+        # 7. 更新 progress 並存檔（★ 這裡是關鍵：每部電影存一次）
+        progress["movies"] = movies
+        progress["directors"] = directors_by_name
+        progress["companies"] = companies_by_name
+        progress["genres"] = genres_by_name
+        progress["actors"] = actors_by_name
+        progress["roles"] = roles_rows
+
+        progress["role_in_movie"] = role_in_movie_rows
+        progress["owns"] = owns_rows
+        progress["movie_genre"] = movie_genre_rows
+
+        progress["users"] = users_all
+        progress["reviews"] = reviews_rows
+        progress["seen_movie_ids"] = list(seen_movie_ids)
+        progress["seen_title_indices"] = list(seen_title_indices)
+        progress["title_index"] = len(seen_title_indices)
+
+        save_progress(progress)
+
+        # 每完成一部 movie 就立刻輸出一次目前累積的 CSV snapshot
+        write_all_csv(
+            movies=movies,
+            directors_by_name=directors_by_name,
+            companies_by_name=companies_by_name,
+            actors_by_name=actors_by_name,
+            roles_rows=roles_rows,
+            genres_by_name=genres_by_name,
+            users_all=users_all,
+            reviews_rows=reviews_rows,
+            role_in_movie_rows=role_in_movie_rows,
+            owns_rows=owns_rows,
+            movie_genre_rows=movie_genre_rows,
+        )
+
+        sleep_a_bit()
+
+    # write_all_csv(
+    #         movies=movies,
+    #         directors_by_name=directors_by_name,
+    #         companies_by_name=companies_by_name,
+    #         actors_by_name=actors_by_name,
+    #         roles_rows=roles_rows,
+    #         genres_by_name=genres_by_name,
+    #         users_all=users_all,
+    #         reviews_rows=reviews_rows,
+    #         role_in_movie_rows=role_in_movie_rows,
+    #         owns_rows=owns_rows,
+    #         movie_genre_rows=movie_genre_rows,
+    #     )
 
     print("[main] All done.")
-
-
 
 if __name__ == "__main__":
     main()
