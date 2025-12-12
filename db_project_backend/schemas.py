@@ -65,7 +65,7 @@ class ReviewOut(BaseModel):
     movie_id: str
     rating: int
     comment: str
-    _date: date
+    date: str
 
 # 呈現導覽列搜尋結果的payload
 class NavOut(BaseModel):

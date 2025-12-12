@@ -146,14 +146,13 @@ def row_to_role_out(row: sqlite3.Row) -> RoleOut:
 
 
 def row_to_review_out(row: sqlite3.Row) -> ReviewOut:
-    # 注意：schemas 裡欄位名稱是 _date
     return ReviewOut(
         review_id=row["review_id"],
         user_name=row["user_name"],
         movie_id=row["movie_id"],
         rating=row["rating"],
         comment=row["comment"],
-        _date=row["date"],
+        date=row["date"],
     )
 
 
@@ -193,6 +192,78 @@ def generate_review_id(db: sqlite3.Connection) -> str:
         if cur.fetchone() is None:
             return review_id
 
+# User頁面
+@app.get("/user_detail/{user_id}", response_model=UserDetailOut)
+def get_user_detail(user_id: str, db: sqlite3.Connection = Depends(get_db)):
+    try:    
+        # 抓使用者資料
+        get_user = db.execute('''
+            SELECT *
+            FROM User u
+            WHERE user_id = ?''',
+            (user_id,)
+        )
+
+        row = get_user.fetchone()
+        if row is None:
+            raise HTTPException(status_code=404, detail="User not found")
+        else :
+            user = UserOut(
+                user_id=row["user_id"],
+                name=row["name"],
+                email=row["email"],
+                join_date=row["join_date"],
+                age=row["age"]
+            )
+
+        # 抓評論過的電影
+        get_commented_movie = db.execute('''
+            SELECT DISTINCT m.movie_id, m.title
+            FROM Movie m
+            JOIN Review R on m.movie_id = R.movie_id
+            WHERE R.user_id = ?''',
+            (user_id,)
+        )
+
+        get_commented_movie_result = get_commented_movie.fetchall()
+        movies = []
+        for row in get_commented_movie_result:
+            movie = MovieOut(
+                movie_id=row['movie_id'],
+                title=row['title']
+            )
+            movies.append(movie)
+
+        # 統計評論最多的類型
+        get_most_commented_genre = db.execute('''
+            SELECT g.name, g.genre_id, COUNT(*) as r_count
+            FROM Review r
+            JOIN MovieGenre mg ON r.movie_id = mg.movie_id
+            JOIN Genre g ON mg.genre_id = g.genre_id
+            WHERE r.user_id = ?
+            GROUP BY g.name
+            ORDER BY r_count DESC''',
+            (user_id,)
+        )
+
+        get_most_commented_genre_result = get_most_commented_genre.fetchall()
+        genres = []
+        for row in get_most_commented_genre_result:
+            genre = GenreOut(
+                genre_id=row['genre_id'],
+                name=row['name']
+            )
+            genres.append(genre)
+
+        return UserDetailOut(
+            user_info=user,
+            movie_list=movies,
+            genre_list=genres
+        )
+    
+    except Exception as e:
+        print("發生錯誤：", e)
+        raise HTTPException(status_code=500, detail=str(e))
 
 # ===================== Sign In 頁面 =====================
 
@@ -201,17 +272,17 @@ class SignInRequest(BaseModel):
     password: str
 
 
-@app.get("/users/by-email", response_model=UserOut)
-def get_user_by_email(email: str, password: str, db: sqlite3.Connection = Depends(get_db)):
+@app.post("/login", response_model=UserOut)
+def get_user_by_email(payload: SignInRequest, db: sqlite3.Connection = Depends(get_db)):
     """
     Sign in：用 email & password 取得使用者基本資料。
     """
     cur = db.execute(
         "SELECT user_id, name, email, password, join_date, age FROM User WHERE email = ?",
-        (email,),
+        (payload.email,),
     )
     row = cur.fetchone()
-    if row is None or row["password"] != password:
+    if row is None or row["password"] != payload.password:
         raise HTTPException(status_code=401, detail="Invalid email or password")
 
     return UserOut(
@@ -407,24 +478,6 @@ def get_movie_by_id(movie_id: str, db: sqlite3.Connection = Depends(get_db)):
         average_rating=average_rating,
         review_list=review_list,
     )
-
-
-class MovieReviewsResponse(BaseModel):
-    average_rating: int
-    review_list: list[ReviewOut]
-
-
-@app.get("/movies/{movie_id}/reviews", response_model=MovieReviewsResponse)
-def get_review_by_id(movie_id: str, db: sqlite3.Connection = Depends(get_db)):
-    """
-    用 movie_id 取得所有 Review，順便回傳平均評分。
-    """
-    review_list, average_rating = get_reviews_for_movie(db, movie_id)
-    return MovieReviewsResponse(
-        average_rating=average_rating,
-        review_list=review_list,
-    )
-
 
 @app.post("/reviews", response_model=ReviewOut, status_code=201)
 def create_review(payload: ReviewIn, db: sqlite3.Connection = Depends(get_db)):
