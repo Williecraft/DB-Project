@@ -20,5 +20,5 @@
 - get_actor_by_id : 用actor_id當參數，先撈演員基本資料再從RoleInMovie_Played關聯表撈出該演員演出過的所有角色以及出現的電影。回傳格式包含RoleOut, ActorOut, MovieOut
 
 ## Advanced Search 頁面
-- get : 傳入advanced_search那頁除了Actor-Director-Combination以外的所有參數組合從資料庫撈出符合的結果，使用者可以決定最後輸出哪個類別的結果(Movie, Company, Director, Actor, Genre, Role擇一，會變成是left join最左邊的表，我不知道結果有沒有差，沒差的話就不用管)。回傳格式都是該結果類別Out
+- get : 傳入advanced_search那頁除了Actor-Director-Combination以外的所有參數組合從資料庫撈出符合的結果，使用者可以決定最後輸出哪個類別的結果(Movie, Company, Director, Actor, Genre, Role擇一，會變成是left join最左邊的表，我不知道結果有沒有差，沒差的話就不用管)。回傳格式都是該結果類別Out(可以用NavOut)
 - get_actor_director_over_k : 傳入參數K，找出合作最頻繁的演員與導演組合，其中要超過K個電影。回傳格式ActorOut, DirectorOut
