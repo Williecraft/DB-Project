@@ -74,6 +74,11 @@
             </div>
 
             <div class="w-2/5 flex flex-col items-end">
+                <div class="text-right mb-4">
+                    <span class="block text-xl text-gray-400">Average Rating</span>
+                    <span id="average_rating" class="text-2xl font-bold">Value</span>
+                    <span class="text-yellow-400 ml-1">★</span> 
+                </div>
                 <div class="w-72 h-96 bg-gray-300 rounded-xl shadow-xl"></div>
             </div>
         </div>
@@ -118,7 +123,7 @@
             document.getElementById('name').textContent = data.company_info.name;
             document.getElementById('founded_year').textContent = data.company_info.founded_year;
             document.getElementById('country').textContent = data.company_info.country;
-            
+            document.getElementById('average_rating').textContent = data.company_average_rating;            
 
             const movieList = document.getElementById('movie_list');
 

@@ -205,7 +205,7 @@
             const urlID = params.get('user_id');
             const localUserID = sessionStorage.getItem('user_id');
 
-            const targetID = urlID || localUserID; // 優先使用URL的user_idID跳轉
+            const targetID = urlID || localUserID; // 優先使用URL的user_id跳轉
 
             const r = await fetch(`${API_BASE}/user_detail/${targetID}`); //回傳UserDetailOut
             const user_detail_data = await r.json();
