@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const type = navType.value;
 
         if (!keyword) {
-            alert("Please enter a keyword");
+            showAlert('failed', "Please enter a keyword");
             return;
         }
 
@@ -120,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (searchTitle) searchTitle.classList.remove('hidden');
 
         try {
-            // 呼叫後端 API
             const res = await fetch(`${API_BASE}/nav?name=${keyword}&type=${type}`);
             if (!res.ok) throw new Error("Search failed");
             
@@ -208,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition border border-gray-100 flex items-center space-x-3">
                 <img src=${randomImg} class="w-10 h-10 rounded-full bg-gray-300 flex-shrink-0"></img>
                 <div>
-                    <h3 class="font-bold text-md">${u.name}</h3>
+                    <a href = user.html?user_id=${u.user_id} class="font-bold text-lg leading-tight mb-1 hover:text-gray-700">${u.name}</a>
                     <p class="text-xs text-gray-500">Age: ${u.age || '?'}</p>
                 </div>
             </div>
