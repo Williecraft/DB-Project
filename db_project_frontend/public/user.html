@@ -30,14 +30,20 @@
             <div class="flex items-center space-x-4">
                 <span class="text-xl font-bold mr-6">Movie</span>
                 <div class="relative flex items-center bg-gray-700 rounded-lg">
-                    <select class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
-                        <option>All</option>
+                    <select id="nav_type" class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
+                        <option value="all">All</option>
+                        <option value="movie">Movie</option>
+                        <option value="actor">Actor</option>
+                        <option value="director">Director</option>
+                        <option value="company">Company</option>
+                        <option value="genre">Genre</option>
+                        <option value="role">Role</option>
+                        <option value="user">User</option>
                     </select>
-                    <input type="text" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
-                    <button class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
+                    <input id="nav_keyword" type="text" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
+                    <button id="nav_search" class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
                         <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
                 </div>
@@ -138,14 +144,6 @@
     <script src="navbar.js"></script>
     <script>
         let hiddenMovie = [];
-        let randomProfile = [
-            'https://i.pinimg.com/736x/8f/84/36/8f84360a1a40c8969e0942eeecb587aa.jpg',
-            'https://i.pinimg.com/736x/be/cb/20/becb20c5c553b02592eb50efb08c2e5e.jpg',
-            'https://i.pinimg.com/736x/38/61/6f/38616f4a0f45ba196a176620cd564e87.jpg',
-            'https://i.pinimg.com/736x/f9/c3/db/f9c3db06ef9dee6428f38332c6fbd3bb.jpg',
-            'https://i.pinimg.com/1200x/6f/46/35/6f46355eb649ab34f667c040b35bf79d.jpg',
-            'https://i.pinimg.com/736x/94/e4/b8/94e4b8ac4a8b734ab93a55369354649c.jpg'
-        ]
 
         function renderUser(data){
             document.getElementById('name').textContent = data.user_info.name;
@@ -204,7 +202,6 @@
             
             const API_BASE = 'http://127.0.0.1:8000';
             var user_id = sessionStorage.getItem('user_id');
-            console.log(user_id);
             const r = await fetch(`${API_BASE}/user_detail/${user_id}`); //回傳UserDetailOut
             const user_detail_data = await r.json();
             

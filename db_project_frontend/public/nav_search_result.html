@@ -26,11 +26,18 @@
             <div class="flex items-center space-x-4">
                 <span class="text-xl font-bold mr-6">Movie</span>
                 <div class="relative flex items-center bg-gray-700 rounded-lg">
-                    <select class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
-                        <option>All</option>
+                    <select id="nav_type" class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
+                        <option value="all">All</option>
+                        <option value="movie">Movie</option>
+                        <option value="actor">Actor</option>
+                        <option value="director">Director</option>
+                        <option value="company">Company</option>
+                        <option value="genre">Genre</option>
+                        <option value="role">Role</option>
+                        <option value="user">User</option>
                     </select>
-                    <input type="text" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
-                    <button class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
+                    <input id="nav_keyword" type="text" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
+                    <button id="nav_search" class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
                         <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
@@ -43,6 +50,15 @@
             </div>
         </div>
     </nav>
+    <main class="flex-grow max-w-7xl mx-auto w-full px-8 py-10">
+        <h1 id="search_title" class="text-3xl font-bold mb-8 border-l-4 border-black pl-4 hidden">Search Results</h1>
+        
+        <div id="results_container" class="space-y-12">
+            <div class="text-center text-gray-400 mt-20">
+                <p class="text-xl">Enter a keyword to start searching.</p>
+            </div>
+        </div>
+    </main>
     <script src="navbar.js"></script>
 </body>
 </html>

@@ -1,3 +1,12 @@
+let randomProfile = [
+    'https://i.pinimg.com/736x/8f/84/36/8f84360a1a40c8969e0942eeecb587aa.jpg',
+    'https://i.pinimg.com/736x/be/cb/20/becb20c5c553b02592eb50efb08c2e5e.jpg',
+    'https://i.pinimg.com/736x/38/61/6f/38616f4a0f45ba196a176620cd564e87.jpg',
+    'https://i.pinimg.com/736x/f9/c3/db/f9c3db06ef9dee6428f38332c6fbd3bb.jpg',
+    'https://i.pinimg.com/1200x/6f/46/35/6f46355eb649ab34f667c040b35bf79d.jpg',
+    'https://i.pinimg.com/736x/94/e4/b8/94e4b8ac4a8b734ab93a55369354649c.jpg'
+]
+
 document.addEventListener('DOMContentLoaded', () => {
     updateNavbar();
 });
@@ -55,3 +64,162 @@ function showAlert(type, message) {
         alert_wrapper.classList.remove("opacity-100", "translate-y-0");
     }, 3000);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navSearch = document.getElementById('nav_search'); 
+    const navInput = document.getElementById('nav_keyword');
+    const navType = document.getElementById('nav_type');
+    const container = document.getElementById('results_container');
+    const searchTitle = document.getElementById('search_title');
+    
+    const API_BASE = 'http://127.0.0.1:8000';
+
+    function triggerSearch() {
+        const keyword = navInput.value.trim();
+        const type = navType.value;
+
+        if (!keyword) {
+            alert("Please enter a keyword");
+            return;
+        }
+
+        const targetUrl = `nav_search_result.html?name=${encodeURIComponent(keyword)}&type=${type}`;
+        window.location.href = targetUrl;
+    }
+
+    if (navSearch) {
+        navSearch.addEventListener('click', (e) => {
+            e.preventDefault();
+            triggerSearch();
+        });
+    }
+
+    if (navInput) {
+        navInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                triggerSearch();
+            }
+        });
+    }
+
+    async function loadSearchResults() {
+        if (!container) return;
+
+        const params = new URLSearchParams(window.location.search);
+        const keyword = params.get('name'); 
+        const type = params.get('type') || 'all'; 
+
+        if (!keyword) return;
+
+        if (navInput) navInput.value = keyword;
+        if (navType) navType.value = type;
+
+        // 顯示 Loading
+        container.innerHTML = '<p class="text-center text-gray-500 mt-10">Searching...</p>';
+        if (searchTitle) searchTitle.classList.remove('hidden');
+
+        try {
+            // 呼叫後端 API
+            const res = await fetch(`${API_BASE}/nav?name=${keyword}&type=${type}`);
+            if (!res.ok) throw new Error("Search failed");
+            
+            const data = await res.json();
+            renderNavResults(data);
+
+        } catch (error) {
+            console.error(error);
+            container.innerHTML = '<p class="text-center text-red-500 mt-10">An error occurred while searching.</p>';
+        }
+    }
+
+    loadSearchResults();
+
+    function renderNavResults(data) {
+        container.innerHTML = ''; 
+        let hasData = false;
+
+        const sections = [
+            { key: 'movie_list', title: 'Movies', render: renderMovieCard },
+            { key: 'actor_list', title: 'Actors', render: renderPersonCard },
+            { key: 'director_list', title: 'Directors', render: renderPersonCard },
+            { key: 'company_list', title: 'Companies', render: renderCompanyCard },
+            { key: 'user_list', title: 'Users', render: renderUserCard },
+            { key: 'genre_list', title: 'Genres', render: renderSimpleCard },
+            { key: 'role_list', title: 'Roles', render: renderSimpleCard },
+        ];
+
+        sections.forEach(section => {
+            const list = data[section.key];
+            if (list && list.length > 0) {
+                hasData = true;
+                const sectionDiv = document.createElement('section');
+                sectionDiv.innerHTML = `
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">${section.title}</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                        ${list.map(item => section.render(item)).join('')}
+                    </div>
+                    <hr class="mt-8 border-gray-200"/>
+                `;
+                container.appendChild(sectionDiv);
+            }
+        });
+
+        if (!hasData) {
+            container.innerHTML = '<p class="text-center text-gray-500 mt-10 text-xl">No results found.</p>';
+        }
+    }
+
+    function renderMovieCard(m) {
+        return `
+            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition border border-gray-200 flex flex-col items-center text-center">
+                <div class="w-full h-32 bg-gray-200 mb-2 rounded flex items-center justify-center text-gray-400">Poster</div>
+                <a href = movie.html?movie_id=${m.movie_id} class="font-bold text-lg leading-tight mb-1 hover:text-gray-700">${m.title}</a>
+                <p class="text-sm text-gray-600">${m.release_year || 'N/A'}</p>
+                <p class="text-xs text-gray-500 mt-1">${m.country || ''}</p>
+            </div>
+        `;
+    }
+
+    function renderPersonCard(p) {
+        return `
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition border border-gray-100">
+                <h3 class="font-bold text-lg">${p.name}</h3>
+                <p class="text-sm text-gray-600">Birth: ${p.birth_year || 'N/A'}</p>
+                <p class="text-sm text-gray-600">Nation: ${p.nationality || 'N/A'}</p>
+            </div>
+        `;
+    }
+
+    function renderCompanyCard(c) {
+        return `
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition border border-gray-100">
+                <h3 class="font-bold text-lg">${c.name}</h3>
+                <p class="text-sm text-gray-600">Est. ${c.founded_year || 'N/A'}</p>
+                <p class="text-xs text-gray-500">${c.country || ''}</p>
+            </div>
+        `;
+    }
+
+    function renderUserCard(u) {
+        const randomImg = randomProfile[randomNumber(0, 5)];
+
+        return `
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition border border-gray-100 flex items-center space-x-3">
+                <img src=${randomImg} class="w-10 h-10 rounded-full bg-gray-300 flex-shrink-0"></img>
+                <div>
+                    <h3 class="font-bold text-md">${u.name}</h3>
+                    <p class="text-xs text-gray-500">Age: ${u.age || '?'}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderSimpleCard(item) {
+        return `
+            <div class="bg-gray-100 p-3 rounded-lg text-center hover:bg-gray-200 transition">
+                <span class="font-medium text-lg">${item.name}</span>
+            </div>
+        `;
+    }
+});
