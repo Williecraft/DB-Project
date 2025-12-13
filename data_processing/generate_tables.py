@@ -23,7 +23,7 @@ TITLE_COLUMN = "name"
 # 2. IMDb 爬蟲設定
 GET_REV_COUNT = 20       # 每部電影最多抓幾篇評論
 GET_ROLE_COUNT = 10      # 每部電影最多抓幾個 cast
-MAX_MOVIES = 200         # 最多成功處理幾部電影（用 while 計數器）
+MAX_MOVIES = None         # 最多成功處理幾部電影（用 while 計數器）
 
 REQUEST_SLEEP_RANGE = (1.0, 3.0)
 
@@ -260,7 +260,7 @@ def scrape_reviews_for_movie(tt_id: str, get_count: int) -> Tuple[Dict[str, Dict
     count = 0
 
     for article in articles:
-        if count >= get_count:
+        if get_count is not None and count >= get_count:
             break
 
         # user
@@ -370,7 +370,7 @@ def scrape_roles_for_movie(tt_id: str, get_count: int) -> List[Tuple[str, str]]:
 
     out: List[Tuple[str, str]] = []
     for item in items:
-        if len(out) >= get_count:
+        if get_count is not None and len(out) >= get_count:
             break
 
         actor_name = (item.get("rowTitle") or "").strip()
@@ -886,7 +886,7 @@ def main():
     )
 
     # ===== 主要爬蟲迴圈 =====
-    while processed_movies < MAX_MOVIES and candidate_indices:
+    while (processed_movies < MAX_MOVIES or MAX_MOVIES is None) and candidate_indices:
         # 隨機挑一個還沒嘗試過的 title index
         idx = random.choice(candidate_indices)
         candidate_indices.remove(idx)
