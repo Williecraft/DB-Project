@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Jersey+25&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <style>
+        .bg-dark-blue {
+            background-color: #1a2035;
+        }
+        .clipped-bg {
+            /* 定義多邊形裁切路徑：從左上角(0 0)到右上角(100% 0)到左下角(0 100%) */
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+        }
+        body {
+        font-family: 'Jersey 25', sans-serif;
+        }
+        nav {
+        font-family: 'Jacques Francois', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen">
+
+    <nav class="bg-black text-white p-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <span class="text-xl font-bold mr-6">Movie</span>
+                <div class="relative flex items-center bg-gray-700 rounded-lg">
+                    <select class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
+                        <option>All</option>
+                    </select>
+                    <input type="text" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
+                    <button class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="space-x-4">
+                <a href="advanced_search.html" class="text-gray-300 hover:text-white text-sm">Advanced Search</a>
+                <a id="auth_link" href="sign_in.html" class="bg-gray-600 hover:bg-gray-500 text-white px-3 py-1.5 rounded-lg text-sm">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 簡單的深藍色橫條當背景 -->
+    <div class="bg-dark-blue h-48 w-full clipped-bg"></div>
+
+    <main class="max-w-5xl mx-auto px-8 pb-16">
+
+        <!-- User 資料區塊 -->
+        <section class="-mt-16 flex items-start justify-between">
+            <div class="flex items-center space-x-6">
+                <!-- 頭像 -->
+                <div class="w-28 h-28 rounded-full bg-gray-300 border-4 border-white shadow-xl z-10"></div>
+
+                <!-- User Name + Email -->
+                <div class="mt-16">
+                    <h1 id="name" class="text-3xl font-normal mb-1"></h1>
+                    <div class="flex items-center text-black text-sm">
+                        <div class="font-bold mr-2">| Email :
+                            <span id="email" class="text-gray-700"></span>
+                        </div>
+                            
+                        <button class="focus:outline-none border-none bg-transparent p-0 flex items-center">
+                            <svg class="w-4 h-4 cursor-pointer hover:scale-110 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右側資訊 -->
+            <div class="mt-16 text-sm text-black space-y-1">
+                <div class="flex">
+                    <span class="font-bold text-black mr-2">| UserID :</span>
+                    <span id="user_id"></span>
+                </div>
+                <div class="flex">
+                    <span class="font-bold text-black mr-2">| Join Date :</span>
+                    <span id="join_date"></span>
+                </div>
+                <div class="flex">
+                    <span class="font-bold text-black mr-2">| Age :</span>
+                    <span id="age"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分隔線 -->
+        <hr class="mt-10 mb-10 border-gray-200">
+
+        <!-- Recent Commented Movie -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-normal mb-6 border-l-4 border-gray-900 pl-4 text-gray-800">
+                Recent Commented Movie
+            </h2>
+
+            <div id="movie_list" class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-between space-x-6 mb-10">
+                <div class="w-36 flex flex-col items-center text-center space-y-3 ml-4">
+                    <div class="w-full h-60 bg-gray-200 rounded-lg shadow-md"></div>
+                    <p class="text-xl text-black">title</p>
+                </div>
+                
+            </div>
+
+            <div class="flex justify-center">
+                <button id="show_more" class="text-gray-500 hover:text-gray-700 flex items-center text-sm">
+                    Show more movie
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Most Commented Genre -->
+        <section>
+            <hr class="mb-10 border-gray-200">
+
+            <h2 class="text-2xl font-normal mb-8 border-l-4 border-gray-900 pl-4 text-gray-800">Most Commented Genre</h2>
+
+            <div id="genre_list" class="space-x-4 pb-12 text-sm">
+                
+            </div>
+        </section>
+
+    </main>
+    <script src="navbar.js"></script>
+    <script>
+        let hiddenMovie = [];
+
+        function renderUser(data){
+            document.getElementById('name').textContent = data.user_info.name;
+            document.getElementById('email').textContent = data.user_info.email;
+            document.getElementById('user_id').textContent = data.user_info.user_id;
+            document.getElementById('join_date').textContent = data.user_info.join_date;
+            document.getElementById('age').textContent = data.user_info.age;
+
+            const movieList = document.getElementById('movie_list');
+            const genreList = document.getElementById('genre_list');
+            const showMoreBtn = document.getElementById('show_more');
+
+            const initDisplayNum = 4; // 初始展示數量
+            movieList.innerHTML = '';
+            if(data.movie_list.length <= initDisplayNum){
+                data.movie_list.forEach(movie => {
+                    addMovie(movie, movieList);
+                });
+                showMoreBtn.style.display = 'none';
+            }
+            else{
+                const firstBatch = data.movie_list.slice(0, initDisplayNum);
+                firstBatch.forEach(movie => {
+                    addMovie(movie, movieList);
+                });
+
+                hiddenMovies = data.movie_list.slice(initDisplayNum);
+                showMoreBtn.style.display = 'flex';
+            }
+
+            genreList.innerHTML = '';
+            data.genre_list.forEach(genre => {
+                const btn = document.createElement('button');
+                btn.className = 'bg-black hover:bg-gray-700 text-white px-3 py-1 rounded-full text-xl font-medium active:scale-95';
+                btn.textContent = genre.name;
+                genreList.appendChild(btn);
+            });
+        }
+
+        function addMovie(data, movieList){
+            const movieCard = document.createElement('div');
+            movieCard.className = 'w-36 flex flex-col items-center text-center space-y-3 ml-4';
+            movieCard.innerHTML = `
+                <div class="w-full h-60 bg-gray-200 rounded-lg shadow-md"></div>
+                <p class="text-xl text-black">${data.title}</p>
+            `;
+            movieList.prepend(movieCard);
+        }
+
+        document.addEventListener('DOMContentLoaded', async (e) => {
+            e.preventDefault();
+            
+            const API_BASE = 'http://127.0.0.1:8000';
+            var user_id = sessionStorage.getItem('user_id');
+            console.log(user_id);
+            const r = await fetch(`${API_BASE}/user_detail/${user_id}`); //回傳UserDetailOut
+            const user_detail_data = await r.json();
+            
+            renderUser(user_detail_data);
+
+            const showMoreBtn = document.getElementById('show_more');
+            showMoreBtn.addEventListener('click', () => {
+                const movieList = document.getElementById('movie_list');
+                
+                hiddenMovies.forEach(movie => {
+                    addMovie(movie, movieList);
+                });
+
+                hiddenMovies = [];
+                showMoreBtn.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

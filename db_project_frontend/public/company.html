@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Jersey+25&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <style>
+        .bg-dark-blue {
+            background-color: #1a2035; 
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+        font-family: 'Jersey 25', sans-serif;
+        }
+        nav {
+        font-family: 'Jacques Francois', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen">
+
+    <nav class="bg-black text-white p-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <span class="text-xl font-bold mr-6">Movie</span>
+                <div class="relative flex items-center bg-gray-700 rounded-lg">
+                    <select class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
+                        <option>All</option>
+                    </select>
+                    <input type="text" placeholder="" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
+                    <button class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="space-x-4">
+                <a href="advanced_search.html" class="text-gray-300 hover:text-white text-sm">Advanced Search</a>
+                <a id="auth_link" href="sign_in.html" class="bg-gray-600 hover:bg-gray-500 text-white px-3 py-1.5 rounded-lg text-sm">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <hr class="w-full max-w-5xl mx-auto my-12 border-t-2 border-gray-300">
+
+    <section class="max-w-4xl mx-auto p-8">
+        <div class="flex justify-between items-start mb-12">
+            <div class="w-3/5">
+                <h1 id="name" class="text-5xl font-light mb-6">Name</h1>
+
+                <div class="space-y-6 text-xl text-black">
+                    <div class="flex">
+                        <span class="w-36 font-bold border-l-4 border-black pl-2 mr-4">Founded Year</span>
+                        <span id="founded_year" class="space-x-2"></span>
+                    </div>
+                    <div class="flex">
+                        <span class="w-36 font-bold border-l-4 border-black pl-2 mr-4">Country</span>
+                        <span id="country" class="space-x-2"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-2/5 flex flex-col items-end">
+                <div class="w-72 h-96 bg-gray-300 rounded-xl shadow-xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="w-full max-w-5xl mx-auto my-12 border-t-2 border-gray-300">
+
+    <section class="bg-dark-blue w-full flex-grow text-white py-16">
+        <div class="max-w-4xl mx-auto px-8">
+            
+            <div class="flex items-center mb-12">
+                <h2 class="text-5xl border-l-4 pl-4">Produced Movies</h2>
+            </div>
+
+            <div id="movie_list" class="grid grid-cols-2 md:grid-cols-4 gap-12"></div>
+
+            <div class="mt-32 flex flex-col items-center justify-center opacity-80 hover:opacity-100 cursor-pointer transition-opacity">
+                <button class="text-xs tracking-widest flex flex-col items-center">
+                Show more movies
+                    <svg class="w-6 h-6 animate-bounce mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+    <script src="navbar.js"></script>
+    <script>
+        function addMovie(data, movieList){
+            const movieCard = document.createElement('div');
+            movieCard.className = 'w-fit flex flex-col items-center text-center space-y-2 ml-4';
+            movieCard.innerHTML = `
+                <div class="w-32 h-32 bg-white rounded-2xl shadow-md"></div>
+                <h3 class="text-xl">${data.title}</h3>
+                <p class="text-xl text-gray-300">${data.release_year}</p>
+            `;
+            movieList.prepend(movieCard);
+        }
+
+        function renderCompany(data){
+            document.getElementById('name').textContent = data.company_info.name;
+            document.getElementById('founded_year').textContent = data.company_info.founded_year;
+            document.getElementById('country').textContent = data.company_info.country;
+            
+
+            const movieList = document.getElementById('movie_list');
+
+            data.movie_list.forEach((movie, index) => {
+                addMovie(movie, movieList);
+            });
+        }
+        // 啟動程式
+        document.addEventListener('DOMContentLoaded', async () => {
+
+            const params = new URLSearchParams(window.location.search);
+            const company_id = params.get('company_id');
+
+            const API_BASE = 'http://127.0.0.1:8000';
+            const r = await fetch(`${API_BASE}/companies/${company_id}`); //回傳ActorDetailOut
+            const company_data = await r.json();
+            renderCompany(company_data);
+        });
+    </script>
+</body>
+</html>

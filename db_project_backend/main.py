@@ -766,7 +766,7 @@ def advanced_search(
     if need_genre_join:
         joins.append("JOIN MovieGenre mg ON mg.movie_id = m.movie_id")
         joins.append("JOIN Genre g ON mg.genre_id = g.genre_id")
-        where_clauses.append("g.name = ?")
+        where_clauses.append("g.name LIKE ?")
         args.append(params.genre_name)
 
     # ===== Director 條件 =====
@@ -822,6 +822,7 @@ def advanced_search(
     # 組出最終 SQL
     join_sql = " ".join(joins)
     where_sql = ""
+    order_sql = "ORDER BY m.release_year"
     if where_clauses:
         where_sql = " WHERE " + " AND ".join(where_clauses)
 

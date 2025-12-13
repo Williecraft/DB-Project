@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Jersey+25&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <style>
+        .bg-dark-blue {
+            background-color: #1a2035; 
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: 'Jersey 25', sans-serif;
+        }
+        nav {
+            font-family: 'Jacques Francois', sans-serif;
+        }
+        #poster {
+            background-size: cover;        
+            background-position: center;   
+            background-repeat: no-repeat;  
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen">
+
+    <div id="alert_wrapper" class="fixed top-4 left-1/2 -translate-x-1/2 transform transition-all duration-300 opacity-0 -translate-y-4 pointer-events-none z-50">
+        <div id="alert_box" class="px-4 py-2 rounded-xl shadow-lg text-sm font-medium"></div>
+    </div>
+
+    <nav class="bg-black text-white p-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <span class="text-xl font-bold mr-6">Movie</span>
+                <div class="relative flex items-center bg-gray-700 rounded-lg">
+                    <select class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
+                        <option>All</option>
+                    </select>
+                    <input type="text" placeholder="" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
+                    <button class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="space-x-4">
+                <a href="advanced_search.html" class="text-gray-300 hover:text-white text-sm">Advanced Search</a>
+                <a id="auth_link" href="sign_in.html" class="bg-gray-600 hover:bg-gray-500 text-white px-3 py-1.5 rounded-lg text-sm">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <hr class="w-full max-w-5xl mx-auto my-12 border-t-2 border-gray-300">
+
+    <form id="movie_form" class="max-w-4xl mx-auto p-8">
+        <div class="flex justify-between items-start mb-12">
+            <div class="w-3/5">
+                <h1 id="title" class="text-5xl font-light mb-6">Title</h1>
+                
+                <div class="flex space-x-8 text-xl text-black mb-6">
+                    <span id="release_year">Release Year</span>
+                    <span id="duration">Duration</span>
+                    <span id="language">Language</span>
+                </div>
+                
+                <div id="genre_list" class="flex space-x-4 mb-8"></div>
+
+                <div class="space-y-6 text-xl text-black">
+                    <div class="flex">
+                        <span class="w-20 font-bold border-l-4 border-black pl-2 mr-4">Director</span>
+                        <div id="director" class="space-x-2"></div>
+                    </div>
+                    <div class="flex">
+                        <span class="w-20 font-bold border-l-4 border-black pl-2 mr-4">Actors</span>
+                        <div id="actor_list" class="space-x-2"></div>
+                    </div>
+                    <div class="flex">
+                        <span class="w-20 font-bold border-l-4 border-black pl-2 mr-4">Company</span>
+                        <div id="company_list" class="space-x-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-2/5 flex flex-col items-end">
+                <div class="text-right mb-4">
+                    <span class="block text-xl text-gray-400">Average Rating</span>
+                    <span id="average_rating" class="text-2xl font-bold">Value</span>
+                    <span class="text-yellow-400 ml-1">★</span> 
+                </div>
+
+                <div class="w-72 h-96 bg-gray-300 rounded-xl shadow-xl">
+                    <img id="poster" class="w-full h-auto block rounded-xl" alt="Movie poster">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <hr class="w-full max-w-5xl mx-auto my-12 border-t-2 border-gray-300">
+
+    <section class="mt-16 pt-8 border-t border-gray-700 bg-dark-blue text-white">
+        <div class="max-w-4xl mx-auto px-8 pb-8">
+            <h2 class="text-5xl font-light mb-8 border-l-4 border-white pl-4">Reviews</h2>
+            
+            <form id="review_form" class="bg-white w-full rounded-xl p-6 mb-12 text-gray-900 shadow-xl">
+                <h3 class="text-2xl font-bold mb-4">Leave a Review</h3>
+
+                <div class="flex items-center mb-4">                
+                    <div id="star_container" class="flex space-x-1 cursor-pointer">
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="1">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="2">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="3">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="5">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="6">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="7">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="8">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="9">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                        <button id="star" type="button" class="star_btn text-gray-300 transition-colors duration-150" value="10">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </button>
+                    </div>
+                    <input type="hidden" id="rating_value" value="0">
+                </div>
+
+                <textarea id="review_input" class="w-full h-32 p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-950 focus:ring-1 focus:ring-black resize-none text-lg mb-4 bg-gray-50 placeholder-gray-400" 
+                    placeholder="Share your thoughts ..."></textarea>
+
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="clear_btn" class="px-6 py-2 text-gray-500 font-bold hover:text-black transition duration-200">Clear</button>
+                    <button type="submit" class="px-8 py-2 bg-black text-white font-bold rounded-lg hover:bg-gray-800 transition duration-200 shadow-xl transform active:scale-95">Post</button>
+                </div>
+            </form>
+
+            <div id="reviews_list" class="space-y-6"></div>
+
+            <div class="mt-32 flex flex-col items-center justify-center opacity-80 hover:opacity-100 cursor-pointer transition-opacity">
+                <button class="text-xs tracking-widest flex flex-col items-center">
+                Show more movies
+                    <svg class="w-6 h-6 animate-bounce mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>   
+    </section>
+    <script src="navbar.js"></script>
+    <script>
+        class ReviewSystem {
+            constructor() {
+                this.form = document.getElementById('review_form');
+                this.reviewsList = document.getElementById('reviews_list');
+                this.stars = document.querySelectorAll('.star_btn');
+                this.ratingInput = document.getElementById('rating_value');
+                this.reviewInput = document.getElementById('review_input');
+                this.clearBtn = document.getElementById('clear_btn');
+                this.currentRating = 0;
+
+                this.initEvents();            
+            }
+
+            initEvents() {
+                // 處理星星事件
+                this.stars.forEach(star => {
+                    //滑鼠移入，亮起直到目前這顆
+                    star.addEventListener('mouseenter', () => {
+                        this.highlightStars(parseInt(star.getAttribute('value')));
+                    });
+
+                    //點擊更新實際分數
+                    star.addEventListener('click', () => {
+                        const value = parseInt(star.getAttribute('value'));
+                        this.currentRating = value;
+                        this.ratingInput.value = value;
+                        this.highlightStars(value);
+                        
+                        star.classList.add('scale-110');
+                        setTimeout(() => star.classList.remove('scale-110'), 200);
+                    });
+                });
+
+                //滑鼠離開星星，恢復到原本確定的分數
+                document.getElementById('star_container').addEventListener('mouseleave', () => {
+                    this.highlightStars(this.currentRating);
+                });
+
+                // clear事件
+                if (this.clearBtn) {
+                    this.clearBtn.addEventListener('click', () => this.resetForm());
+                }
+
+                // Post事件
+                if (this.form) {
+                    this.form.addEventListener('submit', async (e) => {
+                        e.preventDefault(); // 阻止網頁重新整理
+                        
+                        // 檢查是否輸入內容
+                        if (this.currentRating === 0 || this.reviewInput.value.trim() === "") {
+                            showAlert("failed", "Please leave a rating or a comment.");
+                            return;
+                        }
+
+                        if(checkSignIn()){
+                            const payload = {
+                                user_id: sessionStorage.getItem('user_id'),
+                                movie_id: movie_id,
+                                rating: this.ratingInput.value,
+                                comment: this.reviewInput.value.trim()
+                            }                        
+
+                            const API_BASE = 'http://127.0.0.1:8000';
+                            const r = await fetch(`${API_BASE}/reviews`, {
+                                            method: 'POST',
+                                            headers: {'Content-Type': 'application/json'},
+                                            body: JSON.stringify(payload)});
+
+                            if(r.ok){
+                                const review_data = await r.json();
+                                this.addReview(review_data);
+                            }
+                            // 送出後重置表單
+                            this.resetForm();
+                        }
+                        else showAlert('failed', 'Please sign in first');
+                    });
+                }
+            }
+
+            // 點亮星星
+            highlightStars(count) {
+                this.stars.forEach((star, index) => {
+                    if (index < count) {
+                        star.classList.remove('text-gray-300');
+                        star.classList.add('text-yellow-400');
+                    } else {
+                        star.classList.remove('text-yellow-400');
+                        star.classList.add('text-gray-300');
+                    }
+                });
+            }
+
+            // 重置表單
+            resetForm() {
+                this.reviewInput.value = '';
+                this.currentRating = 0;
+                this.ratingInput.value = 0;
+                this.highlightStars(0);
+            }
+
+            // 動態生成評論 HTML
+            addReview(data) {
+                // 建立外層容器
+                const reviewCard = document.createElement('div');
+                reviewCard.className = "bg-dark-blue p-6 rounded-lg border border-gray-700 shadow-md"; 
+
+                reviewCard.innerHTML = `
+                    <div class="flex items-center text-xl text-yellow-400 mb-2">
+                        <span class="mr-2">★</span> ${data.rating}
+                    </div>
+                    
+                    <div class="bg-white text-black w-full max-w-lg rounded-tr-xl rounded-tl-xl rounded-br-xl mb-4 p-4 shadow-sm break-words">
+                        ${data.comment}
+                    </div>
+
+                    <div class="flex justify-between text-xl text-gray-400 max-w-lg">
+                        <span class="font-bold text-gray-300">${data.user_name}</span>
+                        <span class="text-sm pt-1">${data.date}</span>
+                    </div>
+                `;
+
+                // 插入到列表中 (prepend: 新的在最上面)
+                this.reviewsList.prepend(reviewCard);
+            }
+
+        }
+      
+        function renderMovie(data){
+            document.getElementById('title').textContent = data.movie_info.title;
+            document.getElementById('release_year').textContent = data.movie_info.release_year;
+            document.getElementById('duration').textContent = data.movie_info.duration;
+            document.getElementById('language').textContent = data.movie_info.language;
+            document.getElementById('average_rating').textContent = data.average_rating;
+            document.getElementById('director').textContent = data.director.name;
+
+            const genreList = document.getElementById('genre_list');
+            const actorList = document.getElementById('actor_list'); 
+            const companyList = document.getElementById('company_list');            
+
+            // 遍歷list，生成物件
+            data.genre_list.forEach(genre => {
+                const btn = document.createElement('button');
+                btn.className = 'bg-black hover:bg-gray-700 text-white px-3 py-1 rounded-full text-xl font-medium active:scale-95';
+                btn.textContent = genre.name;
+                genreList.appendChild(btn);
+            });
+            
+            if(data.actor_list){
+                data.actor_list.forEach((actor, index) => {
+                    const link = document.createElement('a');
+                    link.textContent = actor.name;
+                    link.href = `actor.html?actor_id=${actor.actor_id}`;
+                    link.className = 'hover:text-gray-500 transition-colors';
+                    actorList.appendChild(link);
+
+                    // +間隔符號
+                    if (index < data.actor_list.length - 1) {
+                        const separator = document.createTextNode('、');
+                        actorList.appendChild(separator);
+                    }
+                });
+            }
+            else document.getElementById('actor_list').textContent = 'No cast info';
+
+            if(data.company_list){
+                data.company_list.forEach((company, index) => {
+                    const link = document.createElement('a');
+                    link.textContent = company.name;
+                    link.href = `company.html?company_id=${company.company_id}`;
+                    link.className = 'hover:text-gray-500 transition-colors';
+                    companyList.appendChild(link);
+
+                    // +間隔符號
+                    if (index < data.company_list.length - 1) {
+                        const separator = document.createTextNode('、');
+                        companyList.appendChild(separator);
+                    }
+                });
+            }
+            else document.getElementById('company_list').textContent = 'No owns info';
+
+        }
+        // 啟動程式
+        document.addEventListener('DOMContentLoaded', async (e) => {
+            e.preventDefault();
+            const reviews = new ReviewSystem();
+            
+            const API_BASE = 'http://127.0.0.1:8000';
+            const params = new URLSearchParams(window.location.search);
+            const movie_id = params.get('movie_id'); 
+            
+            const r = await fetch(`${API_BASE}/movies/${movie_id}`); //回傳MovieDetailOut
+            const movie_data = await r.json();
+            renderMovie(movie_data);
+            movie_data.review_list.forEach(review => {
+                reviews.addReview(review);
+            });
+
+            const poster = document.getElementById('poster');
+            const url = "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/The_Empire_Strikes_Back_%281980_film%29.jpg/250px-The_Empire_Strikes_Back_%281980_film%29.jpg";
+            poster.src = url;
+            
+        });
+    </script>
+
+</body>
+</html>

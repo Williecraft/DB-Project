@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Jersey+25&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <style>
+        .bg-dark-blue {
+            background-color: #1a2035;
+        }
+        body {
+        font-family: 'Jersey 25', sans-serif;
+        }
+        nav {
+        font-family: 'Jacques Francois', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+
+    <div id="alert_wrapper" class="fixed top-4 left-1/2 -translate-x-1/2 transform transition-all duration-300 opacity-0 -translate-y-4 pointer-events-none z-50">
+        <div id="alert_box" class="px-4 py-2 rounded-xl shadow-lg text-sm font-medium"></div>
+    </div>
+
+    <nav class="bg-black text-white p-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <span class="text-xl font-bold mr-6">Movie</span>
+                <div class="relative flex items-center bg-gray-700 rounded-lg">
+                    <select class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
+                        <option>All</option>
+                    </select>
+                    <input type="text" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
+                    <button class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="space-x-4">
+                <a href="advanced_search.html" class="text-gray-300 hover:text-white text-sm">Advanced Search</a>
+                <a id="auth_link" href="sign_in.html" class="bg-gray-600 hover:bg-gray-500 text-white px-3 py-1.5 rounded-lg text-sm">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <form id="create_user" class="flex-grow flex items-center justify-center px-4 ">
+        
+        <div class="w-full max-w-md shadow-xl rounded-2xl bg-white border border-gray-300 p-8 space-y-6">
+            <h1 class="text-3xl font-bold text-slate-900">Create Account</h1>
+
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-md font-medium text-slate-700 mb-1">User Name</label>
+                    <input id="user_name" placeholder="Enter your name(10 charset only)" maxlength="10" type="text" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>
+                </div>
+                <div>
+                    <label class="block text-md font-medium text-slate-700 mb-1">Email</label>
+                    <input id="user_email" placeholder="Enter email address" type="email" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>
+                </div>
+                <div>
+                    <label class="block text-md font-medium text-slate-700 mb-1">Password</label>
+                    <input id="user_password" placeholder="Enter password" type="password" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>
+                </div>
+                <div>
+                    <label class="block text-md font-medium text-slate-700 mb-1">Confirm Password</label>
+                    <input id="user_password_confirm" placeholder="Enter password again" type="password" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>
+                </div>
+                <div>
+                    <label class="block text-md font-medium text-slate-700 mb-1">Age</label>
+                    <input id="user_age" placeholder="Enter your age" min="0" max="100" type="number" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full mt-2 space-y-8 rounded-xl bg-indigo-950 text-white py-2.5 text-sm font-semibold hover:bg-indigo-900 active:scale-95">Create your account</button>
+        </div>
+
+    </form>
+    <script src="navbar.js"></script>
+    <script>
+        const API_BASE = 'http://127.0.0.1:8000';
+        const form = document.getElementById('create_user');
+        const alert_wrapper = document.getElementById('alert_wrapper');
+        const alert_box = document.getElementById('alert_box');
+
+        //監聽type = submit的事件
+        form.addEventListener('submit', async (e) => {
+        e.preventDefault(); //不要讓表單預設跳轉
+
+        const payload = {
+          name: document.getElementById('user_name').value.trim(),
+          email: document.getElementById('user_email').value.trim(),
+          password: document.getElementById('user_password').value.trim(),
+          password_confirm: document.getElementById('user_password_confirm').value.trim(),
+          age: document.getElementById('user_age').value.trim()
+        };
+
+        //檢查密碼一致
+        if (payload.password !== payload. password_confirm) {
+            showAlert('error', 'Password do not match.');
+            return;
+        }
+      
+        //用fetch()發送HTTP POST到後端
+        const r = await fetch(`${API_BASE}/users`, { 
+                                method:'POST',
+                                headers:{'Content-Type':'application/json'}, 
+                                body:JSON.stringify(payload)});
+          
+        const data = await r.json();                    
+        if (r.ok) {
+          showAlert('success', 'create success');
+          form.reset();
+        }
+        else showAlert('error', data.detail);
+      });
+    </script>
+</body>
+</html>

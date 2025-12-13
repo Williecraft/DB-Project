@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Jersey+25&display=swap" rel="stylesheet">
+    <style>
+        /* 定義深藍色背景變數 */
+        .bg-dark-blue {
+            background-color: #1a2035;
+        }
+        
+        /* 設定字體 */
+        body {
+            font-family: 'Jersey 25', sans-serif;
+        }
+        nav {
+            font-family: 'Jacques Francois', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+
+    <nav class="bg-black text-white p-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <span class="text-xl font-bold mr-6">Movie</span>
+                <div class="relative flex items-center bg-gray-700 rounded-lg">
+                    <select class="bg-gray-700 text-white p-2 rounded-l-lg focus:outline-none text-sm">
+                        <option>All</option>
+                    </select>
+                    <input type="text" class="bg-gray-800 text-white p-2 w-64 focus:outline-none text-sm"/>
+                    <button class="p-2 rounded-r-lg bg-gray-800 flex items-center justify-center group transition-colors duration-200 hover:bg-gray-700">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="space-x-4">
+                <a href="advanced_search.html" class="text-gray-300 hover:text-white text-sm">Advanced Search</a>
+                <a id="auth_link" href="sign_in.html" class="bg-gray-600 hover:bg-gray-500 text-white px-3 py-1.5 rounded-lg text-sm">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <hr class="w-full max-w-5xl mx-auto my-12 border-t-2 border-gray-300">
+
+    <form id="actor_form" class="w-full bg-white pt-16 pb-20">
+        <div class="max-w-4xl mx-auto px-8 flex justify-between items-start">
+            
+            <div class="space-y-8 mt-4">
+                <h1 id="name" class="text-5xl text-black tracking-wide">Name</h1>
+
+                <div class="space-y-6 text-xl text-black">
+                    <div class="flex">
+                        <span class="font-bold items-center border-l-4 border-black pl-2 mr-4">Birth Year</span>
+                        <div id="birth_year" class="space-x-2"></div>
+                    </div>
+                    <div class="flex">
+                        <span class="font-bold items-center border-l-4 border-black pl-2 mr-4">Nationality</span>
+                        <div id="nationality" class="space-x-2"></div>
+                    </div>
+                    <div class="flex">
+                        <span class="font-bold items-center border-l-4 border-black pl-2 mr-4">Gender</span>
+                        <div id="gender" class="space-x-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-72 h-96 bg-gray-300 rounded-xl shadow-xl"></div>
+        </div>
+    </form>
+
+    <hr class="w-full max-w-5xl mx-auto my-12 border-t-2 border-gray-300">
+
+    <section class="bg-dark-blue w-full flex-grow text-white py-16">
+        <div class="max-w-4xl mx-auto px-8">
+            
+            <div class="flex items-center mb-12">
+                <h2 class="text-5xl border-l-4 pl-4">Roles</h2>
+            </div>
+
+            <div id="role_list" class="grid grid-cols-2 md:grid-cols-4 gap-12"></div>
+
+            <div class="mt-32 flex flex-col items-center justify-center opacity-80 hover:opacity-100 cursor-pointer transition-opacity">
+                <button class="text-xs tracking-widest flex flex-col items-center">
+                Show more roles
+                    <svg class="w-6 h-6 animate-bounce mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+    <script src="navbar.js"></script>
+    <script>
+        function addRole(data, movie, roleList){
+            const roleCard = document.createElement('div');
+            roleCard.className = 'w-fit flex flex-col items-center text-center space-y-2 ml-4';
+            roleCard.innerHTML = `
+                <div class="w-32 h-32 bg-white rounded-2xl shadow-md"></div>
+                <h3 class="text-xl">${data.name}</h3>
+                <p class="text-xl text-gray-300">${movie.title}</p>
+                <p class="text-xl text-gray-300">${movie.release_year}</p>
+            `;
+            roleList.prepend(roleCard);
+        }
+
+        function renderActor(data){
+            document.getElementById('name').textContent = data.actor_info.name;
+            document.getElementById('birth_year').textContent = data.actor_info.birth_year;
+            document.getElementById('nationality').textContent = data.actor_info.nationality;
+            document.getElementById('gender').textContent = data.actor_info.gender;
+
+            const roleList = document.getElementById('role_list');
+
+            data.role_list.forEach((role, index) => {
+                const movie = data.movie_list[index];
+                addRole(role, movie, roleList);
+            });
+        }
+        // 啟動程式
+        document.addEventListener('DOMContentLoaded', async () => {
+
+            const params = new URLSearchParams(window.location.search);
+            const actor_id = params.get('actor_id');
+
+            const API_BASE = 'http://127.0.0.1:8000';
+            const r = await fetch(`${API_BASE}/actors/${actor_id}`); //回傳ActorDetailOut
+            const actor_data = await r.json();
+            renderActor(actor_data);
+        });
+    </script>
+
+</body>
+</html>
