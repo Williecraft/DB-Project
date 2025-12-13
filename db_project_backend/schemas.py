@@ -67,16 +67,6 @@ class ReviewOut(BaseModel):
     comment: str
     date: str
 
-# 呈現導覽列搜尋結果的payload
-class NavOut(BaseModel):
-    movie_list: list[MovieOut] | None = None
-    genre_list: list[GenreOut] | None = None
-    actor_list: list[ActorOut] | None = None
-    company_list: list[CompanyOut] | None = None
-    director_list: list[DirectorOut] | None = None
-    user_list: list[UserOut] | None = None
-    role_list: list[RoleOut] | None = None
-
 # 呈現movie頁面的payload
 class MovieDetailOut(BaseModel):
     movie_info: MovieOut
@@ -104,8 +94,27 @@ class ActorDetailOut(BaseModel):
     movie_list: list[MovieOut]
     role_list: list[RoleOut]
 
+class ActorDirectorPair(BaseModel):
+    actor: ActorOut
+    director: DirectorOut
+    collab_count: int
+
+# 呈現導覽列搜尋結果的payload
+class NavOut(BaseModel):
+    movie_list: list[MovieOut] | None = None
+    genre_list: list[GenreOut] | None = None
+    actor_list: list[ActorOut] | None = None
+    company_list: list[CompanyOut] | None = None
+    director_list: list[DirectorOut] | None = None
+    user_list: list[UserOut] | None = None
+    role_list: list[RoleOut] | None = None
+
+    actor_director_list: list[ActorDirectorPair] | None = None
+
 # 處理進階搜尋頁面的參數。"="前面是type，後面是預設值
 class AdvancdeSearchParams(BaseModel):
+    result_type: Literal["movie", "company", "director", "actor", "genre", "role"] = "movie"
+    
     # movie
     movie_language: str | None = None
     movie_duration_op: Literal['gt', 'lt', 'eq'] | None = 'gt'
@@ -122,9 +131,6 @@ class AdvancdeSearchParams(BaseModel):
     actor_name: str | None = None 
 
     # genre
-    genre_top_rating_of_year: False = False # top rating of year會搜尋該年份最高評分的K個電影
-    genre_top_rating_of_year_limit: int | None = None
-    genre_top_rating_of_year: int | None = None
     genre_name: str | None = None
 
     # director
@@ -139,5 +145,7 @@ class AdvancdeSearchParams(BaseModel):
     # role
     role_name: str | None = None
 
-    # actor-director
-    actor_director_combination: int | None = None #找出合作最頻繁的演員與導演組合。如果該參數不是None，其他參數全變None(因為其他參數加上這個參數我不知道資料庫會怎麼回傳)
+    # specaial operation
+    actor_director_combination: int | None = None #找出合作最頻繁的演員與導演組合。
+    top_rating_of_year: int | None = None
+    top_rating_of_year_limit: int | None = None

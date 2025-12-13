@@ -72,23 +72,6 @@ def create_user(payload: UserCreate, db: sqlite3.Connection = Depends(get_db)):
     )
 
 
-@app.get("/users/{name}", response_model=UserOut)
-def get_user(name: str, db: sqlite3.Connection = Depends(get_db)):
-    cur = db.execute(
-        "SELECT user_id, name, email, join_date, age FROM User WHERE name = ?",
-        (name,)
-    )
-    row = cur.fetchone()
-    if row is None:
-        raise HTTPException(status_code=404, detail="User not found")
-    return UserOut(
-        user_id=row["user_id"],
-        name=row["name"],
-        email=row["email"],
-        join_date=row["join_date"],
-        age=row["age"]
-    )
-
 # ===================== 共用轉換函式 =====================
 
 def row_to_movie_out(row: sqlite3.Row) -> MovieOut:
@@ -616,19 +599,107 @@ def get_actor_by_id(actor_id: str, db: sqlite3.Connection = Depends(get_db)):
 @app.post("/advanced-search", response_model=NavOut)
 def advanced_search(
     params: AdvancdeSearchParams,
-    result_type: Literal["movie", "company", "director", "actor", "genre", "role"] = "movie",
     db: sqlite3.Connection = Depends(get_db),
 ):
-    """
-    簡化版進階搜尋：
-    目前主要是「以 Movie 當 base table」，再依 result_type 決定輸出哪一類的結果。
-    """
-    # 特別處理：如果使用者有設定 actor_director_combination，請改用另一個 API
+    result_type = params.result_type
+
+    # 特殊查詢不能一起用
+    if params.actor_director_combination is not None and params.top_rating_of_year_limit is not None:
+        raise HTTPException(status_code=400,detail="特殊查詢參數不能一起使用")
+
+    # =========================================================================
+    # 邏輯分流 1：Actor-Director 合作頻率
+    # =========================================================================
     if params.actor_director_combination is not None:
-        raise HTTPException(
-            status_code=400,
-            detail="actor_director_combination 請改用 /advanced-search/actor-director-over-k",
-        )
+        k_value = params.actor_director_combination
+        
+        # 找出合作次數 >= K 的演員與導演，將結果拆成 actor_list 和 director_list 回傳
+        sql = """
+            SELECT 
+                a.actor_id, a.name as a_name, a.birth_year as a_birth, a.nationality as a_nation, a.gender,
+                d.director_id, d.name as d_name, d.birth_year as d_birth, d.nationality as d_nation,
+                COUNT(m.movie_id) as collab_count
+            FROM Actor a
+            JOIN RoleInMovie_Played rim ON a.actor_id = rim.actor_id
+            JOIN Movie m ON rim.movie_id = m.movie_id
+            JOIN Director d ON m.director_id = d.director_id
+            GROUP BY a.actor_id, d.director_id
+            HAVING collab_count >= ?
+            ORDER BY collab_count DESC
+        """
+        
+        cur = db.execute(sql, (k_value,))
+        rows = cur.fetchall()
+
+        # 使用 set 避免重複 (例如同一個導演跟兩個不同演員都合作過 K 次，導演會出現兩次)
+        pairs = []
+        for row in rows:
+            actor = ActorOut(
+                actor_id=row["actor_id"],
+                name=row["a_name"],
+                birth_year=row["a_birth"],
+                nationality=row["a_nation"],
+                gender=row["gender"]
+            )
+        
+            director = DirectorOut(
+                director_id=row["director_id"],
+                name=row["d_name"],
+                birth_year=row["d_birth"],
+                nationality=row["d_nation"]
+            )
+
+            pairs.append(ActorDirectorPair(actor=actor, director=director, collab_count=row['collab_count']))
+
+        return NavOut(actor_director_list=pairs)
+
+    # =========================================================================
+    # 邏輯分流 2：年度高分電影 Top K
+    # =========================================================================
+    if params.top_rating_of_year_limit is not None:
+        year = params.top_rating_of_year
+        limit = params.top_rating_of_year_limit
+
+        sql = """
+            SELECT m.movie_id, m.director_id, m.title, m.release_year, m.duration, m.language, m.country,
+                AVG(r.rating) as avg_rating
+            FROM Movie m
+            JOIN Review r ON m.movie_id = r.movie_id
+        """
+        
+        args = []
+        wheres = ["m.release_year = ?"]
+        args.append(year)
+
+        # 如果有指定類型
+        if params.genre_name:
+            sql += """
+                JOIN MovieGenre mg ON m.movie_id = mg.movie_id
+                JOIN Genre g ON mg.genre_id = g.genre_id
+            """
+            wheres.append("g.name = ?")
+            args.append(params.genre_name)
+
+        # 組合 Where 條件
+        sql += " WHERE " + " AND ".join(wheres)
+
+        # Group By + Order By + Limit
+        sql += """
+            GROUP BY m.movie_id
+            ORDER BY avg_rating DESC
+            LIMIT ?
+        """
+        args.append(limit)
+
+        cur = db.execute(sql, tuple(args))
+        rows = cur.fetchall()
+        movies = [row_to_movie_out(r) for r in rows]
+        
+        return NavOut(movie_list=movies)
+
+    # =========================================================================
+    # 一般功能
+    # =========================================================================
 
     # 目前用 Movie 當作 base table
     base_sql = """
@@ -844,80 +915,6 @@ def advanced_search(
         return NavOut(role_list=roles)
 
     raise HTTPException(status_code=400, detail=f"Unsupported result_type: {result_type}")
-
-
-# ===================== Actor-Director Combination =====================
-
-class ActorDirectorPair(BaseModel):
-    actor: ActorOut
-    director: DirectorOut
-    movie_count: int
-
-
-@app.get("/advanced-search/actor-director-over-k", response_model=list[ActorDirectorPair])
-def get_actor_director_over_k(
-    k: int,
-    db: sqlite3.Connection = Depends(get_db),
-):
-    """
-    找出合作次數超過 k 部電影的 演員-導演 組合。
-    """
-    cur = db.execute(
-        """
-        SELECT a.actor_id,
-               a.name          AS actor_name,
-               a.birth_year    AS actor_birth_year,
-               a.nationality   AS actor_nationality,
-               a.gender        AS actor_gender,
-               d.director_id,
-               d.name          AS director_name,
-               d.birth_year    AS director_birth_year,
-               d.nationality   AS director_nationality,
-               COUNT(DISTINCT rim.movie_id) AS movie_count
-        FROM RoleInMovie_Played rim
-        JOIN Movie m   ON rim.movie_id = m.movie_id
-        JOIN Actor a   ON rim.actor_id = a.actor_id
-        JOIN Director d ON m.director_id = d.director_id
-        GROUP BY a.actor_id,
-                 a.name,
-                 a.birth_year,
-                 a.nationality,
-                 a.gender,
-                 d.director_id,
-                 d.name,
-                 d.birth_year,
-                 d.nationality
-        HAVING movie_count > ?
-        ORDER BY movie_count DESC
-        """,
-        (k,),
-    )
-    rows = cur.fetchall()
-
-    result: list[ActorDirectorPair] = []
-    for r in rows:
-        actor = ActorOut(
-            actor_id=r["actor_id"],
-            name=r["actor_name"],
-            birth_year=r["actor_birth_year"],
-            nationality=r["actor_nationality"],
-            gender=r["actor_gender"],
-        )
-        director = DirectorOut(
-            director_id=r["director_id"],
-            name=r["director_name"],
-            birth_year=r["director_birth_year"],
-            nationality=r["director_nationality"],
-        )
-        result.append(
-            ActorDirectorPair(
-                actor=actor,
-                director=director,
-                movie_count=r["movie_count"],
-            )
-        )
-
-    return result
 
 if __name__ == "__main__":
     import uvicorn
