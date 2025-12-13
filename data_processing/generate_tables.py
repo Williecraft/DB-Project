@@ -21,8 +21,8 @@ INPUT_TITLES_CSV = "data/kaggle/industry/movies.csv"
 TITLE_COLUMN = "name"
 
 # 2. IMDb 爬蟲設定
-GET_REV_COUNT = 20       # 每部電影最多抓幾篇評論
-GET_ROLE_COUNT = 10      # 每部電影最多抓幾個 cast
+GET_REV_COUNT = None       # 每部電影最多抓幾篇評論
+GET_ROLE_COUNT = None      # 每部電影最多抓幾個 cast
 MAX_MOVIES = None         # 最多成功處理幾部電影（用 while 計數器）
 
 REQUEST_SLEEP_RANGE = (1.0, 3.0)
@@ -385,7 +385,7 @@ def scrape_roles_for_movie(tt_id: str, get_count: int) -> List[Tuple[str, str]]:
             if not role_name:
                 continue
             out.append((role_name, actor_name))
-            if len(out) >= get_count:
+            if get_count is not None and len(out) >= get_count:
                 break
 
     print(f"[roles] {tt_id} -> {len(out)} roles")
@@ -886,7 +886,7 @@ def main():
     )
 
     # ===== 主要爬蟲迴圈 =====
-    while (processed_movies < MAX_MOVIES or MAX_MOVIES is None) and candidate_indices:
+    while (MAX_MOVIES is None or processed_movies < MAX_MOVIES) and candidate_indices:
         # 隨機挑一個還沒嘗試過的 title index
         idx = random.choice(candidate_indices)
         candidate_indices.remove(idx)
