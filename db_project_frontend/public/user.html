@@ -202,9 +202,12 @@
             
             const API_BASE = 'http://127.0.0.1:8000';
             const params = new URLSearchParams(window.location.search);
+            const urlID = params.get('user_id');
+            const localUserID = sessionStorage.getItem('user_id');
 
-            var user_id = sessionStorage.getItem('user_id') ? sessionStorage.getItem('user_id') : params.get('user_id');
-            const r = await fetch(`${API_BASE}/user_detail/${user_id}`); //回傳UserDetailOut
+            const targetID = urlID || localUserID; // 優先使用URL的user_idID跳轉
+
+            const r = await fetch(`${API_BASE}/user_detail/${targetID}`); //回傳UserDetailOut
             const user_detail_data = await r.json();
             
             renderUser(user_detail_data);
