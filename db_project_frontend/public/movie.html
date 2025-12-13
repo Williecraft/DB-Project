@@ -168,7 +168,8 @@
     <script src="navbar.js"></script>
     <script>
         class ReviewSystem {
-            constructor() {
+            constructor(movieId) {
+                this.movieId = movieId;
                 this.form = document.getElementById('review_form');
                 this.reviewsList = document.getElementById('reviews_list');
                 this.stars = document.querySelectorAll('.star_btn');
@@ -224,7 +225,7 @@
                         if(checkSignIn()){
                             const payload = {
                                 user_id: sessionStorage.getItem('user_id'),
-                                movie_id: movie_id,
+                                movie_id: this.movieId,
                                 rating: this.ratingInput.value,
                                 comment: this.reviewInput.value.trim()
                             }                        
@@ -353,12 +354,12 @@
         // 啟動程式
         document.addEventListener('DOMContentLoaded', async (e) => {
             e.preventDefault();
-            const reviews = new ReviewSystem();
             
             const API_BASE = 'http://127.0.0.1:8000';
             const params = new URLSearchParams(window.location.search);
-            const movie_id = params.get('movie_id'); 
-            
+            const movie_id = params.get('movie_id');
+            const reviews = new ReviewSystem(movie_id);
+
             const r = await fetch(`${API_BASE}/movies/${movie_id}`); //回傳MovieDetailOut
             const movie_data = await r.json();
             renderMovie(movie_data);
