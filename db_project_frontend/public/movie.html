@@ -299,7 +299,7 @@
         function renderMovie(data){
             document.getElementById('title').textContent = data.movie_info.title;
             document.getElementById('release_year').textContent = data.movie_info.release_year;
-            document.getElementById('duration').textContent = data.movie_info.duration;
+            document.getElementById('duration').textContent = data.movie_info.duration + ' mins';
             document.getElementById('language').textContent = data.movie_info.language;
             document.getElementById('average_rating').textContent = data.average_rating;
             document.getElementById('director').textContent = data.director.name;
