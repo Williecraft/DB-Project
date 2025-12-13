@@ -399,7 +399,7 @@
                 div.className = "bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition border border-gray-200";
                 if(jump){
                     div.innerHTML = `
-                    <a href = ${type}.html?${type}_id=${id} class="text-xl font-bold mb-2 truncate">${title}</a>
+                    <a href = ${type}.html?${type}_id=${id} class="text-xl font-bold mb-2 truncate hover:text-gray-700">${title}</a>
                     <div class="text-sm text-gray-600 space-y-1">
                         ${details.map(d => `<p>${d}</p>`).join('')}
                     </div>

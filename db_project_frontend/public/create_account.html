@@ -113,8 +113,11 @@
           
         const data = await r.json();                    
         if (r.ok) {
-          showAlert('success', 'create success');
-          form.reset();
+            showAlert('success', 'create success');
+            sessionStorage.setItem('user_id', data.user_id);  
+            updateNavbar();
+            form.reset();
+            window.location.href = "user.html";            
         }
         else showAlert('error', data.detail);
       });
