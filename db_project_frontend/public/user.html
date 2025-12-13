@@ -58,7 +58,7 @@
         <section class="-mt-16 flex items-start justify-between">
             <div class="flex items-center space-x-6">
                 <!-- 頭像 -->
-                <div class="w-28 h-28 rounded-full bg-gray-300 border-4 border-white shadow-xl z-10"></div>
+                <img id="profile_img" class="w-28 h-28 rounded-full bg-gray-300 border-4 border-white shadow-xl z-10"></img>
 
                 <!-- User Name + Email -->
                 <div class="mt-16">
@@ -138,6 +138,14 @@
     <script src="navbar.js"></script>
     <script>
         let hiddenMovie = [];
+        let randomProfile = [
+            'https://i.pinimg.com/736x/8f/84/36/8f84360a1a40c8969e0942eeecb587aa.jpg',
+            'https://i.pinimg.com/736x/be/cb/20/becb20c5c553b02592eb50efb08c2e5e.jpg',
+            'https://i.pinimg.com/736x/38/61/6f/38616f4a0f45ba196a176620cd564e87.jpg',
+            'https://i.pinimg.com/736x/f9/c3/db/f9c3db06ef9dee6428f38332c6fbd3bb.jpg',
+            'https://i.pinimg.com/1200x/6f/46/35/6f46355eb649ab34f667c040b35bf79d.jpg',
+            'https://i.pinimg.com/736x/94/e4/b8/94e4b8ac4a8b734ab93a55369354649c.jpg'
+        ]
 
         function renderUser(data){
             document.getElementById('name').textContent = data.user_info.name;
@@ -149,6 +157,10 @@
             const movieList = document.getElementById('movie_list');
             const genreList = document.getElementById('genre_list');
             const showMoreBtn = document.getElementById('show_more');
+
+            const profileImg = document.getElementById('profile_img');
+            const url = randomProfile[randomNumber(0, 5)];
+            profileImg.src = url;
 
             const initDisplayNum = 4; // 初始展示數量
             movieList.innerHTML = '';

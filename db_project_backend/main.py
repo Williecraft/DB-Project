@@ -477,7 +477,8 @@ def create_review(payload: ReviewIn, db: sqlite3.Connection = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Movie not found")
 
     review_id = generate_review_id(db)
-    now_str = datetime.now().isoformat(sep=" ")
+    now = datetime.now().replace(second=0, microsecond=0)
+    now_str = now.strftime("%Y-%m-%d %H:%M")
 
     db.execute(
         """

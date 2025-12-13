@@ -2,6 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNavbar();
 });
 
+function randomNumber(min, max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function checkSignIn(){
     const userId = sessionStorage.getItem('user_id');
     if(!userId) return false;
