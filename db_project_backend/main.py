@@ -131,6 +131,7 @@ def row_to_role_out(row: sqlite3.Row) -> RoleOut:
 def row_to_review_out(row: sqlite3.Row) -> ReviewOut:
     return ReviewOut(
         review_id=row["review_id"],
+        user_id=row["user_id"],
         user_name=row["user_name"],
         movie_id=row["movie_id"],
         rating=row["rating"],
@@ -143,6 +144,7 @@ def get_reviews_for_movie(db: sqlite3.Connection, movie_id: str) -> tuple[list[R
     cur = db.execute(
         """
         SELECT r.review_id,
+               u.user_id,
                u.name AS user_name,
                r.movie_id,
                r.rating,

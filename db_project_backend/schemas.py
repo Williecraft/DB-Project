@@ -61,6 +61,7 @@ class ReviewIn(BaseModel):
 
 class ReviewOut(BaseModel):
     review_id: str
+    user_id: str
     user_name : str
     movie_id: str
     rating: int
