@@ -678,8 +678,8 @@ def advanced_search(
                 JOIN MovieGenre mg ON m.movie_id = mg.movie_id
                 JOIN Genre g ON mg.genre_id = g.genre_id
             """
-            wheres.append("g.name = ?")
-            args.append(params.genre_name)
+            wheres.append("g.name LIKE ?")
+            args.append(f"%{params.genre_name}%")
 
         # 組合 Where 條件
         sql += " WHERE " + " AND ".join(wheres)
@@ -762,13 +762,13 @@ def advanced_search(
             where_clauses.append("a.name LIKE ?")
             args.append(f"%{params.actor_name}%")
 
-    # ===== Genre 條件（這裡先實作 genre_name） =====
+     # ===== Genre 條件（這裡先實作 genre_name） =====
     need_genre_join = params.genre_name is not None
     if need_genre_join:
         joins.append("JOIN MovieGenre mg ON mg.movie_id = m.movie_id")
         joins.append("JOIN Genre g ON mg.genre_id = g.genre_id")
         where_clauses.append("g.name LIKE ?")
-        args.append(params.genre_name)
+        args.append(f"%{params.genre_name}%")
 
     # ===== Director 條件 =====
     need_director_join = any(
@@ -805,7 +805,7 @@ def advanced_search(
             args.append(params.company_founded_year)
         if params.company_name:
             where_clauses.append("c.name LIKE ?")
-            args.append(params.company_name)
+            args.append(f"%{params.company_name}%")
 
     # ===== Role 條件 =====
     need_role_join = params.role_name is not None
@@ -902,10 +902,15 @@ def advanced_search(
         return NavOut(genre_list=genres)
 
     if t == "role":
+
         if not need_role_join:
-            joins.append("JOIN RoleInMovie_Played rim ON rim.movie_id = m.movie_id")
+            if not need_actor_join:
+                joins.append("JOIN RoleInMovie_Played rim ON rim.movie_id = m.movie_id")
+            # 無論如何都要把 Role 加進來
             joins.append("JOIN Role r ON rim.role_id = r.role_id")
-            join_sql = " ".join(joins)
+
+        join_sql = " ".join(joins)
+
         sql = (
             "SELECT DISTINCT r.role_id, r.name "
             + base_sql
