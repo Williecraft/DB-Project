@@ -144,6 +144,10 @@
     <script src="navbar.js"></script>
     <script>
         let hiddenMovies = [];
+<<<<<<< HEAD
+=======
+        const USER_DEFAULT_POSTER = "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/The_Empire_Strikes_Back_%281980_film%29.jpg/250px-The_Empire_Strikes_Back_%281980_film%29.jpg";
+>>>>>>> 0ad5140c0b316f2edcd28c443c820adf32059689
 
         function renderUser(data){
             document.getElementById('name').textContent = data.user_info.name;
@@ -192,7 +196,7 @@
             movieCard.className = 'w-36 flex flex-col items-center text-center space-y-3 ml-4';
 
             // 如果後端有給 poster_url 就用，沒有就用 Star Wars 當預設
-            const posterUrl = data.poster_url || DEFAULT_POSTER;
+            const posterUrl = data.poster_url || USER_DEFAULT_POSTER;
 
             movieCard.innerHTML = `
                 <a href="movie.html?movie_id=${data.movie_id}" class="w-full">
