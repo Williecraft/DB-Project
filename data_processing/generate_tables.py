@@ -572,7 +572,7 @@ def build_movie_and_related_from_industry(
     movie_row = {
         "movie_id": tt_id,
         "director_id": director_id,
-        "title": truncate(title, 30),
+        "title": truncate(title, 100),
         "release_year": int(year),
         "duration": int(runtime),
         "language": "En",                       # 沒有語言就預設英文
