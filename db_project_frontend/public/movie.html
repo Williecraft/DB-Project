@@ -312,6 +312,13 @@
             document.getElementById('language').textContent = data.movie_info.language;
             document.getElementById('average_rating').textContent = data.average_rating;
             document.getElementById('director').textContent = data.director.name;
+            
+            const poster = document.getElementById('poster');
+            if (data.movie_info.poster_url) {
+                poster.src = data.movie_info.poster_url;
+            } else {
+                poster.src = "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/The_Empire_Strikes_Back_%281980_film%29.jpg/250px-The_Empire_Strikes_Back_%281980_film%29.jpg";
+            }
 
             const genreList = document.getElementById('genre_list');
             const actorList = document.getElementById('actor_list'); 
@@ -375,11 +382,6 @@
             movie_data.review_list.forEach(review => {
                 reviews.addReview(review);
             });
-
-            const poster = document.getElementById('poster');
-            const url = "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/The_Empire_Strikes_Back_%281980_film%29.jpg/250px-The_Empire_Strikes_Back_%281980_film%29.jpg";
-            poster.src = url;
-            
         });
     </script>
 

@@ -235,6 +235,36 @@ def parse_review_date(date_text: str) -> str | None:
     except Exception:
         return None
 
+def scrape_poster_url(tt_id: str) -> str | None:
+    """
+    從 IMDb 主頁抓這部電影的海報網址（meta og:image）。
+    抓不到就回傳 None。
+    """
+    url = f"https://www.imdb.com/title/{tt_id}/"
+    print(f"[poster] Fetching poster from {url}")
+    try:
+        resp = SESSION.get(url, headers=HEADERS, timeout=10)
+    except Exception as e:
+        print(f"[poster] Request error for {url}: {e}")
+        return None
+
+    if resp.status_code != 200:
+        print(f"[poster] HTTP {resp.status_code} for {url}")
+        return None
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+    tag = soup.find("meta", property="og:image")
+    if not tag:
+        print(f"[poster] og:image not found for ttID={tt_id}")
+        return None
+
+    poster_url = tag.get("content")
+    if not poster_url:
+        print(f"[poster] og:image content empty for ttID={tt_id}")
+        return None
+
+    print(f"[poster] {tt_id} -> {poster_url}")
+    return poster_url
 
 def scrape_reviews_for_movie(tt_id: str, get_count: int) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Dict[str, Any]]]:
     """
@@ -704,6 +734,7 @@ def write_all_csv(
             "duration",
             "language",
             "country",
+            "poster_url",
         ])
         for m in movies.values():
             writer.writerow([
@@ -714,6 +745,7 @@ def write_all_csv(
                 m["duration"],
                 m["language"],
                 m["country"],
+                m.get("poster_url", ""),
             ])
     print(f"[out] {MOVIE_OUT} ({len(movies)} rows)")
 
@@ -941,6 +973,10 @@ def main():
             progress["title_index"] = len(seen_title_indices)
             save_progress(progress)
             continue
+
+        sleep_a_bit()
+        poster_url = scrape_poster_url(tt_id)
+        movie_row["poster_url"] = poster_url or ""
 
         # 3. 抓 reviews
         sleep_a_bit()

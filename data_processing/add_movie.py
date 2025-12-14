@@ -12,6 +12,7 @@ from generate_tables import (
     scrape_roles_for_movie,
     build_movie_and_related_from_industry,
     build_actor_from_name,
+    scrape_poster_url,  # 🔹 新增：抓海報網址
 
     # 進度管理
     load_progress,
@@ -129,6 +130,7 @@ def process_single_title(
 
     roles_rows: List[Dict[str, Any]] = progress["roles"]
 
+    # 讓同名角色共用同一個 role_id
     role_by_name: Dict[str, str] = {}
     for r in roles_rows:
         name = r.get("name")
@@ -210,12 +212,16 @@ def process_single_title(
         progress["title_index"] = len(seen_title_indices)
         return True  # 有更新 seen_title_indices
 
+    # 🔹 6.5 抓海報網址並塞進 movie_row（跟 generate_tables.main() 同步）
+    sleep_a_bit()
+    poster_url = scrape_poster_url(tt_id)
+    movie_row["poster_url"] = poster_url or ""
+
     # 7. 抓 reviews
     sleep_a_bit()
     users_map, reviews_map = scrape_reviews_for_movie(tt_id, GET_REV_COUNT)
 
     # 8. 抓 roles & actors
-    sleep_a_bit()
     sleep_a_bit()
     roles = scrape_roles_for_movie(tt_id, GET_ROLE_COUNT)
     actors_in_this_movie: Set[str] = set()
@@ -232,7 +238,7 @@ def process_single_title(
         # 先把角色名稱砍到 30 字，跟存進 DB / CSV 的實際值一致
         role_name_trimmed = truncate(role_name, 30)
 
-        # 🔹 新規則：同名角色共用同一個 role_id
+        # 同名角色共用同一個 role_id
         if role_name_trimmed in role_by_name:
             role_id = role_by_name[role_name_trimmed]
         else:

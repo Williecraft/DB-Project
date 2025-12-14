@@ -83,6 +83,7 @@ def row_to_movie_out(row: sqlite3.Row) -> MovieOut:
         duration=row["duration"],
         language=row["language"],
         country=row["country"],
+        poster_url=row["poster_url"],
     )
 
 
@@ -303,7 +304,7 @@ def get_by_name(
     if t in ("all", "movie"):
         cur = db.execute(
             """
-            SELECT movie_id, director_id, title, release_year, duration, language, country
+            SELECT movie_id, director_id, title, release_year, duration, language, country, poster_url
             FROM Movie
             WHERE title LIKE ?
             """,
@@ -391,6 +392,7 @@ def get_movie_by_id(movie_id: str, db: sqlite3.Connection = Depends(get_db)):
                m.duration,
                m.language,
                m.country,
+               m.poster_url,
                d.director_id AS d_director_id,
                d.name        AS d_name,
                d.birth_year  AS d_birth_year,
@@ -530,7 +532,7 @@ def get_company_by_id(company_id: str, db: sqlite3.Connection = Depends(get_db))
     cur = db.execute(
         """
         SELECT m.movie_id, m.director_id, m.title, m.release_year,
-               m.duration, m.language, m.country
+            m.duration, m.language, m.country, m.poster_url
         FROM Owns o
         JOIN Movie m ON o.movie_id = m.movie_id
         WHERE o.company_id = ?
@@ -584,6 +586,7 @@ def get_actor_by_id(actor_id: str, db: sqlite3.Connection = Depends(get_db)):
                m.duration,
                m.language,
                m.country,
+               m.poster_url,
                r.role_id,
                r.name AS role_name
         FROM RoleInMovie_Played rim
@@ -678,6 +681,7 @@ def advanced_search(
 
         sql = """
             SELECT m.movie_id, m.director_id, m.title, m.release_year, m.duration, m.language, m.country,
+                m.poster_url,
                 AVG(r.rating) as avg_rating
             FROM Movie m
             JOIN Review r ON m.movie_id = r.movie_id
@@ -848,7 +852,7 @@ def advanced_search(
     if t == "movie":
         sql = (
             "SELECT DISTINCT "
-            "m.movie_id, m.director_id, m.title, m.release_year, m.duration, m.language, m.country "
+            "m.movie_id, m.director_id, m.title, m.release_year, m.duration, m.language, m.country, m.poster_url "
             + base_sql
             + join_sql
             + where_sql

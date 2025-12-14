@@ -13,6 +13,7 @@ CREATE TABLE Movie(
     duration INT NOT NULL,
     language CHAR(2) NOT NULL DEFAULT 'En',
     country VARCHAR(15) NOT NULL,
+    poster_url TEXT,
     FOREIGN KEY (director_id) REFERENCES Director(director_id)
 );
 

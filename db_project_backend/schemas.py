@@ -25,6 +25,7 @@ class MovieOut(BaseModel):
     duration: int| None = None
     language: str| None = None
     country: str| None = None
+    poster_url: str | None = None
 
 class GenreOut(BaseModel):
     genre_id: str

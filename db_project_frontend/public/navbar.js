@@ -7,6 +7,8 @@ let randomProfile = [
     'https://i.pinimg.com/736x/94/e4/b8/94e4b8ac4a8b734ab93a55369354649c.jpg'
 ]
 
+const DEFAULT_POSTER = "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/The_Empire_Strikes_Back_%281980_film%29.jpg/250px-The_Empire_Strikes_Back_%281980_film%29.jpg";
+
 document.addEventListener('DOMContentLoaded', () => {
     updateNavbar();
 });
@@ -170,15 +172,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderMovieCard(m) {
-        return `
-            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition border border-gray-200 flex flex-col items-center text-center">
-                <div class="w-full h-32 bg-gray-200 mb-2 rounded flex items-center justify-center text-gray-400">Poster</div>
-                <a href = movie.html?movie_id=${m.movie_id} class="font-bold text-lg leading-tight mb-1 hover:text-gray-700">${m.title}</a>
-                <p class="text-sm text-gray-600">${m.release_year || 'N/A'}</p>
-                <p class="text-xs text-gray-500 mt-1">${m.country || ''}</p>
-            </div>
-        `;
-    }
+    const posterUrl = m.poster_url || DEFAULT_POSTER;
+
+    return `
+        <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition border border-gray-200 flex flex-col items-center text-center">
+            <a href="movie.html?movie_id=${m.movie_id}" class="w-full mb-2">
+                <img
+                    src="${posterUrl}"
+                    alt="${m.title}"
+                    class="w-full h-40 md:h-48 object-cover rounded"
+                />
+            </a>
+            <a href="movie.html?movie_id=${m.movie_id}" class="font-bold text-lg leading-tight mb-1 hover:text-gray-700">
+                ${m.title}
+            </a>
+            <p class="text-sm text-gray-600">${m.release_year || 'N/A'}</p>
+            <p class="text-xs text-gray-500 mt-1">${m.country || ''}</p>
+        </div>
+    `;
+}
 
     function renderPersonCard(p) {
         return `

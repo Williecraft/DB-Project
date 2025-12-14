@@ -125,6 +125,7 @@ def main():
                 "duration",
                 "language",
                 "country",
+                "poster_url", 
             ],
         )
 
