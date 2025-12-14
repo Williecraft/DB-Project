@@ -204,7 +204,7 @@ def get_user_detail(user_id: str, db: sqlite3.Connection = Depends(get_db)):
 
         # 抓評論過的電影
         get_commented_movie = db.execute('''
-            SELECT DISTINCT m.movie_id, m.title
+            SELECT DISTINCT m.movie_id, m.title, m.poster_url
             FROM Movie m
             JOIN Review R on m.movie_id = R.movie_id
             WHERE R.user_id = ?''',
@@ -216,7 +216,8 @@ def get_user_detail(user_id: str, db: sqlite3.Connection = Depends(get_db)):
         for row in get_commented_movie_result:
             movie = MovieOut(
                 movie_id=row['movie_id'],
-                title=row['title']
+                title=row['title'],
+                poster_url=row['poster_url'],
             )
             movies.append(movie)
 
@@ -498,6 +499,7 @@ def create_review(payload: ReviewIn, db: sqlite3.Connection = Depends(get_db)):
     cur = db.execute(
         """
         SELECT r.review_id,
+               u.user_id,
                u.name AS user_name,
                r.movie_id,
                r.rating,
