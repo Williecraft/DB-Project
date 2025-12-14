@@ -446,6 +446,7 @@ def get_movie_by_id(movie_id: str, db: sqlite3.Connection = Depends(get_db)):
         FROM RoleInMovie_Played rim
         JOIN Actor a ON rim.actor_id = a.actor_id
         WHERE rim.movie_id = ?
+        ORDER BY a.name
         """,
         (movie_id,),
     )
@@ -624,7 +625,7 @@ def advanced_search(
         raise HTTPException(status_code=400,detail="特殊查詢參數不能一起使用")
 
     # =========================================================================
-    # 邏輯分流 1：Actor-Director 合作頻率
+    # 分流 1：Actor-Director 合作頻率
     # =========================================================================
     if params.actor_director_combination is not None:
         k_value = params.actor_director_combination
@@ -670,7 +671,7 @@ def advanced_search(
         return NavOut(actor_director_list=pairs)
 
     # =========================================================================
-    # 邏輯分流 2：年度高分電影 Top K
+    # 分流 2：年度高分電影 Top K
     # =========================================================================
     if params.top_rating_of_year_limit is not None:
         year = params.top_rating_of_year

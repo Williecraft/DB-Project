@@ -137,11 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderNavResults(data) {
         container.innerHTML = ''; 
         let hasData = false;
+        const batchSize = 20;
 
         const sections = [
             { key: 'movie_list', title: 'Movies', render: renderMovieCard },
-            { key: 'actor_list', title: 'Actors', render: renderPersonCard },
-            { key: 'director_list', title: 'Directors', render: renderPersonCard },
+            { key: 'actor_list', title: 'Actors', render: renderActorCard },
+            { key: 'director_list', title: 'Directors', render: renderDirectorCard },
             { key: 'company_list', title: 'Companies', render: renderCompanyCard },
             { key: 'user_list', title: 'Users', render: renderUserCard },
             { key: 'genre_list', title: 'Genres', render: renderSimpleCard },
@@ -154,12 +155,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 hasData = true;
                 const sectionDiv = document.createElement('section');
                 sectionDiv.innerHTML = `
-                    <h2 class="text-2xl font-bold mb-4 text-gray-800">${section.title}</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                        ${list.map(item => section.render(item)).join('')}
+                    <div class="flex w-full justify-between">
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800">${section.title} </h2>
+                        <span class="text-lg mb-4 text-gray-800">${list.length} results</span>
+                    </div>                   
+                    
+                    <div class="result-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    </div>
+                    <div class="show-more-container mt-4 flex justify-center">
+                        <button type="button" id="show_more" class="text-gray-500 hover:text-gray-700 flex items-center text-sm">
+                            Show more ${section.title}
+                            <svg class="w-4 h-4 ml-1 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
                     </div>
                     <hr class="mt-8 border-gray-200"/>
                 `;
+
+                const gridContainer = sectionDiv.querySelector('.result-grid');
+                const showMoreContainer = sectionDiv.querySelector('.show-more-container');
+                const showMoreBtn = showMoreContainer ? showMoreContainer.querySelector('button') : null;
+
+                let currentCount = 0;
+
+                const loadMoreItems = () => {
+                    const nextBatch = list.slice(currentCount, currentCount + batchSize);
+                    
+                    // 產生 HTML並插入Grid
+                    const batchHTML = nextBatch.map(item => section.render(item)).join('');
+                    gridContainer.insertAdjacentHTML('beforeend', batchHTML);
+
+                    // 更新計數
+                    currentCount += nextBatch.length;
+
+                    // 檢查是否還有剩餘資料
+                    if (currentCount >= list.length) {
+                        showMoreContainer.classList.add('hidden');
+                    } else {
+                        showMoreContainer.classList.remove('hidden');
+                    }
+                };
+
+                if (showMoreBtn) {
+                    showMoreBtn.addEventListener('click', (e) => {
+                        e.preventDefault(); 
+                        loadMoreItems();
+                    });
+                }
+
+                loadMoreItems();
+
                 container.appendChild(sectionDiv);
             }
         });
@@ -171,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderMovieCard(m) {
         return `
-            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition border border-gray-200 flex flex-col items-center text-center">
+            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-xl transition border border-gray-300 flex flex-col items-center text-center">
                 <div class="w-full h-32 bg-gray-200 mb-2 rounded flex items-center justify-center text-gray-400">Poster</div>
                 <a href = movie.html?movie_id=${m.movie_id} class="font-bold text-lg leading-tight mb-1 hover:text-gray-700">${m.title}</a>
                 <p class="text-sm text-gray-600">${m.release_year || 'N/A'}</p>
@@ -180,9 +227,19 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    function renderPersonCard(p) {
+    function renderActorCard(a) {a
         return `
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition border border-gray-100">
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition border border-gray-300">
+                <a href = actor.html?actor_id=${a.actor_id} class="font-bold text-lg hover:text-gray-700">${a.name}</a>
+                <p class="text-sm text-gray-600">Birth: ${a.birth_year || 'N/A'}</p>
+                <p class="text-sm text-gray-600">Nation: ${a.nationality || 'N/A'}</p>
+            </div>
+        `;
+    }
+
+    function renderDirectorCard(p) {
+        return `
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition border border-gray-300">
                 <h3 class="font-bold text-lg">${p.name}</h3>
                 <p class="text-sm text-gray-600">Birth: ${p.birth_year || 'N/A'}</p>
                 <p class="text-sm text-gray-600">Nation: ${p.nationality || 'N/A'}</p>
@@ -192,8 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCompanyCard(c) {
         return `
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition border border-gray-100">
-                <h3 class="font-bold text-lg">${c.name}</h3>
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition border border-gray-300">
+                <a href = company.html?company_id=${c.company_id} class="font-bold text-lg hover:text-gray-700">${c.name}</a>
                 <p class="text-sm text-gray-600">Est. ${c.founded_year || 'N/A'}</p>
                 <p class="text-xs text-gray-500">${c.country || ''}</p>
             </div>
@@ -204,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomImg = randomProfile[randomNumber(0, 5)];
 
         return `
-            <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition border border-gray-100 flex items-center space-x-3">
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-xl transition border border-gray-300 flex items-center space-x-3">
                 <img src=${randomImg} class="w-10 h-10 rounded-full bg-gray-300 flex-shrink-0"></img>
                 <div>
                     <a href = user.html?user_id=${u.user_id} class="font-bold text-lg leading-tight mb-1 hover:text-gray-700">${u.name}</a>
@@ -216,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderSimpleCard(item) {
         return `
-            <div class="bg-gray-100 p-3 rounded-lg text-center hover:bg-gray-200 transition">
+            <div class="bg-gray-100 border-gray-300 p-3 rounded-lg text-center hover:hover:shadow-xl transition">
                 <span class="font-medium text-lg">${item.name}</span>
             </div>
         `;
