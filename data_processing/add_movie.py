@@ -12,7 +12,7 @@ from generate_tables import (
     scrape_roles_for_movie,
     build_movie_and_related_from_industry,
     build_actor_from_name,
-    scrape_poster_url,  # 🔹 新增：抓海報網址
+    scrape_poster_url,  # 抓海報網址
 
     # 進度管理
     load_progress,
@@ -45,7 +45,7 @@ def find_industry_index_by_title(ind_df: pd.DataFrame, title: str) -> Optional[i
     if cand.empty:
         return None
 
-    # 若有多筆重名，跟原本邏輯一樣：選年份最早的那一筆
+    # 若有多筆重名，選年份最早的那一筆
     if "year" in cand.columns:
         cand_sorted = cand.sort_values(by="year", ascending=True)
     else:
@@ -168,7 +168,20 @@ def process_single_title(
 
     # 4. 檢查是否已經嘗試過這個 idx
     if idx in seen_title_indices:
-        print(f"[single] idx={idx} 已經在 seen_title_indices 中，代表之前已經嘗試過，結束。")
+        print(f"[single] idx={idx} 已經在 seen_title_indices 中，代表之前已經嘗試過。")
+
+        # 額外列出名稱相似的電影，讓使用者可以複製其他片名
+        similar = find_similar_titles(ind_df, title, limit=10)
+        if similar:
+            print("[single] 以下是名稱相似的電影，你可以下次直接複製正確的片名來用：")
+            for i, item in enumerate(similar, start=1):
+                if item["idx"] == idx:
+                    continue
+                year_str = f" ({item['year']})" if item["year"] is not None else ""
+                print(f"  {i}. {item['name']}{year_str}")
+        else:
+            print("[single] 沒有其他名稱相似的電影。")
+
         return False
 
     # ===== 以下為完整的一部電影處理流程 =====
@@ -192,6 +205,19 @@ def process_single_title(
         seen_title_indices.add(idx)
         progress["seen_title_indices"] = list(seen_title_indices)
         progress["title_index"] = len(seen_title_indices)
+
+        # 一樣順便列出名稱相近的電影
+        similar = find_similar_titles(ind_df, title, limit=10)
+        if similar:
+            print("[single] 以下是名稱相似的電影，你可以下次直接複製正確的片名來用：")
+            for i, item in enumerate(similar, start=1):
+                if item["idx"] == idx:
+                    continue
+                year_str = f" ({item['year']})" if item["year"] is not None else ""
+                print(f"  {i}. {item['name']}{year_str}")
+        else:
+            print("[single] 沒有其他名稱相似的電影。")
+
         return True  # 有更新 seen_title_indices
 
     # 6. 透過 industry 建立 movie / director / company / genre / owns / movie_genre
@@ -212,7 +238,7 @@ def process_single_title(
         progress["title_index"] = len(seen_title_indices)
         return True  # 有更新 seen_title_indices
 
-    # 🔹 6.5 抓海報網址並塞進 movie_row（跟 generate_tables.main() 同步）
+    # 6.5 抓海報網址並塞進 movie_row
     sleep_a_bit()
     poster_url = scrape_poster_url(tt_id)
     movie_row["poster_url"] = poster_url or ""
