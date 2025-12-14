@@ -475,7 +475,7 @@
                         `Birth: ${a.birth_year || 'N/A'}`,
                         `Nation: ${a.nationality || 'N/A'}`
                     ];
-                    container.appendChild(createCard(a.name, details, true, 'actor', a.actor_id));
+                    return createCard(a.name, details, true, 'actor', a.actor_id);
                 };
             }
 
