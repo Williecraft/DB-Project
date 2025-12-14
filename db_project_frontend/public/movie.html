@@ -58,6 +58,7 @@
             </div>
             <div class="space-x-4">
                 <a href="advanced_search.html" class="text-gray-300 hover:text-white text-sm">Advanced Search</a>
+                    <button id="sign_out" type="button" class="hidden text-gray-300 hover:text-white text-sm">Sign Out</button>
                 <a id="auth_link" href="sign_in.html" class="bg-gray-600 hover:bg-gray-500 text-white px-3 py-1.5 rounded-lg text-sm">Sign In</a>
             </div>
         </div>
@@ -317,7 +318,7 @@
             if (data.movie_info.poster_url) {
                 poster.src = data.movie_info.poster_url;
             } else {
-                poster.src = "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/The_Empire_Strikes_Back_%281980_film%29.jpg/250px-The_Empire_Strikes_Back_%281980_film%29.jpg";
+                poster.src = DEFAULT_POSTER;
             }
 
             const genreList = document.getElementById('genre_list');

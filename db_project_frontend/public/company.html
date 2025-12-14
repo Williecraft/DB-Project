@@ -49,6 +49,7 @@
             </div>
             <div class="space-x-4">
                 <a href="advanced_search.html" class="text-gray-300 hover:text-white text-sm">Advanced Search</a>
+                <button id="sign_out" type="button" class="hidden text-gray-300 hover:text-white text-sm">Sign Out</button>
                 <a id="auth_link" href="sign_in.html" class="bg-gray-600 hover:bg-gray-500 text-white px-3 py-1.5 rounded-lg text-sm">Sign In</a>
             </div>
         </div>
@@ -112,8 +113,8 @@
             const movieCard = document.createElement('div');
             movieCard.className = 'w-fit flex flex-col items-center text-center space-y-2 ml-4';
             movieCard.innerHTML = `
-                <div class="w-32 h-32 bg-white rounded-2xl shadow-md"></div>
-                <h3 class="text-xl">${data.title}</h3>
+                <img src="${data.poster_url}" alt="${data.title}" class="w-32 h-48 bg-white rounded-2xl shadow-md"/>
+                <a href="movie.html?movie_id=${data.movie_id}" class="text-xl hover:text-gray-300">${data.title}</a>
                 <p class="text-xl text-gray-300">${data.release_year}</p>
             `;
             movieList.prepend(movieCard);

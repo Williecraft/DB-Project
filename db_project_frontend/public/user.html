@@ -50,6 +50,7 @@
             </div>
             <div class="space-x-4">
                 <a href="advanced_search.html" class="text-gray-300 hover:text-white text-sm">Advanced Search</a>
+                <button id="sign_out" type="button" class="hidden text-gray-300 hover:text-white text-sm">Sign Out</button>
                 <a id="auth_link" href="sign_in.html" class="bg-gray-600 hover:bg-gray-500 text-white px-3 py-1.5 rounded-lg text-sm">Sign In</a>
             </div>
         </div>
@@ -67,11 +68,11 @@
                 <img id="profile_img" class="w-28 h-28 rounded-full bg-gray-300 border-4 border-white shadow-xl z-10"></img>
 
                 <!-- User Name + Email -->
-                <div class="mt-16">
-                    <h1 id="name" class="text-3xl font-normal mb-1"></h1>
-                    <div class="flex items-center text-black text-sm">
-                        <div class="font-bold mr-2">| Email :
-                            <span id="email" class="text-gray-700"></span>
+                <div class="mt-16 space-y-8">
+                    <h1 id="name" class="text-4xl font-normal mb-1 ml-2"></h1>
+                    <div class="flex items-center text-black">
+                        <div class="text-xl font-bold mr-2">| Email :
+                            <span id="email" class="text-xl text-gray-700"></span>
                         </div>
                             
                         <button class="focus:outline-none border-none bg-transparent p-0 flex items-center">
@@ -87,16 +88,16 @@
             <!-- 右側資訊 -->
             <div class="mt-16 text-sm text-black space-y-1">
                 <div class="flex">
-                    <span class="font-bold text-black mr-2">| UserID :</span>
-                    <span id="user_id"></span>
+                    <span class="text-xl font-bold text-black mr-2">| UserID :</span>
+                    <span id="user_id" class="text-xl"></span>
                 </div>
                 <div class="flex">
-                    <span class="font-bold text-black mr-2">| Join Date :</span>
-                    <span id="join_date"></span>
+                    <span class="text-xl font-bold text-black mr-2">| Join Date :</span>
+                    <span id="join_date" class="text-xl"></span>
                 </div>
                 <div class="flex">
-                    <span class="font-bold text-black mr-2">| Age :</span>
-                    <span id="age"></span>
+                    <span class="text-xl font-bold text-black mr-2">| Age :</span>
+                    <span id="age" class="text-xl"></span>
                 </div>
             </div>
         </section>
@@ -197,11 +198,7 @@
 
             movieCard.innerHTML = `
                 <a href="movie.html?movie_id=${data.movie_id}" class="w-full">
-                    <img
-                        src="${posterUrl}"
-                        alt="${data.title}"
-                        class="w-full h-60 rounded-lg shadow-md object-cover"
-                    />
+                    <img src="${posterUrl}" alt="${data.title}" class="w-full h-60 rounded-lg shadow-md object-cover"/>
                 </a>
                 <a href="movie.html?movie_id=${data.movie_id}" class="text-xl text-black hover:text-gray-700">
                     ${data.title}

@@ -217,7 +217,7 @@ def get_user_detail(user_id: str, db: sqlite3.Connection = Depends(get_db)):
             movie = MovieOut(
                 movie_id=row['movie_id'],
                 title=row['title'],
-                poster_url=row['poster_url'],
+                poster_url=row['poster_url']
             )
             movies.append(movie)
 
