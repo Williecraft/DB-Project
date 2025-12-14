@@ -1,9 +1,10 @@
 # init_db.py
 import sqlite3
 
-DB_PATH = "db_project.db"
+DB_PATH = "db_project_backend/db_project.db"
 
 schema_sql = """
+DrOP TABLE IF EXISTS Movie;
 CREATE TABLE Movie(
     movie_id VARCHAR(15) PRIMARY KEY,
     director_id INT,
@@ -15,6 +16,7 @@ CREATE TABLE Movie(
     FOREIGN KEY (director_id) REFERENCES Director(director_id)
 );
 
+DROP TABLE IF EXISTS Director;
 CREATE TABLE Director(
     director_id VARCHAR(15) PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
@@ -22,6 +24,7 @@ CREATE TABLE Director(
     nationality VARCHAR(10) NOT NULL
 );
 
+DROP TABLE IF EXISTS Company;
 CREATE TABLE Company(
     company_id VARCHAR(15) PRIMARY KEY,
     name VARCHAR(30) NOT NULL UNIQUE,
@@ -29,6 +32,7 @@ CREATE TABLE Company(
     country VARCHAR(10) NOT NULL
 );
 
+DROP TABLE IF EXISTS Actor;
 CREATE TABLE Actor(
     actor_id VARCHAR(15) PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
@@ -37,16 +41,19 @@ CREATE TABLE Actor(
     gender CHAR(1)
 );
 
+DROP TABLE IF EXISTS Role;
 CREATE TABLE Role(
     role_id VARCHAR(15) PRIMARY KEY,
     name VARCHAR(30) NOT NULL
 );
 
+DROP TABLE IF EXISTS Genre;
 CREATE TABLE Genre(
     genre_id VARCHAR(15) PRIMARY KEY,
     name VARCHAR(15) NOT NULL UNIQUE
 );
 
+DROP TABLE IF EXISTS User;
 CREATE TABLE User(
     user_id VARCHAR(15) PRIMARY KEY,
     name VARCHAR(10) NOT NULL,
@@ -57,6 +64,7 @@ CREATE TABLE User(
     CONSTRAINT age_range CHECK (age BETWEEN 0 AND 100)
 );
 
+DROP TABLE IF EXISTS Review;
 CREATE TABLE Review(
     review_id VARCHAR(15) PRIMARY KEY,
     user_id VARCHAR(15) NOT NULL ,
@@ -68,6 +76,7 @@ CREATE TABLE Review(
     FOREIGN KEY (movie_id) REFERENCES Movie(movie_id)
 );
 
+DROP TABLE IF EXISTS Owns;
 CREATE TABLE Owns(
     company_id VARCHAR(15) NOT NULL,
     movie_id VARCHAR(15) NOT NULL,
@@ -76,6 +85,7 @@ CREATE TABLE Owns(
     FOREIGN KEY (movie_id) REFERENCES Movie(movie_id)
 );
 
+DROP TABLE IF EXISTS RoleInMovie_Played;
 CREATE TABLE RoleInMovie_Played(
     role_id VARCHAR(15) NOT NULL,
     actor_id VARCHAR(15) NOT NULL,
@@ -86,6 +96,7 @@ CREATE TABLE RoleInMovie_Played(
     FOREIGN KEY (movie_id) REFERENCES Movie(movie_id)
 );
 
+DROP TABLE IF EXISTS MovieGenre;
 CREATE TABLE MovieGenre(
     genre_id VARCHAR(15) NOT NULL,
     movie_id VARCHAR(15) NOT NULL,
