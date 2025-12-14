@@ -144,7 +144,6 @@
     <script src="navbar.js"></script>
     <script>
         let hiddenMovies = [];
-        const DEFAULT_POSTER = "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/The_Empire_Strikes_Back_%281980_film%29.jpg/250px-The_Empire_Strikes_Back_%281980_film%29.jpg";
 
         function renderUser(data){
             document.getElementById('name').textContent = data.user_info.name;
@@ -197,11 +196,7 @@
 
             movieCard.innerHTML = `
                 <a href="movie.html?movie_id=${data.movie_id}" class="w-full">
-                    <img
-                        src="${posterUrl}"
-                        alt="${data.title}"
-                        class="w-full h-60 rounded-lg shadow-md object-cover"
-                    />
+                    <img src="${posterUrl}" alt="${data.title}" class="w-full h-60 rounded-lg shadow-md object-cover"/>
                 </a>
                 <a href="movie.html?movie_id=${data.movie_id}" class="text-xl text-black hover:text-gray-700">
                     ${data.title}
