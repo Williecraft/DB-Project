@@ -27,13 +27,15 @@ function checkSignIn(){
 
 function updateNavbar() {
     // 檢查 sessionStorage 是否有使用者 ID
-    const userId = sessionStorage.getItem('user_id');
     const authLink = document.getElementById('auth_link') || document.querySelector('a[href="sign_in.html"]');
+    const signOut = document.getElementById('sign_out');
 
     if (!authLink) return;
 
-    if (userId) {
+    if (checkSignIn()) {
         // 已登入狀態
+        signOut.classList.remove('hidden');
+
         authLink.textContent = "Profile";     
         authLink.href = "user.html";         
         
@@ -41,6 +43,8 @@ function updateNavbar() {
         authLink.classList.add('bg-blue-950', 'hover:bg-blue-900');
     } else {
         // 未登入狀態 
+        signOut.classList.add('hidden');
+
         authLink.textContent = "Sign In";
         authLink.href = "sign_in.html";
         
@@ -75,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navType = document.getElementById('nav_type');
     const container = document.getElementById('results_container');
     const searchTitle = document.getElementById('search_title');
+    const signOut = document.getElementById('sign_out');
     
     const API_BASE = 'http://127.0.0.1:8000';
 
@@ -89,6 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const targetUrl = `nav_search_result.html?name=${encodeURIComponent(keyword)}&type=${type}`;
         window.location.href = targetUrl;
+    }
+
+    if(signOut){
+        signOut.addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.removeItem('user_id');
+            window.location.href = 'sign_in.html';
+        });
     }
 
     if (navSearch) {
