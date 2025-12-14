@@ -861,6 +861,15 @@ def main():
     actors_by_name: Dict[str, Dict[str, Any]] = progress["actors"]
     roles_rows: List[Dict[str, Any]] = progress["roles"]
 
+    role_by_name: Dict[str, str] = {}
+    for r in roles_rows:
+        name = r.get("name")
+        rid = r.get("role_id")
+        if not name or not rid:
+            continue
+        if name not in role_by_name:
+            role_by_name[name] = rid
+
     role_in_movie_rows: List[Dict[str, Any]] = progress["role_in_movie"]
     owns_rows: List[Dict[str, Any]] = progress["owns"]
     movie_genre_rows: List[Dict[str, Any]] = progress["movie_genre"]
@@ -954,19 +963,26 @@ def main():
                 continue
             actors_in_this_movie.add(actor_id)
 
-            role_id = make_id("role")
+            # 先把角色名稱砍到 30 字，跟存進 DB 的實際值一致
             role_name_trimmed = truncate(role_name, 30)
 
-            roles_rows.append({
-                "role_id": role_id,
-                "name": role_name_trimmed,
-            })
+            # 🔹 新規則：同名角色共用同一個 role_id
+            if role_name_trimmed in role_by_name:
+                role_id = role_by_name[role_name_trimmed]
+            else:
+                role_id = make_id("role")
+                roles_rows.append({
+                    "role_id": role_id,
+                    "name": role_name_trimmed,
+                })
+                role_by_name[role_name_trimmed] = role_id
 
             role_in_movie_rows.append({
                 "role_id": role_id,
                 "actor_id": actor_id,
                 "movie_id": tt_id,
             })
+
 
         # 5. 累積 user / review
         for uid, u in users_map.items():

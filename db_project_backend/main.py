@@ -860,9 +860,12 @@ def advanced_search(
 
     if t == "actor":
         if not need_actor_join:
-            joins.append("JOIN RoleInMovie_Played rim ON rim.movie_id = m.movie_id")
+            if not any("RoleInMovie_Played rim" in j for j in joins):
+                joins.append("JOIN RoleInMovie_Played rim ON rim.movie_id = m.movie_id")
             joins.append("JOIN Actor a ON rim.actor_id = a.actor_id")
-            join_sql = " ".join(joins)
+
+        join_sql = " ".join(joins)
+
         sql = (
             "SELECT DISTINCT a.actor_id, a.name, a.birth_year, a.nationality, a.gender "
             + base_sql
