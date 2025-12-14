@@ -87,6 +87,7 @@ class UserDetailOut(BaseModel):
 # 呈現company頁面的payload
 class CompanyDetailOut(BaseModel):
     company_info: CompanyOut
+    company_average_rating: float
     movie_list: list[MovieOut]
 
 # 呈現actor頁面的payload(movie_list的index對應到role_list必須有關聯)

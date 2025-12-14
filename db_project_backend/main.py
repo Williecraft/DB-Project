@@ -539,8 +539,21 @@ def get_company_by_id(company_id: str, db: sqlite3.Connection = Depends(get_db))
     )
     movie_list = [row_to_movie_out(r) for r in cur.fetchall()]
 
+    cur = db.execute(
+        """
+        SELECT AVG(r.rating) as avg
+        FROM Review r
+        JOIN Owns o ON r.movie_id = o.movie_id
+        WHERE o.company_id = ?
+        """,
+        (company_id,),
+    )
+    row = cur.fetchone()
+    average_rating = round(row['avg'], 1)
+
     return CompanyDetailOut(
         company_info=company_info,
+        company_average_rating=average_rating,
         movie_list=movie_list,
     )
 
