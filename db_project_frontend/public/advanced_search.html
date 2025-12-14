@@ -398,126 +398,170 @@
         function renderResults(data) {
             const container = document.getElementById('result_container');
             container.innerHTML = ''; // 清空舊結果
-            container.className = "w-full min-h-96 border border-gray-200 shadow-sm rounded-sm p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min";
+            container.className = "w-full min-h-96 border border-gray-200 shadow-sm rounded-sm p-4 flex flex-col gap-6"
+            //container.className = "w-full min-h-96 border border-gray-200 shadow-sm rounded-sm p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min";
+
+            const gridDiv = document.createElement('div');
+            gridDiv.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min w-full";
+            container.appendChild(gridDiv);
+
+            const btnDiv = document.createElement('div');
+            btnDiv.className = "flex justify-center mt-4 hidden";
+            btnDiv.innerHTML = `
+                <button type="button" id="show_more" class="text-gray-500 hover:text-gray-700 flex items-center text-sm">
+                    Show more result
+                    <svg class="w-4 h-4 ml-1 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+            `;
+            container.appendChild(btnDiv);
+
+            const showMoreBtn = document.getElementById('show_more');
+            const batchSize = 20;
+            let currentCount = 0;
 
             // 輔助卡片產生器
             const createCard = (title, details, jump, type, id) => {
                 const div = document.createElement('div');
-                div.className = "bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition border border-gray-200";
-                if(jump){
-                    div.innerHTML = `
-                    <a href = ${type}.html?${type}_id=${id} class="text-xl font-bold mb-2 truncate hover:text-gray-700">${title}</a>
+                div.className = "bg-gray-50 p-4 rounded-lg shadow hover:shadow-xl transition border border-gray-200";
+
+                const detailHTML = `
                     <div class="text-sm text-gray-600 space-y-1">
                         ${details.map(d => `<p>${d}</p>`).join('')}
                     </div>
-                    `;
+                `;
+
+                if(jump){
+                    div.innerHTML = `
+                        <a href = ${type}.html?${type}_id=${id} class="text-xl font-bold mb-2 truncate hover:text-gray-700">${title}</a>
+                        ${detailHTML}
+                    `;                 
                 }
                 else{
                     div.innerHTML = `
-                    <h3 class="text-xl font-bold mb-2 truncate">${title}</h3>
-                    <div class="text-sm text-gray-600 space-y-1">
-                        ${details.map(d => `<p>${d}</p>`).join('')}
-                    </div>
+                        <h3 class="text-xl font-bold mb-2 truncate">${title}</h3>
+                        ${detailHTML}
                     `;
                 }
                 return div;
             };
 
-            let hasData = false, jump = false;
+            let list = [];
+            let itemRenderer = null;
             
             // A. Movie List
             if (data.movie_list && data.movie_list.length > 0) {
-                hasData = true;
-                jump = true;
-                data.movie_list.forEach(m => {
+                list = data.movie_list;
+                itemRenderer = (m) => {
                     const details = [
-                        `Year: ${m.release_year}` || 'N/A',
-                        `Duration: ${m.duration} min`  || 'N/A',
-                        `Country: ${m.country}`  || 'N/A',
-                        `Director ID: ${m.director_id}` || 'N/A',
-                        `Language: ${m.language}` || 'N/A'
+                        `Year: ${m.release_year || 'N/A'}`,
+                        `Duration: ${m.duration ? m.duration + ' min' : 'N/A'}`,
+                        `Country: ${m.country || 'N/A'}`,
+                        `Director ID: ${m.director_id || 'N/A'}`,
+                        `Language: ${m.language || 'N/A'}`
                     ];
-                    container.appendChild(createCard(m.title, details, jump, 'movie', m.movie_id));
-                });
+                    return createCard(m.title, details, true, 'movie', m.movie_id);
+                };
             }
 
             // B. Actor List
             if (data.actor_list && data.actor_list.length > 0) {
-                hasData = true;
-                jump = true;
-                data.actor_list.forEach(a => {
+                list = data.actor_list;
+                itemRenderer = (a) => {
                     const details = [
                         `Gender: ${a.gender || 'N/A'}`,
                         `Birth: ${a.birth_year || 'N/A'}`,
                         `Nation: ${a.nationality || 'N/A'}`
                     ];
-                    container.appendChild(createCard(a.name, details, jump, 'actor', a.actor_id));
-                });
+                    container.appendChild(createCard(a.name, details, true, 'actor', a.actor_id));
+                };
             }
 
             // C. Director List (可能會跟 Actor 一起出現)
             if (data.director_list && data.director_list.length > 0) {
-                hasData = true;
-                data.director_list.forEach(d => {
+                list = data.director_list;
+                itemRenderer = (d) => {
                     const details = [
                         `Role: Director`,
                         `Birth: ${d.birth_year || 'N/A'}`,
                         `Nation: ${d.nationality || 'N/A'}`
                     ];
-                    container.appendChild(createCard(d.name, details));
-                });
+                    return createCard(d.name, details, false, null, null);
+                };
             }
 
             // D. Company List
             if (data.company_list && data.company_list.length > 0) {
-                hasData = true;
-                jump = true;
-                data.company_list.forEach(c => {
+                list = data.company_list;
+                itemRenderer = (c) => {
                     const details = [
                         `Founded: ${c.founded_year || 'N/A'}`,
                         `Country: ${c.country || 'N/A'}`
                     ];
-                    container.appendChild(createCard(c.name, details, jump, 'company', c.company_id));
-                });
+                    return createCard(c.name, details, true, 'company', c.company_id);
+                };
             }
 
             // E. Genre List
             if (data.genre_list && data.genre_list.length > 0) {
-                hasData = true;
-                data.genre_list.forEach(g => {
-                    container.appendChild(createCard(g.name, [`ID: ${g.genre_id}`]));
-                });
+                list = data.genre_list;
+                itemRenderer = (g) => createCard(g.name, [`ID: ${g.genre_id}`], false, null, null);
             }
 
             // F. Role List
             if (data.role_list && data.role_list.length > 0) {
-                hasData = true;
-                data.role_list.forEach(r => {
-                    container.appendChild(createCard(r.name, [`ID: ${r.role_id}`]));
-                });
+                list = data.role_list;
+                itemRenderer = (r) => createCard(r.name, [`ID: ${r.role_id}`], false, null, null);
             }
 
             // G. Actor-Director Combination List 
             if (data.actor_director_list && data.actor_director_list.length > 0) {
-                hasData = true;
-                data.actor_director_list.forEach(item => {                  
+                list = data.actor_director_list;
+                itemRenderer = (item) => {
                     const title = `${item.actor.name} & ${item.director.name}`;
-                    
                     const details = [
-                        `Cooperation: ${item.collab_count} times`, // 顯示合作次數
-                        `Director Nat.: ${item.director.nationality}`,
-                        `Actor Nat.: ${item.actor.nationality}`,
-                        `Actor Gender: ${item.actor.gender}`
+                        `Cooperation: ${item.collab_count} times`,
+                        `Director Nat.: ${item.director.nationality || 'N/A'}`,
+                        `Actor Nat.: ${item.actor.nationality || 'N/A'}`,
+                        `Actor Gender: ${item.actor.gender || 'N/A'}`
                     ];
-                    // 建立卡片
-                    container.appendChild(createCard(title, details));
-                });
+                    return createCard(title, details, false, null, null);
+                };
             }
 
-            if (!hasData) {
+            if (list.length === 0) {
                 container.className = "w-full min-h-96 border border-gray-200 shadow-sm rounded-sm p-4 flex items-center justify-center";
                 container.innerHTML = `<p class="text-gray-500 text-xl">No results found.</p>`;
             }
+
+            const loadNextBatch = () => {
+                const nextBatch = list.slice(currentCount, currentCount + batchSize);
+                
+                nextBatch.forEach(item => {
+                    const card = itemRenderer(item);
+                    gridDiv.appendChild(card);
+                });
+
+                currentCount += nextBatch.length;
+
+                if (currentCount >= list.length) {
+                    btnDiv.classList.add('hidden'); 
+                } else {
+                    btnDiv.classList.remove('hidden'); 
+                }
+            };
+
+            // 綁定按鈕事件
+            if (showMoreBtn) {
+                showMoreBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); 
+                    loadNextBatch();
+                });
+            }
+            
+            loadNextBatch();
         }
     </script>
 </body>
