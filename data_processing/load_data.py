@@ -51,7 +51,7 @@ def insert_csv(conn, table, csv_path, columns, extra_values=None):
                 inserted += 1
             except sqlite3.Error as e:
                 skipped += 1
-                print(f"[SKIP {table}] row={row}  error={e}")
+                # print(f"[SKIP {table}] row={row}  error={e}")
 
     conn.commit()
     print(f"→ {table} 插入完成：成功 {inserted} 筆，略過 {skipped} 筆")
