@@ -217,11 +217,7 @@ def get_user_detail(user_id: str, db: sqlite3.Connection = Depends(get_db)):
             movie = MovieOut(
                 movie_id=row['movie_id'],
                 title=row['title'],
-<<<<<<< HEAD
                 poster_url=row['poster_url']
-=======
-                poster_url=row['poster_url'],
->>>>>>> 0ad5140c0b316f2edcd28c443c820adf32059689
             )
             movies.append(movie)
 
