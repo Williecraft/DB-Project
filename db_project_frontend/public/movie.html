@@ -320,6 +320,7 @@
             // 遍歷list，生成物件
             data.genre_list.forEach(genre => {
                 const btn = document.createElement('button');
+                btn.type = 'button';
                 btn.className = 'bg-black hover:bg-gray-700 text-white px-3 py-1 rounded-full text-xl font-medium active:scale-95';
                 btn.textContent = genre.name;
                 genreList.appendChild(btn);

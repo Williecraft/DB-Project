@@ -7,10 +7,6 @@ let randomProfile = [
     'https://i.pinimg.com/736x/94/e4/b8/94e4b8ac4a8b734ab93a55369354649c.jpg'
 ]
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateNavbar();
-});
-
 function randomNumber(min, max){
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -66,6 +62,8 @@ function showAlert(type, message) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    updateNavbar();
+
     const navSearch = document.getElementById('nav_search'); 
     const navInput = document.getElementById('nav_keyword');
     const navType = document.getElementById('nav_type');
