@@ -451,7 +451,7 @@ def random_year(start: int = 1940, end: int = 2010) -> int:
 def map_country_to_code(country: str) -> str:
     if not country:
         return random_nationality()
-    c = country.lower()
+    c = (country).lower()
     if "united states" in c or "usa" in c or "u.s.a" in c:
         return "US"
     if "united kingdom" in c or "uk" in c or "england" in c:
